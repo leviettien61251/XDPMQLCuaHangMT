@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,13 @@ namespace DAL
 
         public DAL_Account() { }
 
-        public bool Login(string username, string password)
+        public DataTable Login(string username, string password)
         {
-            query = "SELECT Username, PasswordHash FROM dbo.Accounts WHERE Username = @Username AND PasswordHash = @Password";
-            
-            ExecuteQuery(query, new object[] { });
+            query = "SELECT  RoleId, EmployeeId, CreatedAt, Username, PasswordHash FROM dbo.Accounts WHERE Username = @Username AND PasswordHash = @Password";
 
-            return false;
+            DataTable dt = ExecuteQuery(query, new object[] { username, password });
+
+            return dt;
         }
     }
 }

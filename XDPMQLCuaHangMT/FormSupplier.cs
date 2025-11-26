@@ -29,7 +29,7 @@ namespace XDPMQLCuaHangMT
 
         private void LoadData()
         {
-            dgv_Supplier.DataSource = new BUS.BUS_Supplier().GetAllSuppliers();
+            dgv_Supplier.DataSource = BUS_Supplier.GetAllSuppliers();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace XDPMQLCuaHangMT
             string phone = textBoxPhone.Text;
             string email = textBoxEmail.Text;
             string address = textBoxAddress.Text;
-            Supplier supplier = new Supplier(name, contactName, phone, email, address);
+            supplier = new Supplier(name, contactName, phone, email, address);
 
             try
             {
@@ -66,10 +66,11 @@ namespace XDPMQLCuaHangMT
             string phone = textBoxPhone.Text;
             string email = textBoxEmail.Text;
             string address = textBoxAddress.Text;
+            supplier = new Supplier(supplierId, name, contactName, phone, email, address);
 
             try
             {
-                if (BUS_Supplier.UpdateSupplier(supplierId, name, contactName, phone, email, address))
+                if (BUS_Supplier.UpdateSupplier(supplier))
                 {
                     MessageBox.Show("Supplier updated successfully.");
                 }
@@ -88,11 +89,11 @@ namespace XDPMQLCuaHangMT
         private void dgv_Supplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             supplierId = dgv_Supplier.CurrentRow.Cells[0].Value != null ? Convert.ToInt32(dgv_Supplier.CurrentRow.Cells[0].Value) : 0;
-            textBoxName.Text = dgv_Supplier.CurrentRow.Cells[1].Value.ToString();
-            textBoxContact.Text = dgv_Supplier.CurrentRow.Cells[2].Value.ToString();
-            textBoxPhone.Text = dgv_Supplier.CurrentRow.Cells[3].Value.ToString();
-            textBoxEmail.Text = dgv_Supplier.CurrentRow.Cells[4].Value.ToString();
-            textBoxAddress.Text = dgv_Supplier.CurrentRow.Cells[5].Value.ToString();
+            textBoxName.Text = dgv_Supplier.CurrentRow.Cells[1].Value != null ? dgv_Supplier.CurrentRow.Cells[1].Value.ToString() : "";
+            textBoxContact.Text = dgv_Supplier.CurrentRow.Cells[2].Value != null ? dgv_Supplier.CurrentRow.Cells[2].Value.ToString() : "";
+            textBoxPhone.Text = dgv_Supplier.CurrentRow.Cells[3].Value != null ? dgv_Supplier.CurrentRow.Cells[3].Value.ToString() : "";
+            textBoxEmail.Text = dgv_Supplier.CurrentRow.Cells[4].Value != null ? dgv_Supplier.CurrentRow.Cells[4].Value.ToString() : "";
+            textBoxAddress.Text = dgv_Supplier.CurrentRow.Cells[5].Value != null ? dgv_Supplier.CurrentRow.Cells[5].Value.ToString() : "";
         }
     }
 }
