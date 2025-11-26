@@ -5,14 +5,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DAL;
 namespace BUS
 {
     public class BUS_Supplier
     {
 
 
-        DAL.DAL_Supplier dalSupplier = new DAL.DAL_Supplier();
+        DAL_Supplier dalSupplier = new DAL_Supplier();
+        public BUS_Supplier() { }
         public DataTable GetAllSuppliers()
         {
             return dalSupplier.GetAllSuppliers();
@@ -24,9 +25,9 @@ namespace BUS
             return rowAffected > 0;
         }
 
-        public bool UpdateSupplier(int id, string name, string contactName, string phone, string email, string address)
+        public bool UpdateSupplier(Supplier supplier)
         {
-            int rowAffected = dalSupplier.UpdateSupplier(id, name, contactName, phone, email, address);
+            int rowAffected = dalSupplier.UpdateSupplier(supplier.supplierID, supplier.name, supplier.contactName, supplier.phone, supplier.email, supplier.address);
             return rowAffected > 0;
         }
     }

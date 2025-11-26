@@ -37,5 +37,11 @@ namespace DTO
             this.password = password;
             this.roleId = roleId;
         }
+
+        public Account(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
     }
 }
