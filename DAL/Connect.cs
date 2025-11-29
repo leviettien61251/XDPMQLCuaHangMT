@@ -12,7 +12,7 @@ namespace DAL
     public class Connect
     {
         private string connString = @"Data Source=tim\SQLEXPRESS;
-                                      Initial Catalog=cuaHangMayTinh2;
+                                      Initial Catalog=cuaHangMayTinh;
                                       Integrated Security=True;
                                       Encrypt=True;TrustServerCertificate=True";
         public DataTable Load(string query)

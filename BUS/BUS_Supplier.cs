@@ -30,5 +30,10 @@ namespace BUS
             int rowAffected = dalSupplier.UpdateSupplier(supplier.supplierID, supplier.name, supplier.contactName, supplier.phone, supplier.email, supplier.address);
             return rowAffected > 0;
         }
+        public bool DeleteSupplier(Supplier supplier)
+        {
+            int rowAffected = dalSupplier.DeleteSupplier(supplier.supplierID);
+            return rowAffected > 0;
+        }
     }
 }

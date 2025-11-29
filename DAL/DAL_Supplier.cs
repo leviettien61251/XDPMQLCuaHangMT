@@ -39,8 +39,22 @@ namespace DAL
         {
             try
             {
-                query = "EXEC usp_UpdateSupplier @SupplierId , @Name , @Contact , @Phone , @Email , @Address ";
-                return ExecuteNonQuery(query, new object[] { id, name, contactName, phone, email, address });
+                query = "UPDATE dbo.Suppliers SET Name = @Name , Contact = @Contact , Phone = @Phone , Email = @Email , Address = @Address WHERE SupplierId = @SupplierId ";
+                return ExecuteNonQuery(query, new object[] { name, contactName, phone, email, address , id });
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+
+        }
+
+        public int DeleteSupplier(int id)
+        {
+            try
+            {
+                query = "DELETE FROM dbo.Suppliers WHERE SupplierId = @SupplierId";
+                return ExecuteNonQuery(query, new object[] { id });
             }
             catch (SqlException)
             {

@@ -105,7 +105,9 @@
             this.ClientSize = new System.Drawing.Size(708, 450);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "FormLogin";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
