@@ -41,14 +41,6 @@ namespace XDPMQLCuaHangMT
             labelCreateAt.Text = "Created at: " + createdAt;
 
         }
-        Form form;
-
-        //private void formTestToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    form = new FormTest();
-        //    form.ShowDialog();
-        //}
-
         private void formToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Form form = new Form();
@@ -71,12 +63,23 @@ namespace XDPMQLCuaHangMT
             form.BringToFront();
         }
 
-        //private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    form = new FormSupplier();
-        //    form.ShowDialog();
-        //}
-
-
+        private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            Form form = new Form();
+            switch (e.ClickedItem.Name)
+            {
+                
+                case "FormAccount":
+                    FormAccount F_Account = new FormAccount();
+                    form = F_Account;
+                    break;
+                default:
+                    break;
+            }
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+            form.BringToFront();
+        }
     }
 }

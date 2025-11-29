@@ -22,11 +22,25 @@ namespace DAL
 
             return dt;
         }
+        public DataTable GetAllAccounts()
+        {
+            query = "SELECT AccountId, Username, RoleId, EmployeeId, CreatedAt FROM dbo.Accounts";
+            try
+            {
+                DataTable dt = ExecuteQuery(query);
+                return dt;
 
+            }
+            catch (SqlException ex)
+            {
+                return new DataTable();
+                throw ex;
+            }
+        }
         public int InsertAccount(string username, string passwordHash, int roleId, int employeeId)
         {
             query = "INSERT INTO dbo.Accounts (Username, PasswordHash, RoleId, EmployeeId) VALUES ( @Username , @PasswordHash , @RoleId , @EmployeeId )";
-            
+
             try
             {
                 int result = ExecuteNonQuery(query, new object[] { username, passwordHash, roleId, employeeId });
@@ -36,8 +50,8 @@ namespace DAL
             {
                 throw ex;
             }
-            
-
         }
+
+        
     }
 }

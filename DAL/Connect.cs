@@ -25,7 +25,7 @@ namespace DAL
                 {
                     conn.Open();
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
                     // Handle exception (e.g., log it)
                     throw; // Re-throw the exception after handling
