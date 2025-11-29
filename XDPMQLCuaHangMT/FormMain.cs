@@ -43,11 +43,39 @@ namespace XDPMQLCuaHangMT
         }
         Form form;
 
-        private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        //private void formTestToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    form = new FormTest();
+        //    form.ShowDialog();
+        //}
+
+        private void formToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            form = new FormSupplier();
-            form.ShowDialog();
+            Form form = new Form();
+            switch (e.ClickedItem.Name)
+            {
+                case "FormTest":
+                    FormTest F_Test = new FormTest();
+                    form = F_Test;
+                    break;
+                case "FormSupplier":
+                    FormSupplier F_Supplier = new FormSupplier();
+                    form = F_Supplier;
+                    break;
+                default:
+                    break;
+            }
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+            form.BringToFront();
         }
+
+        //private void supplierToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    form = new FormSupplier();
+        //    form.ShowDialog();
+        //}
 
 
     }

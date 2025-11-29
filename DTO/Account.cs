@@ -9,16 +9,16 @@ namespace DTO
     public class Account
     {
         public int accountId { get; set; }
-        public string employeeId { get; set; }
+        public int employeeId { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-        public string roleId { get; set; }
+        public int roleId { get; set; }
         public bool isActive { get; set; }
         public string createdAt { get; set; }
 
         public Account() { }
 
-        public Account(int accountId, string employeeId, string username, string password, string roleId, bool isActive, string createdAt)
+        public Account(int accountId, int employeeId, string username, string password, int roleId, bool isActive, string createdAt)
         {
             this.accountId = accountId;
             this.employeeId = employeeId;
@@ -29,7 +29,7 @@ namespace DTO
             this.createdAt = createdAt;
         }
 
-        public Account(int accountId, string employeeId, string username, string password, string roleId)
+        public Account(int accountId, int employeeId, string username, string password, int roleId)
         {
             this.accountId = accountId;
             this.employeeId = employeeId;

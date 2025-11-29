@@ -6,9 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace XDPMQLCuaHangMT
 {
@@ -57,6 +60,7 @@ namespace XDPMQLCuaHangMT
                 MessageBox.Show("Error: " + ex.Message);
             }
             LoadData();
+            ClearInputFields();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -84,6 +88,7 @@ namespace XDPMQLCuaHangMT
                 MessageBox.Show("Error: " + ex.Message);
             }
             LoadData();
+            ClearInputFields();
         }
 
         private void dgv_Supplier_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -94,6 +99,43 @@ namespace XDPMQLCuaHangMT
             textBoxPhone.Text = dgv_Supplier.CurrentRow.Cells[3].Value != null ? dgv_Supplier.CurrentRow.Cells[3].Value.ToString() : "";
             textBoxEmail.Text = dgv_Supplier.CurrentRow.Cells[4].Value != null ? dgv_Supplier.CurrentRow.Cells[4].Value.ToString() : "";
             textBoxAddress.Text = dgv_Supplier.CurrentRow.Cells[5].Value != null ? dgv_Supplier.CurrentRow.Cells[5].Value.ToString() : "";
+        }
+
+        private void ClearInputFields()
+        {
+            textBoxName.Clear();
+            textBoxContact.Clear();
+            textBoxPhone.Clear();
+            textBoxEmail.Clear();
+            textBoxAddress.Clear();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string name = textBoxName.Text;
+            string contactName = textBoxContact.Text;
+            string phone = textBoxPhone.Text;
+            string email = textBoxEmail.Text;
+            string address = textBoxAddress.Text;
+            supplier = new Supplier(supplierId, name, contactName, phone, email, address);
+
+            try
+            {
+                if (BUS_Supplier.DeleteSupplier(supplier))
+                {
+                    MessageBox.Show("Supplier deleted successfully.");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to delete supplier.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            LoadData();
+            ClearInputFields();
         }
     }
 }
