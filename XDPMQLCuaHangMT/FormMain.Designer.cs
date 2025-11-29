@@ -31,6 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FormSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormManagement = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
@@ -41,7 +43,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FormSupplier,
-            this.FormTest});
+            this.FormTest,
+            this.FormManagement});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1129, 24);
@@ -52,14 +55,29 @@
             // FormSupplier
             // 
             this.FormSupplier.Name = "FormSupplier";
-            this.FormSupplier.Size = new System.Drawing.Size(62, 20);
-            this.FormSupplier.Text = "Supplier";
+            this.FormSupplier.Size = new System.Drawing.Size(44, 20);
+            this.FormSupplier.Text = "NCC";
             // 
             // FormTest
             // 
             this.FormTest.Name = "FormTest";
             this.FormTest.Size = new System.Drawing.Size(68, 20);
             this.FormTest.Text = "FormTest";
+            // 
+            // FormManagement
+            // 
+            this.FormManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormAccount});
+            this.FormManagement.Name = "FormManagement";
+            this.FormManagement.Size = new System.Drawing.Size(60, 20);
+            this.FormManagement.Text = "Quản lý";
+            this.FormManagement.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ManagementToolStripMenuItem_DropDownItemClicked);
+            // 
+            // FormAccount
+            // 
+            this.FormAccount.Name = "FormAccount";
+            this.FormAccount.Size = new System.Drawing.Size(126, 22);
+            this.FormAccount.Text = "Tài Khoản";
             // 
             // labelRoleId
             // 
@@ -101,7 +119,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormMain";
+            this.Text = "Màn hình chính";
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -118,6 +136,8 @@
         private System.Windows.Forms.Label labelEmployeeId;
         private System.Windows.Forms.Label labelCreateAt;
         private System.Windows.Forms.ToolStripMenuItem FormTest;
+        private System.Windows.Forms.ToolStripMenuItem FormManagement;
+        private System.Windows.Forms.ToolStripMenuItem FormAccount;
     }
 }
 

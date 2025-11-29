@@ -12,8 +12,8 @@ namespace BUS
     public class BUS_Account
     {
         DAL_Account dalAccount = new DAL_Account();
-
-
+        DAL_Role dalRole = new DAL_Role();
+        DAL_Employee dalEmployee = new DAL_Employee();
 
         public DataTable Login(Account account)
         {
@@ -37,6 +37,19 @@ namespace BUS
         {
             int rowAffected = dalAccount.InsertAccount(account.username, account.password, account.roleId, account.employeeId);
             return rowAffected > 0;
+        }
+        public DataTable GetAllAccounts()
+        {
+            return dalAccount.GetAllAccounts();
+        }
+        public DataTable GetAllRoles()
+        {
+            return dalRole.GetAllRole();
+        }
+
+        public DataTable GetAllEmployees()
+        {
+            return dalEmployee.GetAllEmployees();
         }
 
     }
