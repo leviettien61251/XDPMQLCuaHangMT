@@ -38,6 +38,7 @@
             this.labelRoleId = new System.Windows.Forms.Label();
             this.comboBoxRole = new System.Windows.Forms.ComboBox();
             this.labelEmployeeId = new System.Windows.Forms.Label();
+            this.textBoxEmployee = new System.Windows.Forms.TextBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
@@ -45,7 +46,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.dgvEmployee = new System.Windows.Forms.DataGridView();
-            this.textBoxEmployee = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -118,7 +118,7 @@
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(3, 23);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(237, 20);
+            this.textBoxUsername.Size = new System.Drawing.Size(378, 20);
             this.textBoxUsername.TabIndex = 1;
             // 
             // labelPassword
@@ -135,7 +135,7 @@
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(3, 69);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(237, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(378, 20);
             this.textBoxPassword.TabIndex = 3;
             // 
             // labelRoleId
@@ -153,7 +153,7 @@
             this.comboBoxRole.FormattingEnabled = true;
             this.comboBoxRole.Location = new System.Drawing.Point(3, 115);
             this.comboBoxRole.Name = "comboBoxRole";
-            this.comboBoxRole.Size = new System.Drawing.Size(237, 21);
+            this.comboBoxRole.Size = new System.Drawing.Size(378, 21);
             this.comboBoxRole.TabIndex = 5;
             this.comboBoxRole.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
             // 
@@ -166,6 +166,13 @@
             this.labelEmployeeId.Size = new System.Drawing.Size(93, 20);
             this.labelEmployeeId.TabIndex = 6;
             this.labelEmployeeId.Text = "Nhân viên:";
+            // 
+            // textBoxEmployee
+            // 
+            this.textBoxEmployee.Location = new System.Drawing.Point(3, 162);
+            this.textBoxEmployee.Name = "textBoxEmployee";
+            this.textBoxEmployee.Size = new System.Drawing.Size(378, 20);
+            this.textBoxEmployee.TabIndex = 7;
             // 
             // flowLayoutPanel2
             // 
@@ -249,13 +256,6 @@
             this.dgvEmployee.Size = new System.Drawing.Size(388, 216);
             this.dgvEmployee.TabIndex = 3;
             this.dgvEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
-            // 
-            // textBoxEmployee
-            // 
-            this.textBoxEmployee.Location = new System.Drawing.Point(3, 162);
-            this.textBoxEmployee.Name = "textBoxEmployee";
-            this.textBoxEmployee.Size = new System.Drawing.Size(237, 20);
-            this.textBoxEmployee.TabIndex = 7;
             // 
             // FormAccount
             // 
