@@ -73,6 +73,10 @@ namespace XDPMQLCuaHangMT
                     FormAccount F_Account = new FormAccount();
                     form = F_Account;
                     break;
+                case "FormEmployee":
+                    FormEmployee F_Employee = new FormEmployee();
+                    form = F_Employee;
+                    break;
                 default:
                     break;
             }

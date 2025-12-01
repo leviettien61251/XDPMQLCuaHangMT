@@ -36,6 +36,7 @@
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
+            this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.FormManagement});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1129, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
@@ -67,7 +68,8 @@
             // FormManagement
             // 
             this.FormManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FormAccount});
+            this.FormAccount,
+            this.FormEmployee});
             this.FormManagement.Name = "FormManagement";
             this.FormManagement.Size = new System.Drawing.Size(60, 20);
             this.FormManagement.Text = "Quản lý";
@@ -76,13 +78,13 @@
             // FormAccount
             // 
             this.FormAccount.Name = "FormAccount";
-            this.FormAccount.Size = new System.Drawing.Size(126, 22);
+            this.FormAccount.Size = new System.Drawing.Size(180, 22);
             this.FormAccount.Text = "Tài Khoản";
             // 
             // labelRoleId
             // 
             this.labelRoleId.AutoSize = true;
-            this.labelRoleId.Location = new System.Drawing.Point(798, 0);
+            this.labelRoleId.Location = new System.Drawing.Point(656, 0);
             this.labelRoleId.Name = "labelRoleId";
             this.labelRoleId.Size = new System.Drawing.Size(44, 13);
             this.labelRoleId.TabIndex = 1;
@@ -91,7 +93,7 @@
             // labelEmployeeId
             // 
             this.labelEmployeeId.AutoSize = true;
-            this.labelEmployeeId.Location = new System.Drawing.Point(866, 0);
+            this.labelEmployeeId.Location = new System.Drawing.Point(724, 0);
             this.labelEmployeeId.Name = "labelEmployeeId";
             this.labelEmployeeId.Size = new System.Drawing.Size(68, 13);
             this.labelEmployeeId.TabIndex = 2;
@@ -100,17 +102,23 @@
             // labelCreateAt
             // 
             this.labelCreateAt.AutoSize = true;
-            this.labelCreateAt.Location = new System.Drawing.Point(958, 0);
+            this.labelCreateAt.Location = new System.Drawing.Point(816, 0);
             this.labelCreateAt.Name = "labelCreateAt";
             this.labelCreateAt.Size = new System.Drawing.Size(60, 13);
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
             // 
+            // FormEmployee
+            // 
+            this.FormEmployee.Name = "FormEmployee";
+            this.FormEmployee.Size = new System.Drawing.Size(180, 22);
+            this.FormEmployee.Text = "Nhân viên";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1129, 578);
+            this.ClientSize = new System.Drawing.Size(984, 578);
             this.Controls.Add(this.labelCreateAt);
             this.Controls.Add(this.labelEmployeeId);
             this.Controls.Add(this.labelRoleId);
@@ -138,6 +146,7 @@
         private System.Windows.Forms.ToolStripMenuItem FormTest;
         private System.Windows.Forms.ToolStripMenuItem FormManagement;
         private System.Windows.Forms.ToolStripMenuItem FormAccount;
+        private System.Windows.Forms.ToolStripMenuItem FormEmployee;
     }
 }
 
