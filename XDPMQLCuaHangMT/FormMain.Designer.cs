@@ -33,10 +33,10 @@
             this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
             this.FormManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.FormAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
-            this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +51,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
             // 
             // FormSupplier
             // 
@@ -80,6 +79,14 @@
             this.FormAccount.Name = "FormAccount";
             this.FormAccount.Size = new System.Drawing.Size(180, 22);
             this.FormAccount.Text = "Tài Khoản";
+            this.FormAccount.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
+            // 
+            // FormEmployee
+            // 
+            this.FormEmployee.Name = "FormEmployee";
+            this.FormEmployee.Size = new System.Drawing.Size(180, 22);
+            this.FormEmployee.Text = "Nhân viên";
+            this.FormEmployee.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
             // 
             // labelRoleId
             // 
@@ -107,12 +114,6 @@
             this.labelCreateAt.Size = new System.Drawing.Size(60, 13);
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
-            // 
-            // FormEmployee
-            // 
-            this.FormEmployee.Name = "FormEmployee";
-            this.FormEmployee.Size = new System.Drawing.Size(180, 22);
-            this.FormEmployee.Text = "Nhân viên";
             // 
             // FormMain
             // 

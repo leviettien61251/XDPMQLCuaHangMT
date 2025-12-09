@@ -43,24 +43,7 @@ namespace XDPMQLCuaHangMT
         }
         private void formToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            Form form = new Form();
-            switch (e.ClickedItem.Name)
-            {
-                case "FormTest":
-                    FormTest F_Test = new FormTest();
-                    form = F_Test;
-                    break;
-                case "FormSupplier":
-                    FormSupplier F_Supplier = new FormSupplier();
-                    form = F_Supplier;
-                    break;
-                default:
-                    break;
-            }
-            form.MdiParent = this;
-            form.WindowState = FormWindowState.Maximized;
-            form.Show();
-            form.BringToFront();
+
         }
 
         private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
