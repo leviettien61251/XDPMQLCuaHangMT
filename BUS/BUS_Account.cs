@@ -49,7 +49,7 @@ namespace BUS
 
         public DataTable GetAllEmployees()
         {
-            return dalEmployee.GetAllEmployees();
+            return dalEmployee.GetAllEmployeess();
         }
 
     }
