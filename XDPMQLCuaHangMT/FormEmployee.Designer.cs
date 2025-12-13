@@ -43,13 +43,12 @@
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBoxImageURL = new System.Windows.Forms.TextBox();
             this.buttonImageURL = new System.Windows.Forms.Button();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -58,6 +57,7 @@
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -187,8 +187,7 @@
             this.flowLayoutPanel2.Controls.Add(this.textBoxPhone);
             this.flowLayoutPanel2.Controls.Add(this.label4);
             this.flowLayoutPanel2.Controls.Add(this.textBoxEmail);
-            this.flowLayoutPanel2.Controls.Add(this.label5);
-            this.flowLayoutPanel2.Controls.Add(this.textBoxImageURL);
+            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
             this.flowLayoutPanel2.Controls.Add(this.buttonImageURL);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -231,27 +230,10 @@
             this.textBoxEmail.Size = new System.Drawing.Size(457, 20);
             this.textBoxEmail.TabIndex = 3;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(114, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ảnh đại diện:";
-            // 
-            // textBoxImageURL
-            // 
-            this.textBoxImageURL.Location = new System.Drawing.Point(3, 115);
-            this.textBoxImageURL.Name = "textBoxImageURL";
-            this.textBoxImageURL.Size = new System.Drawing.Size(457, 20);
-            this.textBoxImageURL.TabIndex = 5;
-            // 
             // buttonImageURL
             // 
             this.buttonImageURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImageURL.Location = new System.Drawing.Point(3, 141);
+            this.buttonImageURL.Location = new System.Drawing.Point(3, 284);
             this.buttonImageURL.Name = "buttonImageURL";
             this.buttonImageURL.Size = new System.Drawing.Size(100, 31);
             this.buttonImageURL.TabIndex = 8;
@@ -298,6 +280,14 @@
             this.dgvEmployees.TabIndex = 1;
             this.dgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellContentClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 95);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(231, 183);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // FormEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +308,7 @@
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,11 +331,10 @@
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxImageURL;
         private System.Windows.Forms.Button buttonImageURL;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxLastName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

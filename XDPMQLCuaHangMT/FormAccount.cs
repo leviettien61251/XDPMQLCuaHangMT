@@ -27,6 +27,8 @@ namespace XDPMQLCuaHangMT
 
         private void FormAccount_Load(object sender, EventArgs e)
         {
+            
+            
             LoadData();
             LoadComboboxRoles();
         }
@@ -77,7 +79,7 @@ namespace XDPMQLCuaHangMT
                 return;
 
             }
-            if (regexUsername.IsMatch(username))
+            if (!regexUsername.IsMatch(username))
             {
                 MessageBox.Show("Tên đăng nhập không hợp lệ. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;

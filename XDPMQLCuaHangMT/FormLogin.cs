@@ -30,7 +30,7 @@ namespace XDPMQLCuaHangMT
             {
                 if (BUS_Account.Login(account).Rows.Count == 1)//Check if login is return 1 row
                 {
-                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
                     FormMain formMain = new FormMain(account);
                     formMain.ShowDialog();

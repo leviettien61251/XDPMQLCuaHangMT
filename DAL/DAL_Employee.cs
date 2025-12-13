@@ -12,10 +12,10 @@ namespace DAL
         public DAL_Employee() { }
         string query = @"";
 
-        public DataTable GetAllEmployees()
+        public DataTable GetNameAllEmployees()
         {
             DataTable dt = new DataTable();
-            query = "SELECT EmployeeId, FullName FROM dbo.Employees";
+            query = "SELECT EmployeeId, FirstName as 'Tên', LastName as 'Họ' FROM dbo.Employees";
             dt = ExecuteQuery(query);
             return dt;
         }
@@ -48,6 +48,12 @@ namespace DAL
         public int DeleteEmployee(int employeeId)
         {
             query = "DELETE FROM dbo.Employees WHERE EmployeeId = @employeeId ";
+            int result = ExecuteNonQuery(query, new object[] { employeeId });
+            return result;
+        }
+        public int SoftDeleteEmployee(int employeeId)
+        {
+            query = "UPDATE dbo.Employees SET IsActive = 0 WHERE EmployeeId = @employeeId ";
             int result = ExecuteNonQuery(query, new object[] { employeeId });
             return result;
         }

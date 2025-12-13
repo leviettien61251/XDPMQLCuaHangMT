@@ -46,12 +46,16 @@ namespace XDPMQLCuaHangMT
 
         }
 
+        private void FormSupplier_Click(object sender, EventArgs e)
+        {
+        }
+
         private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Form form = new Form();
             switch (e.ClickedItem.Name)
             {
-                
+
                 case "FormAccount":
                     FormAccount F_Account = new FormAccount();
                     form = F_Account;
@@ -59,6 +63,14 @@ namespace XDPMQLCuaHangMT
                 case "FormEmployee":
                     FormEmployee F_Employee = new FormEmployee();
                     form = F_Employee;
+                    break;
+                case "FormSupplier":
+                    FormSupplier F_Supplier = new FormSupplier();
+                    form = F_Supplier;
+                    break;
+                case "FormStock":
+                    FormStock F_Stock = new FormStock(employeeId);
+                    form = F_Stock;
                     break;
                 default:
                     break;

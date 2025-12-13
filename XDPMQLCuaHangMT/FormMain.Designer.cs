@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.FormSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
             this.FormManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.FormAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
+            this.FormStock = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FormSupplier,
             this.FormTest,
             this.FormManagement});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -51,12 +51,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // FormSupplier
-            // 
-            this.FormSupplier.Name = "FormSupplier";
-            this.FormSupplier.Size = new System.Drawing.Size(44, 20);
-            this.FormSupplier.Text = "NCC";
             // 
             // FormTest
             // 
@@ -68,7 +62,9 @@
             // 
             this.FormManagement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FormAccount,
-            this.FormEmployee});
+            this.FormEmployee,
+            this.FormSupplier,
+            this.FormStock});
             this.FormManagement.Name = "FormManagement";
             this.FormManagement.Size = new System.Drawing.Size(60, 20);
             this.FormManagement.Text = "Quản lý";
@@ -87,6 +83,13 @@
             this.FormEmployee.Size = new System.Drawing.Size(180, 22);
             this.FormEmployee.Text = "Nhân viên";
             this.FormEmployee.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
+            // 
+            // FormSupplier
+            // 
+            this.FormSupplier.Name = "FormSupplier";
+            this.FormSupplier.Size = new System.Drawing.Size(180, 22);
+            this.FormSupplier.Text = "Nhà cung cấp";
+            this.FormSupplier.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ManagementToolStripMenuItem_DropDownItemClicked);
             // 
             // labelRoleId
             // 
@@ -115,6 +118,12 @@
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
             // 
+            // FormStock
+            // 
+            this.FormStock.Name = "FormStock";
+            this.FormStock.Size = new System.Drawing.Size(180, 22);
+            this.FormStock.Text = "Phiếu nhập/xuất";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,7 +149,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem FormSupplier;
         private System.Windows.Forms.Label labelRoleId;
         private System.Windows.Forms.Label labelEmployeeId;
         private System.Windows.Forms.Label labelCreateAt;
@@ -148,6 +156,8 @@
         private System.Windows.Forms.ToolStripMenuItem FormManagement;
         private System.Windows.Forms.ToolStripMenuItem FormAccount;
         private System.Windows.Forms.ToolStripMenuItem FormEmployee;
+        private System.Windows.Forms.ToolStripMenuItem FormSupplier;
+        private System.Windows.Forms.ToolStripMenuItem FormStock;
     }
 }
 
