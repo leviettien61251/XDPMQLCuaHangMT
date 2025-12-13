@@ -18,11 +18,18 @@ namespace BUS
         {
             return dalEmployee.GetAllEmployeess();
         }
-
+        public DataTable GetEmployeeById(int employeeId)
+        {
+            return dalEmployee.GetEmployeeById(employeeId);
+        }
         public bool InsertEmployee(Employee employee)
         {
             int result = dalEmployee.InsertEmployee(employee);
             return result > 0;
+        }
+        public DataTable GetNameAllEmployees()
+        {
+            return dalEmployee.GetNameAllEmployees();
         }
         public bool UpdateEmployee(Employee employee)
         {
@@ -31,15 +38,15 @@ namespace BUS
                 int result = dalEmployee.UpdateEmployee(employee);
                 return result > 0;
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
                 throw ex;
             }
-            
+
         }
-        public bool DeleteEmployee(int employeeId)
+        public bool SoftDeleteEmployee(int employeeId)
         {
-            int result = dalEmployee.DeleteEmployee(employeeId);
+            int result = dalEmployee.SoftDeleteEmployee(employeeId);
             return result > 0;
         }
     }

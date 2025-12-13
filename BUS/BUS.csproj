@@ -44,7 +44,9 @@
     <Compile Include="BUS_Account.cs" />
     <Compile Include="BUS_Employee.cs" />
     <Compile Include="BUS_Role.cs" />
+    <Compile Include="BUS_StockVoucher.cs" />
     <Compile Include="BUS_Supplier.cs" />
+    <Compile Include="BUS_VoucherDetail.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

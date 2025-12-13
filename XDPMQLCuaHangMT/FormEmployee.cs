@@ -125,7 +125,7 @@ namespace XDPMQLCuaHangMT
         {
             try
             {
-                if (busEmployee.DeleteEmployee(employeeId_))
+                if (busEmployee.SoftDeleteEmployee(employeeId_))
                 {
                     MessageBox.Show("Xóa nhân viên thành công.");
                 }
