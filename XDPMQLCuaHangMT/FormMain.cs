@@ -50,6 +50,15 @@ namespace XDPMQLCuaHangMT
         {
         }
 
+        private void FormVoucherIN_Click(object sender, EventArgs e)
+        {
+            FormVoucherIN F_VoucherIN = new FormVoucherIN();
+            F_VoucherIN.MdiParent = this;
+            F_VoucherIN.WindowState = FormWindowState.Maximized;
+            F_VoucherIN.Show();
+            F_VoucherIN.BringToFront();
+        }
+
         private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Form form = new Form();

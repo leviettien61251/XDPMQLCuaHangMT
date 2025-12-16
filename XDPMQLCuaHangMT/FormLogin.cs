@@ -20,6 +20,7 @@ namespace XDPMQLCuaHangMT
         }
         Account account;
         BUS_Account BUS_Account = new BUS_Account();
+        
         private void buttonLogin_Click(object sender, EventArgs e)
         {
 

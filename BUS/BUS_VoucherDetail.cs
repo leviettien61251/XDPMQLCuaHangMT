@@ -47,11 +47,11 @@ namespace BUS
             }
         }
 
-        public bool InsertVoucherDetail(VoucherDetail voucherDetail)
+        public bool InsertVoucherDetail(VoucherDetail voucherDetail, int performedBy, string productName, int quantity)
         {
             try
             {
-                int rowAffected = dalVoucherDetail.InsertVoucherDetail(voucherDetail.voucherId, voucherDetail.productId, voucherDetail.quantity, voucherDetail.unitPrice);
+                int rowAffected = dalVoucherDetail.InsertVoucherDetail(voucherDetail.voucherId, performedBy, voucherDetail.productId, productName, quantity);
                 return rowAffected > 0;
             }
             catch (Exception)

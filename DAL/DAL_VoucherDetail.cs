@@ -1,4 +1,4 @@
-using DTO;
+﻿using DTO;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,7 +13,7 @@ namespace DAL
         {
             try
             {
-                query = "SELECT * FROM VoucherDetails";
+                query = "SELECT DetailId, VoucherId, prod.Name as 'Tên sản phẩm', prod.StockQty as 'Tồn kho', vd.UnitPrice\r\nFROM dbo.StockVoucherDetails as vd INNER JOIN dbo.Products as prod\r\nON vd.ProductId = prod.ProductId";
                 return Load(query);
             }
             catch (SqlException)
@@ -26,7 +26,7 @@ namespace DAL
         {
             try
             {
-                query = "SELECT * FROM VoucherDetails WHERE VoucherId = @VoucherId";
+                query = "SELECT DetailId, VoucherId, prod.Name as 'Tên sản phẩm', prod.StockQty as 'Tồn kho', vd.UnitPrice\r\nFROM dbo.StockVoucherDetails as vd INNER JOIN dbo.Products as prod\r\nON vd.ProductId = prod.ProductId WHERE vd.VoucherId = @VoucherId";
                 return ExecuteQuery(query, new object[] { voucherId });
             }
             catch (SqlException)
@@ -39,7 +39,7 @@ namespace DAL
         {
             try
             {
-                query = "SELECT * FROM VoucherDetails WHERE DetailId = @DetailId";
+                query = "SELECT DetailId, VoucherId, prod.Name as 'Tên sản phẩm', prod.StockQty as 'Tồn kho', vd.UnitPrice\r\nFROM dbo.StockVoucherDetails as vd INNER JOIN dbo.Products as prod\r\nON vd.ProductId = prod.ProductId WHERE vd.DetailId = @DetailId";
                 return ExecuteQuery(query, new object[] { detailId });
             }
             catch (SqlException)
@@ -48,12 +48,12 @@ namespace DAL
             }
         }
 
-        public int InsertVoucherDetail(int voucherId, int productId, int quantity, decimal unitPrice)
+        public int InsertVoucherDetail(int voucherId, int performedBy, int productId, string productName, int quantity)
         {
             try
             {
-                query = "INSERT INTO VoucherDetails (VoucherId, ProductId, Quantity, UnitPrice) VALUES ( @VoucherId , @ProductId , @Quantity , @UnitPrice )";
-                return ExecuteNonQuery(query, new object[] { voucherId, productId, quantity, unitPrice });
+                query = " EXEC usp_InsertProductToDetailVoucher @VoucherId , @PerformedBy , @ProductId , @ProductName , @Quantity ";
+                return ExecuteNonQuery(query, new object[] { voucherId, performedBy, productId, productName, quantity });
             }
             catch (SqlException)
             {

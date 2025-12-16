@@ -20,22 +20,38 @@ namespace XDPMQLCuaHangMT
         {
             InitializeComponent();
         }
-        protected int employeeId, voucherId;
         public FormStock(int employeeId)
         {
             InitializeComponent();
             this.employeeId = employeeId;
         }
+        protected int employeeId, voucherId;
+        protected string voucherType__;
         StockVoucher dtoStockVoucher;
         DataTable dtEmployee;
         BUS_StockVoucher busStockVoucher = new BUS_StockVoucher();
         BUS_Employee busEmployee = new BUS_Employee();
         private void buttonStockDetial_Click(object sender, EventArgs e)
         {
-            FormStockDetail formStockDetail = new FormStockDetail();
-            formStockDetail.ShowDialog();
-            formStockDetail.WindowState = FormWindowState.Maximized;
-            formStockDetail.BringToFront();
+            //FormStockDetail formStockDetail = new FormStockDetail(employeeId, voucherId, voucherType);
+            //formStockDetail.ShowDialog();
+            //formStockDetail.WindowState = FormWindowState.Maximized;
+            //formStockDetail.BringToFront();
+            if (voucherType__ != "IN")
+            {
+
+                FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__);
+                formVoucherOUT.ShowDialog();
+                formVoucherOUT.WindowState = FormWindowState.Maximized;
+                formVoucherOUT.BringToFront();
+            }
+            else
+            {
+                FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__);
+                formVoucherIN.ShowDialog();
+                formVoucherIN.WindowState = FormWindowState.Maximized;
+                formVoucherIN.BringToFront();
+            }
         }
 
         private void FormStock_Load(object sender, EventArgs e)
@@ -56,6 +72,7 @@ namespace XDPMQLCuaHangMT
 
         private void dgvStock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            voucherType__ = dgvStock.CurrentRow.Cells["Loại"].Value.ToString().Trim();
             comboBoxStockType.Text = dgvStock.CurrentRow.Cells["Loại"].Value.ToString();
             textBoxDate.Text = dgvStock.CurrentRow.Cells["Ngày nhập/xuất"].Value.ToString();
             textBoxNote.Text = dgvStock.CurrentRow.Cells["Ghi chú"].Value.ToString();
@@ -65,16 +82,26 @@ namespace XDPMQLCuaHangMT
 
         private void comboBoxStockType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            labelType.Text = comboBoxStockType.Text.ToString();
+            voucherType__ = comboBoxStockType.Text.ToString();
         }
-
+        private void Clear_Fields()
+        {
+            comboBoxStockType.Text = "";
+            textBoxDate.Text = "";
+            textBoxNote.Text = "";
+            labelStockId.Text = "Mã phiếu: ";
+        }
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            string voucherType = comboBoxStockType.Text.ToString();
             int createdBy = employeeId;
             string notes = textBoxNote.Text.ToString();
 
-            dtoStockVoucher = new StockVoucher(voucherType, createdBy, notes);
+            if (string.IsNullOrEmpty(voucherType__))
+            {
+                MessageBox.Show("Vui lòng chọn loại phiếu");
+                return;
+            }
+            dtoStockVoucher = new StockVoucher(voucherType__, createdBy, notes);
             if (!busStockVoucher.InsertStockVoucher(dtoStockVoucher))
             {
                 MessageBox.Show("Thêm phiếu không thành công");
@@ -84,6 +111,24 @@ namespace XDPMQLCuaHangMT
             {
                 MessageBox.Show("Thêm phiếu thành công");
                 Load_Data();
+                voucherId = dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value != null ?
+                            Int32.Parse(dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value.ToString()) : 0;
+                if (voucherType__ != "IN")
+                {
+
+                    FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__);
+                    formVoucherOUT.ShowDialog();
+                    formVoucherOUT.WindowState = FormWindowState.Maximized;
+                    formVoucherOUT.BringToFront();
+                }
+                else
+                {
+                    FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__);
+                    formVoucherIN.ShowDialog();
+                    formVoucherIN.WindowState = FormWindowState.Maximized;
+                    formVoucherIN.BringToFront();
+                }
+
             }
 
 
@@ -91,12 +136,11 @@ namespace XDPMQLCuaHangMT
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            string voucherType = comboBoxStockType.Text.ToString();
             string notes = textBoxNote.Text.ToString();
 
             dtoStockVoucher = new StockVoucher();
             dtoStockVoucher.voucherId = voucherId;
-            dtoStockVoucher.voucherType = voucherType;
+            dtoStockVoucher.voucherType = voucherType__;
             dtoStockVoucher.note = notes;
             if (!busStockVoucher.UpdateStockVoucher(dtoStockVoucher))
             {
@@ -107,6 +151,7 @@ namespace XDPMQLCuaHangMT
             {
                 MessageBox.Show("Sửa phiếu thành công");
                 Load_Data();
+                Clear_Fields();
             }
         }
 
@@ -118,12 +163,14 @@ namespace XDPMQLCuaHangMT
             if (!busStockVoucher.DeleteStockVoucher(dtoStockVoucher))
             {
                 MessageBox.Show("Xóa phiếu không thành công");
+                Clear_Fields();
                 return;
             }
             else
             {
                 MessageBox.Show("Xóa phiếu thành công");
                 Load_Data();
+                Clear_Fields();
             }
         }
     }

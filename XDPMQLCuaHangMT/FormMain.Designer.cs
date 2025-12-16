@@ -34,10 +34,10 @@
             this.FormAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.FormSupplier = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormStock = new System.Windows.Forms.ToolStripMenuItem();
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
-            this.FormStock = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,23 +73,29 @@
             // FormAccount
             // 
             this.FormAccount.Name = "FormAccount";
-            this.FormAccount.Size = new System.Drawing.Size(180, 22);
+            this.FormAccount.Size = new System.Drawing.Size(161, 22);
             this.FormAccount.Text = "Tài Khoản";
             this.FormAccount.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
             // 
             // FormEmployee
             // 
             this.FormEmployee.Name = "FormEmployee";
-            this.FormEmployee.Size = new System.Drawing.Size(180, 22);
+            this.FormEmployee.Size = new System.Drawing.Size(161, 22);
             this.FormEmployee.Text = "Nhân viên";
             this.FormEmployee.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
             // 
             // FormSupplier
             // 
             this.FormSupplier.Name = "FormSupplier";
-            this.FormSupplier.Size = new System.Drawing.Size(180, 22);
+            this.FormSupplier.Size = new System.Drawing.Size(161, 22);
             this.FormSupplier.Text = "Nhà cung cấp";
             this.FormSupplier.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ManagementToolStripMenuItem_DropDownItemClicked);
+            // 
+            // FormStock
+            // 
+            this.FormStock.Name = "FormStock";
+            this.FormStock.Size = new System.Drawing.Size(161, 22);
+            this.FormStock.Text = "Phiếu nhập/xuất";
             // 
             // labelRoleId
             // 
@@ -117,12 +123,6 @@
             this.labelCreateAt.Size = new System.Drawing.Size(60, 13);
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
-            // 
-            // FormStock
-            // 
-            this.FormStock.Name = "FormStock";
-            this.FormStock.Size = new System.Drawing.Size(180, 22);
-            this.FormStock.Text = "Phiếu nhập/xuất";
             // 
             // FormMain
             // 

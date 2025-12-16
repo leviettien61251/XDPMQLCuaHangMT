@@ -32,37 +32,39 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonSearchDetail = new System.Windows.Forms.Button();
-            this.dgvDetailStock = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.buttonSearchProduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBoxDetail = new System.Windows.Forms.TextBox();
+            this.buttonSearchDetail = new System.Windows.Forms.Button();
+            this.dgvDetailStock = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonUpdate = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxStockId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxProduct = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxQuantity = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxStockQty = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxUnitPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailStock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailStock)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
@@ -106,7 +108,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dgvDetailStock, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.dgvProduct, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -118,42 +120,43 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
-            this.flowLayoutPanel1.Controls.Add(this.buttonSearchDetail);
+            this.flowLayoutPanel1.Controls.Add(this.textBoxSearchProduct);
+            this.flowLayoutPanel1.Controls.Add(this.buttonSearchProduct);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(474, 31);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // textBox1
+            // textBoxSearchProduct
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(377, 20);
-            this.textBox1.TabIndex = 0;
+            this.textBoxSearchProduct.Location = new System.Drawing.Point(3, 3);
+            this.textBoxSearchProduct.Name = "textBoxSearchProduct";
+            this.textBoxSearchProduct.Size = new System.Drawing.Size(377, 20);
+            this.textBoxSearchProduct.TabIndex = 0;
             // 
-            // buttonSearchDetail
+            // buttonSearchProduct
             // 
-            this.buttonSearchDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchDetail.Location = new System.Drawing.Point(386, 3);
-            this.buttonSearchDetail.Name = "buttonSearchDetail";
-            this.buttonSearchDetail.Size = new System.Drawing.Size(82, 23);
-            this.buttonSearchDetail.TabIndex = 1;
-            this.buttonSearchDetail.Text = "Tìm kiếm";
-            this.buttonSearchDetail.UseVisualStyleBackColor = true;
+            this.buttonSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearchProduct.Location = new System.Drawing.Point(386, 3);
+            this.buttonSearchProduct.Name = "buttonSearchProduct";
+            this.buttonSearchProduct.Size = new System.Drawing.Size(82, 23);
+            this.buttonSearchProduct.TabIndex = 1;
+            this.buttonSearchProduct.Text = "Tìm kiếm";
+            this.buttonSearchProduct.UseVisualStyleBackColor = true;
             // 
-            // dgvDetailStock
+            // dgvProduct
             // 
-            this.dgvDetailStock.AllowUserToAddRows = false;
-            this.dgvDetailStock.AllowUserToDeleteRows = false;
-            this.dgvDetailStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetailStock.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDetailStock.Location = new System.Drawing.Point(3, 40);
-            this.dgvDetailStock.Name = "dgvDetailStock";
-            this.dgvDetailStock.ReadOnly = true;
-            this.dgvDetailStock.Size = new System.Drawing.Size(474, 237);
-            this.dgvDetailStock.TabIndex = 1;
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProduct.Location = new System.Drawing.Point(3, 40);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.Size = new System.Drawing.Size(474, 237);
+            this.dgvProduct.TabIndex = 1;
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
             // tableLayoutPanel4
             // 
@@ -161,7 +164,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel2, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dgvProduct, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.dgvDetailStock, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 289);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -173,42 +176,42 @@
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Controls.Add(this.textBox2);
-            this.flowLayoutPanel2.Controls.Add(this.buttonSearchProduct);
+            this.flowLayoutPanel2.Controls.Add(this.textBoxDetail);
+            this.flowLayoutPanel2.Controls.Add(this.buttonSearchDetail);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(474, 26);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
-            // textBox2
+            // textBoxDetail
             // 
-            this.textBox2.Location = new System.Drawing.Point(3, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(377, 20);
-            this.textBox2.TabIndex = 0;
+            this.textBoxDetail.Location = new System.Drawing.Point(3, 3);
+            this.textBoxDetail.Name = "textBoxDetail";
+            this.textBoxDetail.Size = new System.Drawing.Size(377, 20);
+            this.textBoxDetail.TabIndex = 0;
             // 
-            // buttonSearchProduct
+            // buttonSearchDetail
             // 
-            this.buttonSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchProduct.Location = new System.Drawing.Point(386, 3);
-            this.buttonSearchProduct.Name = "buttonSearchProduct";
-            this.buttonSearchProduct.Size = new System.Drawing.Size(84, 23);
-            this.buttonSearchProduct.TabIndex = 1;
-            this.buttonSearchProduct.Text = "Tìm kiếm";
-            this.buttonSearchProduct.UseVisualStyleBackColor = true;
+            this.buttonSearchDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearchDetail.Location = new System.Drawing.Point(386, 3);
+            this.buttonSearchDetail.Name = "buttonSearchDetail";
+            this.buttonSearchDetail.Size = new System.Drawing.Size(84, 23);
+            this.buttonSearchDetail.TabIndex = 1;
+            this.buttonSearchDetail.Text = "Tìm kiếm";
+            this.buttonSearchDetail.UseVisualStyleBackColor = true;
             // 
-            // dgvProduct
+            // dgvDetailStock
             // 
-            this.dgvProduct.AllowUserToAddRows = false;
-            this.dgvProduct.AllowUserToDeleteRows = false;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProduct.Location = new System.Drawing.Point(3, 35);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.ReadOnly = true;
-            this.dgvProduct.Size = new System.Drawing.Size(474, 242);
-            this.dgvProduct.TabIndex = 1;
+            this.dgvDetailStock.AllowUserToAddRows = false;
+            this.dgvDetailStock.AllowUserToDeleteRows = false;
+            this.dgvDetailStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailStock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDetailStock.Location = new System.Drawing.Point(3, 35);
+            this.dgvDetailStock.Name = "dgvDetailStock";
+            this.dgvDetailStock.ReadOnly = true;
+            this.dgvDetailStock.Size = new System.Drawing.Size(474, 242);
+            this.dgvDetailStock.TabIndex = 1;
             // 
             // tableLayoutPanel5
             // 
@@ -246,6 +249,7 @@
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Thêm";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonUpdate
             // 
@@ -269,13 +273,15 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.label1);
+            this.flowLayoutPanel4.Controls.Add(this.labelTitle);
             this.flowLayoutPanel4.Controls.Add(this.label2);
             this.flowLayoutPanel4.Controls.Add(this.textBoxStockId);
             this.flowLayoutPanel4.Controls.Add(this.label3);
             this.flowLayoutPanel4.Controls.Add(this.textBoxProduct);
             this.flowLayoutPanel4.Controls.Add(this.label4);
             this.flowLayoutPanel4.Controls.Add(this.textBoxQuantity);
+            this.flowLayoutPanel4.Controls.Add(this.label6);
+            this.flowLayoutPanel4.Controls.Add(this.textBoxStockQty);
             this.flowLayoutPanel4.Controls.Add(this.label5);
             this.flowLayoutPanel4.Controls.Add(this.textBoxUnitPrice);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -285,15 +291,15 @@
             this.flowLayoutPanel4.Size = new System.Drawing.Size(480, 495);
             this.flowLayoutPanel4.TabIndex = 1;
             // 
-            // label1
+            // labelTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Phiếu nhập/xuất";
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.Location = new System.Drawing.Point(3, 0);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(224, 33);
+            this.labelTitle.TabIndex = 0;
+            this.labelTitle.Text = "Phiếu nhập/xuất";
             // 
             // label2
             // 
@@ -349,20 +355,38 @@
             this.textBoxQuantity.Size = new System.Drawing.Size(458, 24);
             this.textBoxQuantity.TabIndex = 6;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 177);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Tồn kho:";
+            // 
+            // textBoxStockQty
+            // 
+            this.textBoxStockQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStockQty.Location = new System.Drawing.Point(3, 198);
+            this.textBoxStockQty.Name = "textBoxStockQty";
+            this.textBoxStockQty.Size = new System.Drawing.Size(458, 24);
+            this.textBoxStockQty.TabIndex = 10;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 177);
+            this.label5.Location = new System.Drawing.Point(3, 225);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 18);
+            this.label5.Size = new System.Drawing.Size(71, 18);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Giá trên 1 đơn vị:";
+            this.label5.Text = "Đơn giá:";
             // 
             // textBoxUnitPrice
             // 
             this.textBoxUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUnitPrice.Location = new System.Drawing.Point(3, 198);
+            this.textBoxUnitPrice.Location = new System.Drawing.Point(3, 246);
             this.textBoxUnitPrice.Name = "textBoxUnitPrice";
             this.textBoxUnitPrice.Size = new System.Drawing.Size(458, 24);
             this.textBoxUnitPrice.TabIndex = 8;
@@ -381,11 +405,11 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailStock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailStock)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
@@ -401,20 +425,20 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button buttonSearchDetail;
-        private System.Windows.Forms.DataGridView dgvDetailStock;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxSearchProduct;
         private System.Windows.Forms.Button buttonSearchProduct;
         private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.TextBox textBoxDetail;
+        private System.Windows.Forms.Button buttonSearchDetail;
+        private System.Windows.Forms.DataGridView dgvDetailStock;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxStockId;
         private System.Windows.Forms.Label label3;
@@ -423,5 +447,7 @@
         private System.Windows.Forms.TextBox textBoxQuantity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxUnitPrice;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxStockQty;
     }
 }
