@@ -1,4 +1,8 @@
-﻿namespace XDPMQLCuaHangMT
+﻿using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace XDPMQLCuaHangMT
 {
     partial class FormEmployee
     {
@@ -28,313 +32,456 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonUpdate = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlInput = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonImageURL = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
-            this.buttonImageURL = new System.Windows.Forms.Button();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonUpdate = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.pnlBangNhanVien = new System.Windows.Forms.Panel();
+            this.lblBangNhanVien = new System.Windows.Forms.Label();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
+            this.colEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colImageUrl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIsActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colDeletedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeletedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTimKiemNV = new System.Windows.Forms.Panel();
+            this.txtTimKiemNV = new System.Windows.Forms.TextBox();
+            this.btnTimKiemNV = new System.Windows.Forms.Button();
+            this.pnlInput.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pnlBangNhanVien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
+            this.pnlTimKiemNV.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // pnlInput
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgvEmployees, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.77778F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.22222F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 578);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.pnlInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.pnlInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInput.Controls.Add(this.pictureBox1);
+            this.pnlInput.Controls.Add(this.buttonImageURL);
+            this.pnlInput.Controls.Add(this.label1);
+            this.pnlInput.Controls.Add(this.textBoxLastName);
+            this.pnlInput.Controls.Add(this.label2);
+            this.pnlInput.Controls.Add(this.textBoxFirstName);
+            this.pnlInput.Controls.Add(this.label3);
+            this.pnlInput.Controls.Add(this.textBoxPhone);
+            this.pnlInput.Controls.Add(this.label4);
+            this.pnlInput.Controls.Add(this.textBoxEmail);
+            this.pnlInput.Controls.Add(this.buttonAdd);
+            this.pnlInput.Controls.Add(this.buttonUpdate);
+            this.pnlInput.Controls.Add(this.buttonDelete);
+            this.pnlInput.Location = new System.Drawing.Point(12, 12);
+            this.pnlInput.Name = "pnlInput";
+            this.pnlInput.Size = new System.Drawing.Size(380, 639);
+            this.pnlInput.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // pictureBox1
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel1, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75.67567F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.32432F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(486, 572);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.buttonAdd);
-            this.flowLayoutPanel1.Controls.Add(this.buttonUpdate);
-            this.flowLayoutPanel1.Controls.Add(this.buttonDelete);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 435);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(480, 134);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(3, 3);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(153, 45);
-            this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Thêm";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // buttonUpdate
-            // 
-            this.buttonUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdate.Location = new System.Drawing.Point(162, 3);
-            this.buttonUpdate.Name = "buttonUpdate";
-            this.buttonUpdate.Size = new System.Drawing.Size(153, 45);
-            this.buttonUpdate.TabIndex = 1;
-            this.buttonUpdate.Text = "Sửa";
-            this.buttonUpdate.UseVisualStyleBackColor = true;
-            this.buttonUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Location = new System.Drawing.Point(321, 3);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(153, 45);
-            this.buttonDelete.TabIndex = 2;
-            this.buttonDelete.Text = "Xóa";
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.20833F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.79167F));
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel4, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel2, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.flowLayoutPanel3, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.26761F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.73239F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(480, 426);
-            this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.label2);
-            this.flowLayoutPanel4.Controls.Add(this.textBoxFirstName);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(243, 3);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(234, 42);
-            this.flowLayoutPanel4.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tên:";
-            // 
-            // textBoxFirstName
-            // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(53, 3);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(167, 20);
-            this.textBoxFirstName.TabIndex = 1;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.tableLayoutPanel3.SetColumnSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Controls.Add(this.label3);
-            this.flowLayoutPanel2.Controls.Add(this.textBoxPhone);
-            this.flowLayoutPanel2.Controls.Add(this.label4);
-            this.flowLayoutPanel2.Controls.Add(this.textBoxEmail);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel2.Controls.Add(this.buttonImageURL);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 51);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(474, 372);
-            this.flowLayoutPanel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Số điện thoại:";
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Location = new System.Drawing.Point(3, 23);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(457, 20);
-            this.textBoxPhone.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Email:";
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(3, 69);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(457, 20);
-            this.textBoxEmail.TabIndex = 3;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 160);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonImageURL
             // 
-            this.buttonImageURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImageURL.Location = new System.Drawing.Point(3, 284);
+            this.buttonImageURL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonImageURL.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonImageURL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImageURL.ForeColor = System.Drawing.Color.White;
+            this.buttonImageURL.Location = new System.Drawing.Point(24, 184);
             this.buttonImageURL.Name = "buttonImageURL";
-            this.buttonImageURL.Size = new System.Drawing.Size(100, 31);
-            this.buttonImageURL.TabIndex = 8;
+            this.buttonImageURL.Size = new System.Drawing.Size(120, 30);
+            this.buttonImageURL.TabIndex = 1;
             this.buttonImageURL.Text = "Thêm ảnh";
-            this.buttonImageURL.UseVisualStyleBackColor = true;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Controls.Add(this.label1);
-            this.flowLayoutPanel3.Controls.Add(this.textBoxLastName);
-            this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(234, 42);
-            this.flowLayoutPanel3.TabIndex = 1;
+            this.buttonImageURL.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(200, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 20);
-            this.label1.TabIndex = 0;
+            this.label1.Size = new System.Drawing.Size(160, 30);
+            this.label1.TabIndex = 2;
             this.label1.Text = "Họ:";
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(46, 3);
+            this.textBoxLastName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.textBoxLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxLastName.ForeColor = System.Drawing.Color.White;
+            this.textBoxLastName.Location = new System.Drawing.Point(200, 44);
             this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(167, 20);
-            this.textBoxLastName.TabIndex = 1;
+            this.textBoxLastName.Size = new System.Drawing.Size(160, 26);
+            this.textBoxLastName.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(200, 73);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 35);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Tên:";
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxFirstName.ForeColor = System.Drawing.Color.White;
+            this.textBoxFirstName.Location = new System.Drawing.Point(200, 112);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(160, 26);
+            this.textBoxFirstName.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(16, 231);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(160, 33);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Số điện thoại:";
+            // 
+            // textBoxPhone
+            // 
+            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.textBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPhone.ForeColor = System.Drawing.Color.White;
+            this.textBoxPhone.Location = new System.Drawing.Point(16, 268);
+            this.textBoxPhone.Name = "textBoxPhone";
+            this.textBoxPhone.Size = new System.Drawing.Size(344, 26);
+            this.textBoxPhone.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(16, 297);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(160, 33);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Email:";
+            // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxEmail.ForeColor = System.Drawing.Color.White;
+            this.textBoxEmail.Location = new System.Drawing.Point(16, 334);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(344, 26);
+            this.textBoxEmail.TabIndex = 9;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.ForeColor = System.Drawing.Color.White;
+            this.buttonAdd.Location = new System.Drawing.Point(16, 560);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(80, 30);
+            this.buttonAdd.TabIndex = 10;
+            this.buttonAdd.Text = "Thêm";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // buttonUpdate
+            // 
+            this.buttonUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonUpdate.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdate.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdate.Location = new System.Drawing.Point(116, 560);
+            this.buttonUpdate.Name = "buttonUpdate";
+            this.buttonUpdate.Size = new System.Drawing.Size(80, 30);
+            this.buttonUpdate.TabIndex = 11;
+            this.buttonUpdate.Text = "Sửa";
+            this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.ForeColor = System.Drawing.Color.White;
+            this.buttonDelete.Location = new System.Drawing.Point(216, 560);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(80, 30);
+            this.buttonDelete.TabIndex = 12;
+            this.buttonDelete.Text = "Xóa";
+            this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.btnDeleteEmployee_Click);
+            // 
+            // pnlBangNhanVien
+            // 
+            this.pnlBangNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlBangNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.pnlBangNhanVien.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBangNhanVien.Controls.Add(this.lblBangNhanVien);
+            this.pnlBangNhanVien.Controls.Add(this.dgvEmployees);
+            this.pnlBangNhanVien.Controls.Add(this.pnlTimKiemNV);
+            this.pnlBangNhanVien.Location = new System.Drawing.Point(408, 12);
+            this.pnlBangNhanVien.Name = "pnlBangNhanVien";
+            this.pnlBangNhanVien.Size = new System.Drawing.Size(1184, 639);
+            this.pnlBangNhanVien.TabIndex = 1;
+            // 
+            // lblBangNhanVien
+            // 
+            this.lblBangNhanVien.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblBangNhanVien.ForeColor = System.Drawing.Color.White;
+            this.lblBangNhanVien.Location = new System.Drawing.Point(0, 56);
+            this.lblBangNhanVien.Name = "lblBangNhanVien";
+            this.lblBangNhanVien.Size = new System.Drawing.Size(392, 28);
+            this.lblBangNhanVien.TabIndex = 0;
+            this.lblBangNhanVien.Text = "Bảng nhân viên";
+            this.lblBangNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dgvEmployees
             // 
-            this.dgvEmployees.AllowUserToAddRows = false;
-            this.dgvEmployees.AllowUserToDeleteRows = false;
-            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvEmployees.Location = new System.Drawing.Point(495, 3);
+            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEmployees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmployees.ColumnHeadersHeight = 34;
+            this.dgvEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colEmployeeId,
+            this.colFirstName,
+            this.colLastName,
+            this.colImageUrl,
+            this.colPhone,
+            this.colEmail,
+            this.colIsActive,
+            this.colDeletedAt,
+            this.colDeletedBy});
+            this.dgvEmployees.EnableHeadersVisualStyles = false;
+            this.dgvEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.dgvEmployees.Location = new System.Drawing.Point(10, 87);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.ReadOnly = true;
-            this.dgvEmployees.Size = new System.Drawing.Size(486, 572);
+            this.dgvEmployees.RowHeadersWidth = 62;
+            this.dgvEmployees.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.dgvEmployees.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEmployees.Size = new System.Drawing.Size(1162, 538);
             this.dgvEmployees.TabIndex = 1;
             this.dgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellContentClick);
             // 
-            // pictureBox1
+            // colEmployeeId
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 95);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(231, 183);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.colEmployeeId.DataPropertyName = "EmployeeId";
+            this.colEmployeeId.HeaderText = "Employee ID";
+            this.colEmployeeId.MinimumWidth = 8;
+            this.colEmployeeId.Name = "colEmployeeId";
+            this.colEmployeeId.ReadOnly = true;
+            // 
+            // colFirstName
+            // 
+            this.colFirstName.DataPropertyName = "FirstName";
+            this.colFirstName.HeaderText = "First Name";
+            this.colFirstName.MinimumWidth = 8;
+            this.colFirstName.Name = "colFirstName";
+            this.colFirstName.ReadOnly = true;
+            // 
+            // colLastName
+            // 
+            this.colLastName.DataPropertyName = "LastName";
+            this.colLastName.HeaderText = "Last Name";
+            this.colLastName.MinimumWidth = 8;
+            this.colLastName.Name = "colLastName";
+            this.colLastName.ReadOnly = true;
+            // 
+            // colImageUrl
+            // 
+            this.colImageUrl.DataPropertyName = "ImageUrl";
+            this.colImageUrl.HeaderText = "Image URL";
+            this.colImageUrl.MinimumWidth = 8;
+            this.colImageUrl.Name = "colImageUrl";
+            this.colImageUrl.ReadOnly = true;
+            // 
+            // colPhone
+            // 
+            this.colPhone.DataPropertyName = "Phone";
+            this.colPhone.HeaderText = "Phone";
+            this.colPhone.MinimumWidth = 8;
+            this.colPhone.Name = "colPhone";
+            this.colPhone.ReadOnly = true;
+            // 
+            // colEmail
+            // 
+            this.colEmail.DataPropertyName = "Email";
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.MinimumWidth = 8;
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colIsActive
+            // 
+            this.colIsActive.DataPropertyName = "IsActive";
+            this.colIsActive.HeaderText = "Is Active";
+            this.colIsActive.MinimumWidth = 8;
+            this.colIsActive.Name = "colIsActive";
+            this.colIsActive.ReadOnly = true;
+            // 
+            // colDeletedAt
+            // 
+            this.colDeletedAt.DataPropertyName = "DeletedAt";
+            this.colDeletedAt.HeaderText = "Deleted At";
+            this.colDeletedAt.MinimumWidth = 8;
+            this.colDeletedAt.Name = "colDeletedAt";
+            this.colDeletedAt.ReadOnly = true;
+            // 
+            // colDeletedBy
+            // 
+            this.colDeletedBy.DataPropertyName = "DeletedBy";
+            this.colDeletedBy.HeaderText = "Deleted By";
+            this.colDeletedBy.MinimumWidth = 8;
+            this.colDeletedBy.Name = "colDeletedBy";
+            this.colDeletedBy.ReadOnly = true;
+            // 
+            // pnlTimKiemNV
+            // 
+            this.pnlTimKiemNV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlTimKiemNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.pnlTimKiemNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlTimKiemNV.Controls.Add(this.txtTimKiemNV);
+            this.pnlTimKiemNV.Controls.Add(this.btnTimKiemNV);
+            this.pnlTimKiemNV.Location = new System.Drawing.Point(10, 10);
+            this.pnlTimKiemNV.Name = "pnlTimKiemNV";
+            this.pnlTimKiemNV.Size = new System.Drawing.Size(1162, 36);
+            this.pnlTimKiemNV.TabIndex = 3;
+            // 
+            // txtTimKiemNV
+            // 
+            this.txtTimKiemNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTimKiemNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.txtTimKiemNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTimKiemNV.ForeColor = System.Drawing.Color.Gray;
+            this.txtTimKiemNV.Location = new System.Drawing.Point(6, 6);
+            this.txtTimKiemNV.Name = "txtTimKiemNV";
+            this.txtTimKiemNV.Size = new System.Drawing.Size(1082, 26);
+            this.txtTimKiemNV.TabIndex = 0;
+            this.txtTimKiemNV.Text = "Tìm kiếm nhân viên...";
+            // 
+            // btnTimKiemNV
+            // 
+            this.btnTimKiemNV.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnTimKiemNV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.btnTimKiemNV.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnTimKiemNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTimKiemNV.ForeColor = System.Drawing.Color.White;
+            this.btnTimKiemNV.Location = new System.Drawing.Point(1094, 4);
+            this.btnTimKiemNV.Name = "btnTimKiemNV";
+            this.btnTimKiemNV.Size = new System.Drawing.Size(64, 27);
+            this.btnTimKiemNV.TabIndex = 1;
+            this.btnTimKiemNV.Text = "Tìm kiếm";
+            this.btnTimKiemNV.UseVisualStyleBackColor = false;
             // 
             // FormEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 578);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.ClientSize = new System.Drawing.Size(1604, 663);
+            this.Controls.Add(this.pnlInput);
+            this.Controls.Add(this.pnlBangNhanVien);
+            this.ForeColor = System.Drawing.Color.White;
+            this.MinimumSize = new System.Drawing.Size(760, 480);
             this.Name = "FormEmployee";
-            this.Text = "FormEmployee";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Form Nhân Viên";
             this.Load += new System.EventHandler(this.FormEmployee_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
-            this.flowLayoutPanel3.ResumeLayout(false);
-            this.flowLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
+            this.pnlInput.ResumeLayout(false);
+            this.pnlInput.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.pnlBangNhanVien.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
+            this.pnlTimKiemNV.ResumeLayout(false);
+            this.pnlTimKiemNV.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView dgvEmployees;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonUpdate;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxFirstName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxEmail;
-        private System.Windows.Forms.Button buttonImageURL;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxLastName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        // Controls
+        private Panel pnlInput;
+        private PictureBox pictureBox1;
+        private Button buttonImageURL;
+        private Label label1;
+        private TextBox textBoxLastName;
+        private Label label2;
+        private TextBox textBoxFirstName;
+        private Label label3;
+        private TextBox textBoxPhone;
+        private Label label4;
+        private TextBox textBoxEmail;
+        private Button buttonAdd;
+        private Button buttonUpdate;
+        private Button buttonDelete;
+        private Panel pnlBangNhanVien;
+        private Label lblBangNhanVien;
+        private Panel pnlTimKiemNV;
+        private TextBox txtTimKiemNV;
+        private Button btnTimKiemNV;
+        private DataGridView dgvEmployees;
+
+        // DataGridView columns
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmployeeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colImageUrl;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colIsActive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeletedAt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeletedBy;
     }
 }

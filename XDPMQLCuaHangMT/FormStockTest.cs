@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace XDPMQLCuaHangMT
 {
-    public partial class FormStockDetail : Form
+    public partial class FormStockTest : Form
     {
-        public FormStockDetail()
+        public FormStockTest()
         {
             InitializeComponent();
-        }
-
-        private void FormStockDetail_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUnitPrice_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
