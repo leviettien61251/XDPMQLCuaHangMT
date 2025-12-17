@@ -48,6 +48,18 @@ namespace BUS
             }
         }
 
+        public object InsertStockVoucherSolid(StockVoucher stockVoucher)
+        {
+            try
+            {
+                return dalStockVoucher.InsertStockVoucherSolid(stockVoucher.voucherType, stockVoucher.createdBy, stockVoucher.note);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public bool UpdateStockVoucher(StockVoucher stockVoucher)
         {
             try
