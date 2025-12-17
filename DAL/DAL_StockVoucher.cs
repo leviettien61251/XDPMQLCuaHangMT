@@ -47,6 +47,20 @@ namespace DAL
             }
         }
 
+        public object InsertStockVoucherSolid(string voucherType, int createdBy, string note)
+        {
+            try
+            {
+                query = "EXEC usp_InsertStockVoucher_ @VoucherType , @EmployeeId , @Note ";
+                return ExecuteScalar(query, new object[] { voucherType, createdBy, note });
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
+
+
         public int UpdateStockVoucher(int voucherId, string voucherType, string note)
         {
             try

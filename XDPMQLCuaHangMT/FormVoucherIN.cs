@@ -14,8 +14,8 @@ namespace XDPMQLCuaHangMT
 {
     public partial class FormVoucherIN : Form
     {
-        protected int employeeId__, stockVoucherId__, productId__, voucherType__, productStockQty__;
-        protected string productName__;
+        protected int employeeId__, stockVoucherId__, productId__, productStockQty__;
+        protected string productName__, voucherType__, note__;
         VoucherDetail voucherDetail;
         BUS_Product busProduct = new BUS_Product();
         BUS_VoucherDetail busVoucherDetail = new BUS_VoucherDetail();
@@ -29,7 +29,15 @@ namespace XDPMQLCuaHangMT
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = voucherType__;
+            this.voucherType__ = voucherType;
+        }
+        public FormVoucherIN(int employeeId, int stockVoucherId, string voucherType, string note)
+        {
+            InitializeComponent();
+            this.employeeId__ = employeeId;
+            this.stockVoucherId__ = stockVoucherId;
+            this.voucherType__ = voucherType;
+            this.note__ = note;
         }
         private void FormVoucherIN_Load(object sender, EventArgs e)
         {
@@ -46,6 +54,10 @@ namespace XDPMQLCuaHangMT
             var bindingList = new BindingList<VoucherDetail>(productList);
             dgvDetailProduct.DataSource = bindingList;
             dgvDetailProduct.Columns["detailId"].HeaderText = "Mã chi tiết phiếu";
+            dgvDetailProduct.Columns["voucherId"].HeaderText = "Mã phiếu nhập";
+            dgvDetailProduct.Columns["productId"].HeaderText = "Mã sản phẩm";
+            dgvDetailProduct.Columns["quantity"].HeaderText = "Số lượng";
+
         }
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -54,7 +66,21 @@ namespace XDPMQLCuaHangMT
             productStockQty__ = Convert.ToInt32(dgvProduct.CurrentRow.Cells["Tồn kho"].Value);
         }
 
-        
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            FormFinalStock formFinalStock = new FormFinalStock(productList, employeeId__, voucherType__, note__);
+            formFinalStock.ShowDialog();
+        }
+
+        private void buttonSearchVoucherIN_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBoxSearchVoucherIN_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
 
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
@@ -75,13 +101,13 @@ namespace XDPMQLCuaHangMT
                 MessageBox.Show("Vui lòng nhập số lượng sản phẩm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
+
             int quantity__ = Convert.ToInt32(textBoxQuantity.Text);
-            if (quantity__ > productStockQty__)
-            {
-                MessageBox.Show("Số lượng tồn kho không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            //if (quantity__ < productStockQty__)
+            //{
+            //    MessageBox.Show("Số lượng tồn kho không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
             voucherDetail = new VoucherDetail();
             voucherDetail.productId = productId__;
             voucherDetail.voucherId = stockVoucherId__;

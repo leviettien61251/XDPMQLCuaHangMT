@@ -60,6 +60,18 @@ namespace DAL
                 throw;
             }
         }
+        public int InsertVoucherDetailSolid(int voucherId, string type, int productId, string productName, int quantity)
+        {
+            try
+            {
+                query = "EXEC usp_InsertProductToDetailVoucherSolid @TypeForInsertVoucher , @VoucherId , @ProductId , @ProductName , @Quantity ";
+                return ExecuteNonQuery(query, new object[] { type, voucherId, productId, productName, quantity });
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
 
         public int UpdateVoucherDetail(int detailId, int voucherId, int productId, int quantity, decimal unitPrice)
         {

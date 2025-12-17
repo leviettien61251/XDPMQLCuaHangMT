@@ -59,6 +59,18 @@ namespace BUS
                 throw;
             }
         }
+        public bool InsertVoucherDetailSolid(VoucherDetail voucherDetail, string productName, string type, int voucherId)
+        {
+            try
+            {
+                int rowAffected = dalVoucherDetail.InsertVoucherDetailSolid(voucherId, type, voucherDetail.productId, productName, voucherDetail.quantity);
+                return rowAffected > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         public bool UpdateVoucherDetail(VoucherDetail voucherDetail)
         {

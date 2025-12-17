@@ -123,7 +123,7 @@ namespace XDPMQLCuaHangMT
                 }
                 else
                 {
-                    FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__);
+                    FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__, dtoStockVoucher.note);
                     formVoucherIN.ShowDialog();
                     formVoucherIN.WindowState = FormWindowState.Maximized;
                     formVoucherIN.BringToFront();

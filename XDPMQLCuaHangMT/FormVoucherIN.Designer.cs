@@ -108,6 +108,7 @@
             this.textBoxSearchVoucherIN.Size = new System.Drawing.Size(381, 24);
             this.textBoxSearchVoucherIN.TabIndex = 0;
             this.textBoxSearchVoucherIN.WordWrap = false;
+            this.textBoxSearchVoucherIN.TextChanged += new System.EventHandler(this.textBoxSearchVoucherIN_TextChanged);
             // 
             // buttonSearchVoucherIN
             // 
@@ -119,6 +120,7 @@
             this.buttonSearchVoucherIN.TabIndex = 1;
             this.buttonSearchVoucherIN.Text = "Tìm kiếm";
             this.buttonSearchVoucherIN.UseVisualStyleBackColor = true;
+            this.buttonSearchVoucherIN.Click += new System.EventHandler(this.buttonSearchVoucherIN_Click);
             // 
             // dgvDetailProduct
             // 
@@ -305,6 +307,7 @@
             this.buttonConfirm.TabIndex = 1;
             this.buttonConfirm.Text = "Xác nhận";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonRemoveProductFromDetail
             // 
