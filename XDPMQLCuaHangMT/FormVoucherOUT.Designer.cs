@@ -101,6 +101,7 @@
             this.buttonAddProductToDetail.TabIndex = 0;
             this.buttonAddProductToDetail.Text = "Chọn";
             this.buttonAddProductToDetail.UseVisualStyleBackColor = true;
+            this.buttonAddProductToDetail.Click += new System.EventHandler(this.buttonAddProductToDetail_Click);
             // 
             // buttonConfirm
             // 
@@ -111,6 +112,7 @@
             this.buttonConfirm.TabIndex = 1;
             this.buttonConfirm.Text = "Xác nhận";
             this.buttonConfirm.UseVisualStyleBackColor = true;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // buttonRemoveProductFromDetail
             // 
@@ -121,6 +123,7 @@
             this.buttonRemoveProductFromDetail.TabIndex = 2;
             this.buttonRemoveProductFromDetail.Text = "Xóa";
             this.buttonRemoveProductFromDetail.UseVisualStyleBackColor = true;
+            this.buttonRemoveProductFromDetail.Click += new System.EventHandler(this.buttonRemoveProductFromDetail_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -142,6 +145,7 @@
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
             this.textBoxSearchProduct.Size = new System.Drawing.Size(375, 24);
             this.textBoxSearchProduct.TabIndex = 0;
+            this.textBoxSearchProduct.TextChanged += new System.EventHandler(this.textBoxSearchProduct_TextChanged);
             // 
             // buttonSearchProduct
             // 
@@ -153,6 +157,7 @@
             this.buttonSearchProduct.TabIndex = 1;
             this.buttonSearchProduct.Text = "Tìm kiếm";
             this.buttonSearchProduct.UseVisualStyleBackColor = true;
+            this.buttonSearchProduct.Click += new System.EventHandler(this.buttonSearchProduct_Click);
             // 
             // dgvProduct
             // 
@@ -164,8 +169,9 @@
             this.dgvProduct.Location = new System.Drawing.Point(3, 37);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
-            this.dgvProduct.Size = new System.Drawing.Size(474, 333);
+            this.dgvProduct.Size = new System.Drawing.Size(474, 334);
             this.dgvProduct.TabIndex = 2;
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
             // 
             // tableLayoutPanel5
             // 
@@ -181,7 +187,7 @@
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.192201F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.8078F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(480, 373);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(480, 374);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // textBoxCreatedDate
@@ -228,7 +234,7 @@
             this.tableLayoutPanel6.Controls.Add(this.flowLayoutPanel1, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.flowLayoutPanel2, 0, 0);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 382);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 383);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.31624F));
@@ -252,7 +258,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(486, 95);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(486, 94);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // textBoxSearchVoucherIN
@@ -316,12 +322,12 @@
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel6, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 104);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 103);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.53278F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.46721F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(486, 471);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(486, 472);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -349,6 +355,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormVoucherOUT";
             this.Text = "Phiếu xuất kho";
+            this.Load += new System.EventHandler(this.FormVoucherOUT_Load);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);

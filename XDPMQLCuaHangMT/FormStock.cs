@@ -102,37 +102,37 @@ namespace XDPMQLCuaHangMT
                 return;
             }
             dtoStockVoucher = new StockVoucher(voucherType__, createdBy, notes);
-            if (!busStockVoucher.InsertStockVoucher(dtoStockVoucher))
+            //if (!busStockVoucher.InsertStockVoucher(dtoStockVoucher))
+            //{
+            //    MessageBox.Show("Thêm phiếu không thành công");
+            //    return;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Thêm phiếu thành công");
+            //    Load_Data();
+            //    voucherId = dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value != null ?
+            //                Int32.Parse(dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value.ToString()) : 0;
+            if (voucherType__ != "IN")
             {
-                MessageBox.Show("Thêm phiếu không thành công");
-                return;
+
+                FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__, dtoStockVoucher.note);
+                formVoucherOUT.ShowDialog();
+                formVoucherOUT.WindowState = FormWindowState.Maximized;
+                formVoucherOUT.BringToFront();
             }
             else
             {
-                MessageBox.Show("Thêm phiếu thành công");
-                Load_Data();
-                voucherId = dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value != null ?
-                            Int32.Parse(dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value.ToString()) : 0;
-                if (voucherType__ != "IN")
-                {
-
-                    FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__);
-                    formVoucherOUT.ShowDialog();
-                    formVoucherOUT.WindowState = FormWindowState.Maximized;
-                    formVoucherOUT.BringToFront();
-                }
-                else
-                {
-                    FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__, dtoStockVoucher.note);
-                    formVoucherIN.ShowDialog();
-                    formVoucherIN.WindowState = FormWindowState.Maximized;
-                    formVoucherIN.BringToFront();
-                }
-
+                FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__, dtoStockVoucher.note);
+                formVoucherIN.ShowDialog();
+                formVoucherIN.WindowState = FormWindowState.Maximized;
+                formVoucherIN.BringToFront();
             }
 
-
         }
+
+
+        //}
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
