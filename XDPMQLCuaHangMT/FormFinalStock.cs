@@ -67,8 +67,6 @@ namespace XDPMQLCuaHangMT
             object id = busStockVoucher.InsertStockVoucherSolid(stockVoucher);
             int voucherId_ = (int)id;
 
-
-
             foreach (VoucherDetail item in list)
             {
                 i++;
@@ -78,22 +76,22 @@ namespace XDPMQLCuaHangMT
 
                 if (busVoucherDetail.InsertVoucherDetailSolid(item, productName, type_, voucherId_))
                 {
-                    MessageBox.Show("Thêm thành công");
+                    //MessageBox.Show("Thêm thành công");
                 }
                 else
                 {
-                    MessageBox.Show("Thêm không thành công");
+                    //MessageBox.Show("Thêm không thành công");
                 }
             }
-            //if (i == n)
-            //{
-            //    MessageBox.Show("Xuất phiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xuất phiếu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            if (i == n)
+            {
+                MessageBox.Show("Xuất phiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Xuất phiếu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             i = 0;
         }
     }

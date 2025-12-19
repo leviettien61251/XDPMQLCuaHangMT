@@ -59,6 +59,24 @@ namespace XDPMQLCuaHangMT
             F_VoucherIN.BringToFront();
         }
 
+        private void FormVoucherIN_Click_1(object sender, EventArgs e)
+        {
+            FormVoucherIN F_VoucherIN = new FormVoucherIN(employeeId, "Phiếu nhập kho");
+            F_VoucherIN.MdiParent = this;
+            F_VoucherIN.WindowState = FormWindowState.Maximized;
+            F_VoucherIN.Show();
+        }
+
+        private void FormVoucherOUT_Click(object sender, EventArgs e)
+        {
+            FormVoucherOUT F_VoucherOUT = new FormVoucherOUT(employeeId, "Phiếu xuất kho");
+            F_VoucherOUT.MdiParent = this;
+            F_VoucherOUT.WindowState = FormWindowState.Maximized;
+            F_VoucherOUT.Show();
+            F_VoucherOUT.BringToFront();
+            
+        }
+
         private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Form form = new Form();
