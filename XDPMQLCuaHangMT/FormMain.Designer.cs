@@ -38,6 +38,8 @@
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
+            this.FormVoucherIN = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormVoucherOUT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FormTest,
-            this.FormManagement});
+            this.FormManagement,
+            this.FormVoucherIN,
+            this.FormVoucherOUT});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -124,6 +128,20 @@
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
             // 
+            // FormVoucherIN
+            // 
+            this.FormVoucherIN.Name = "FormVoucherIN";
+            this.FormVoucherIN.Size = new System.Drawing.Size(102, 20);
+            this.FormVoucherIN.Text = "Phiếu nhập kho";
+            this.FormVoucherIN.Click += new System.EventHandler(this.FormVoucherIN_Click_1);
+            // 
+            // FormVoucherOUT
+            // 
+            this.FormVoucherOUT.Name = "FormVoucherOUT";
+            this.FormVoucherOUT.Size = new System.Drawing.Size(97, 20);
+            this.FormVoucherOUT.Text = "Phiếu xuất kho";
+            this.FormVoucherOUT.Click += new System.EventHandler(this.FormVoucherOUT_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -158,6 +176,8 @@
         private System.Windows.Forms.ToolStripMenuItem FormEmployee;
         private System.Windows.Forms.ToolStripMenuItem FormSupplier;
         private System.Windows.Forms.ToolStripMenuItem FormStock;
+        private System.Windows.Forms.ToolStripMenuItem FormVoucherIN;
+        private System.Windows.Forms.ToolStripMenuItem FormVoucherOUT;
     }
 }
 

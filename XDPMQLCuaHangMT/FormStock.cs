@@ -116,14 +116,14 @@ namespace XDPMQLCuaHangMT
             if (voucherType__ != "IN")
             {
 
-                FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__, dtoStockVoucher.note);
+                FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, dtoStockVoucher.note);
                 formVoucherOUT.ShowDialog();
                 formVoucherOUT.WindowState = FormWindowState.Maximized;
                 formVoucherOUT.BringToFront();
             }
             else
             {
-                FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__, dtoStockVoucher.note);
+                FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, dtoStockVoucher.note);
                 formVoucherIN.ShowDialog();
                 formVoucherIN.WindowState = FormWindowState.Maximized;
                 formVoucherIN.BringToFront();
@@ -157,7 +157,6 @@ namespace XDPMQLCuaHangMT
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
             dtoStockVoucher = new StockVoucher();
             dtoStockVoucher.voucherId = voucherId;
             if (!busStockVoucher.DeleteStockVoucher(dtoStockVoucher))

@@ -15,7 +15,7 @@ namespace XDPMQLCuaHangMT
     public partial class FormVoucherOUT : Form
     {
         protected int employeeId__, stockVoucherId__, productId__, productStockQty__;
-        protected string productName__, voucherType__, note__;
+        protected string productName__, voucherType__ = "OUT", note__;
         VoucherDetail voucherDetail;
         BUS_Product busProduct = new BUS_Product();
         BUS_VoucherDetail busVoucherDetail = new BUS_VoucherDetail();
@@ -24,19 +24,26 @@ namespace XDPMQLCuaHangMT
         {
             InitializeComponent();
         }
-        public FormVoucherOUT(int employeeId, int stockVoucherId, string voucherType)
+        public FormVoucherOUT(int employeeId, int stockVoucherId)
         {
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = voucherType;
+            this.voucherType__ = "OUT";
         }
-        public FormVoucherOUT(int employeeId, int stockVoucherId, string voucherType, string note)
+        public FormVoucherOUT(int employeeId, string note)
+        {
+            InitializeComponent();
+            this.employeeId__ = employeeId;
+            this.voucherType__ = "OUT";
+            this.note__ = note;
+        }
+        public FormVoucherOUT(int employeeId, int stockVoucherId, string note)
         {
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = voucherType;
+            this.voucherType__ = "OUT";
             this.note__ = note;
         }
         private void FormVoucherOUT_Load(object sender, EventArgs e)

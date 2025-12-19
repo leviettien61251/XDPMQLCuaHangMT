@@ -15,7 +15,7 @@ namespace XDPMQLCuaHangMT
     public partial class FormVoucherIN : Form
     {
         protected int employeeId__, stockVoucherId__, productId__, productStockQty__;
-        protected string productName__, voucherType__, note__;
+        protected string productName__, voucherType__ = "IN", note__;
         VoucherDetail voucherDetail;
         BUS_Product busProduct = new BUS_Product();
         BUS_VoucherDetail busVoucherDetail = new BUS_VoucherDetail();
@@ -24,19 +24,26 @@ namespace XDPMQLCuaHangMT
         {
             InitializeComponent();
         }
-        public FormVoucherIN(int employeeId, int stockVoucherId, string voucherType)
+        public FormVoucherIN(int employeeId, int stockVoucherId)
         {
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = voucherType;
+            this.voucherType__ = "IN";
         }
-        public FormVoucherIN(int employeeId, int stockVoucherId, string voucherType, string note)
+        public FormVoucherIN(int employeeId, string note)
+        {
+            InitializeComponent();
+            this.employeeId__ = employeeId;
+            this.voucherType__ = "IN";
+            this.note__ = note;
+        }
+        public FormVoucherIN(int employeeId, int stockVoucherId, string note)
         {
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = voucherType;
+            this.voucherType__ = "IN";
             this.note__ = note;
         }
         private void FormVoucherIN_Load(object sender, EventArgs e)
@@ -74,12 +81,12 @@ namespace XDPMQLCuaHangMT
 
         private void buttonSearchVoucherIN_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void textBoxSearchVoucherIN_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
@@ -103,11 +110,7 @@ namespace XDPMQLCuaHangMT
             }
 
             int quantity__ = Convert.ToInt32(textBoxQuantity.Text);
-            //if (quantity__ < productStockQty__)
-            //{
-            //    MessageBox.Show("Số lượng tồn kho không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            
             voucherDetail = new VoucherDetail();
             voucherDetail.productId = productId__;
             voucherDetail.voucherId = stockVoucherId__;
