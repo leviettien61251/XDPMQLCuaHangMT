@@ -1,6 +1,6 @@
 <Solution>
-  <Project Path="D:/ForSavingCode/CSharp/lapTrinhService/XDPMQLCuaHangMT/BUS/BUS.csproj" Id="43b04805-8e58-426e-8127-b549d55c8e6b" />
-  <Project Path="D:/ForSavingCode/CSharp/lapTrinhService/XDPMQLCuaHangMT/DAL/DAL.csproj" Id="3c2a762e-7991-4025-b1d9-9f3114357a44" />
-  <Project Path="D:/ForSavingCode/CSharp/lapTrinhService/XDPMQLCuaHangMT/DTO/DTO.csproj" Id="4eba6966-0758-47e8-b9d1-d277c95de049" />
-  <Project Path="D:/ForSavingCode/CSharp/lapTrinhService/XDPMQLCuaHangMT/XDPMQLCuaHangMT/XDPMQLCuaHangMT.csproj" Id="738f023d-3808-4996-be97-d26f7fbd5f59" />
+  <Project Path="C:/Users/Omi/Documents/GitHub/XDPMQLCuaHangMT2/BUS/BUS.csproj" Id="43b04805-8e58-426e-8127-b549d55c8e6b" />
+  <Project Path="C:/Users/Omi/Documents/GitHub/XDPMQLCuaHangMT2/DAL/DAL.csproj" Id="3c2a762e-7991-4025-b1d9-9f3114357a44" />
+  <Project Path="C:/Users/Omi/Documents/GitHub/XDPMQLCuaHangMT2/DTO/DTO.csproj" Id="4eba6966-0758-47e8-b9d1-d277c95de049" />
+  <Project Path="C:/Users/Omi/Documents/GitHub/XDPMQLCuaHangMT2/XDPMQLCuaHangMT/XDPMQLCuaHangMT.csproj" Id="738f023d-3808-4996-be97-d26f7fbd5f59" />
 </Solution>
