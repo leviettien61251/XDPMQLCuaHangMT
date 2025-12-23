@@ -159,6 +159,48 @@
     <Compile Include="UI_UPDATE\Form_Account.Designer.cs">
       <DependentUpon>Form_Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_UPDATE\Form_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Employee.Designer.cs">
+      <DependentUpon>Form_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_PrintConfirm .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_PrintConfirm .Designer.cs">
+      <DependentUpon>Form_PrintConfirm .cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_StockDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_StockDetail.Designer.cs">
+      <DependentUpon>Form_StockDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Supplier.Designer.cs">
+      <DependentUpon>Form_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Product.Designer.cs">
+      <DependentUpon>Form_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_UPDATE\Form_Stock.Designer.cs">
+      <DependentUpon>Form_Stock.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAccount.resx">
       <DependentUpon>FormAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +243,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI_UPDATE\Form_Account.resx">
+      <DependentUpon>Form_Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_Employee.resx">
+      <DependentUpon>Form_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_PrintConfirm .resx">
+      <DependentUpon>Form_PrintConfirm .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_Product.resx">
+      <DependentUpon>Form_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_Stock.resx">
+      <DependentUpon>Form_Stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_StockDetail.resx">
+      <DependentUpon>Form_StockDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_UPDATE\Form_Supplier.resx">
+      <DependentUpon>Form_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

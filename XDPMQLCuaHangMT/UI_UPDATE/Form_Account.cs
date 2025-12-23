@@ -1,22 +1,28 @@
 ﻿// AccountForm.cs
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace XDPMQLCuaHangMT
 {
-    // Lớp chính: phải kế thừa Form và là partial để ghép với Designer
     public partial class AccountForm : Form
     {
         public AccountForm()
         {
             InitializeComponent();
 
-            // Gán placeholder an toàn bằng reflection ngoài InitializeComponent
-            var prop = this.txtSearch.GetType().GetProperty("PlaceholderText");
+            // Gán placeholder an toàn (nếu TextBox hỗ trợ PlaceholderText)
+            var prop = this.txtSearch?.GetType().GetProperty("PlaceholderText");
             if (prop != null)
             {
-                prop.SetValue(this.txtSearch, "Tìm kiếm theo tên hoặc username");
+                prop.SetValue(this.txtSearch, "Tìm kiếm theo username hoặc nhân viên");
             }
+
+            // Gắn event handlers ở đây nếu cần (bạn đã có logic riêng)
+            // btnAdd.Click += BtnAdd_Click;
+            // btnEdit.Click += BtnEdit_Click;
+            // btnDelete.Click += BtnDelete_Click;
+            // btnSearch.Click += BtnSearch_Click;
         }
     }
 }

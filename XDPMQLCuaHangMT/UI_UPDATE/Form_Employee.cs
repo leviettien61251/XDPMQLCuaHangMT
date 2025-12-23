@@ -1,20 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// EmployeeForm.cs
+using System;
+using System.Reflection;
 using System.Windows.Forms;
 
-namespace XDPMQLCuaHangMT.UI_UPDATE
+namespace XDPMQLCuaHangMT
 {
-    public partial class Form_Employee : Form
+    public partial class EmployeeForm : Form
     {
-        public Form_Employee()
+        public EmployeeForm()
         {
             InitializeComponent();
+
+            // Gán placeholder an toàn (nếu TextBox hỗ trợ PlaceholderText)
+            var prop = this.txtSearch?.GetType().GetProperty("PlaceholderText");
+            if (prop != null)
+            {
+                prop.SetValue(this.txtSearch, "Tìm kiếm theo tên hoặc email");
+            }
+
+            // Ví dụ: gắn event handlers (bạn sẽ triển khai logic riêng)
+            // btnAdd.Click += BtnAdd_Click;
+            // btnEdit.Click += BtnEdit_Click;
+            // btnDelete.Click += BtnDelete_Click;
+            // btnUploadImage.Click += BtnUploadImage_Click;
         }
+
+        // Bạn tự triển khai các handler theo logic hiện có.
     }
 }

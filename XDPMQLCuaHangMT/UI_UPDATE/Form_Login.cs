@@ -16,5 +16,10 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
         {
             InitializeComponent();
         }
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
