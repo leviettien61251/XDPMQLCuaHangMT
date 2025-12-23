@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DTO;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DTO;
 namespace DAL
 {
     public class DAL_Employee : Connect
@@ -22,7 +17,7 @@ namespace DAL
         public DataTable GetAllEmployeess()
         {
             DataTable dt = new DataTable();
-            query = "SELECT EmployeeId, ImageURL, FirstName as 'Tên', LastName as 'Họ', Phone as 'Số điện thoại', Email, DeletedAt, DeletedBy FROM dbo.Employees";
+            query = "SELECT EmployeeId as 'Mã nhân viên', ImageURL as 'Hình ảnh', FirstName as 'Tên', LastName as 'Họ', Phone as 'Số điện thoại', Email, DeletedAt as 'Thời gian xóa', DeletedBy as 'Người thực hiện', IsActive as 'Trạng thái' FROM dbo.Employees";
             dt = ExecuteQuery(query);
             return dt;
         }
@@ -30,7 +25,19 @@ namespace DAL
         {
             DataTable dt = new DataTable();
             query = "SELECT EmployeeId, FirstName as 'Tên', LastName as 'Họ', Phone as 'Số điện thoại', Email  FROM dbo.Employees WHERE EmployeeId = @employeeId";
-            dt = ExecuteQuery(query, new object[] {employeeId});
+            dt = ExecuteQuery(query, new object[] { employeeId });
+            return dt;
+        }
+        public object GetEmployeeNameById(int employeeId)
+        {
+            query = "EXEC usp_GetEmployeeNameById @EmployeeId";
+            return ExecuteScalar(query, new object[] { employeeId });
+        }
+        public DataTable SearchEmployees(string keyword)
+        {
+            DataTable dt = new DataTable();
+            query = "EXEC usp_SearchEmployee @Searching";
+            dt = ExecuteQuery(query, new object[] { keyword });
             return dt;
         }
         public int InsertEmployee(Employee employee)
@@ -41,8 +48,8 @@ namespace DAL
         }
         public int UpdateEmployee(Employee employee)
         {
-            query = "UPDATE dbo.Employees SET FirstName = @FirstName , LastName = @LastName , Phone = @Phone , Email = @Email , ImageURL = @ImageURL WHERE EmployeeId = @employeeId ";
-            int result = ExecuteNonQuery(query, new object[] { employee.firstName, employee.lastName, employee.phone, employee.email, employee.imageURL, employee.employeeId });
+            query = "UPDATE dbo.Employees SET FirstName = @FirstName , LastName = @LastName , Phone = @Phone , Email = @Email , ImageURL = @ImageURL , IsActive = @IsActive WHERE EmployeeId = @employeeId ";
+            int result = ExecuteNonQuery(query, new object[] { employee.firstName, employee.lastName, employee.phone, employee.email, employee.imageURL, employee.isActive, employee.employeeId });
             return result;
         }
         public int DeleteEmployee(int employeeId)

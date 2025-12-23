@@ -1,11 +1,6 @@
-﻿using DTO;
-using System;
-using System.Collections.Generic;
+﻿using DAL;
+using DTO;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
 namespace BUS
 {
     public class BUS_Supplier
@@ -18,13 +13,15 @@ namespace BUS
         {
             return dalSupplier.GetAllSuppliers();
         }
-        //string name, string contactName, string phone, string email, string address
+        public DataTable SearchSupplierByName(string keywords)
+        {
+            return dalSupplier.SearchSupplierByName(keywords);
+        }
         public bool InsertSupplier(Supplier supplier)
         {
             int rowAffected = dalSupplier.InsertSupplier(supplier.name, supplier.contactName, supplier.phone, supplier.email, supplier.address);
             return rowAffected > 0;
         }
-
         public bool UpdateSupplier(Supplier supplier)
         {
             int rowAffected = dalSupplier.UpdateSupplier(supplier.supplierID, supplier.name, supplier.contactName, supplier.phone, supplier.email, supplier.address);

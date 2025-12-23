@@ -35,11 +35,11 @@
             this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.FormSupplier = new System.Windows.Forms.ToolStripMenuItem();
             this.FormStock = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormVoucherIN = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormVoucherOUT = new System.Windows.Forms.ToolStripMenuItem();
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
-            this.FormVoucherIN = new System.Windows.Forms.ToolStripMenuItem();
-            this.FormVoucherOUT = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,6 +101,20 @@
             this.FormStock.Size = new System.Drawing.Size(161, 22);
             this.FormStock.Text = "Phiếu nhập/xuất";
             // 
+            // FormVoucherIN
+            // 
+            this.FormVoucherIN.Name = "FormVoucherIN";
+            this.FormVoucherIN.Size = new System.Drawing.Size(102, 20);
+            this.FormVoucherIN.Text = "Phiếu nhập kho";
+            this.FormVoucherIN.Click += new System.EventHandler(this.FormVoucherIN_Click_1);
+            // 
+            // FormVoucherOUT
+            // 
+            this.FormVoucherOUT.Name = "FormVoucherOUT";
+            this.FormVoucherOUT.Size = new System.Drawing.Size(97, 20);
+            this.FormVoucherOUT.Text = "Phiếu xuất kho";
+            this.FormVoucherOUT.Click += new System.EventHandler(this.FormVoucherOUT_Click);
+            // 
             // labelRoleId
             // 
             this.labelRoleId.AutoSize = true;
@@ -128,20 +142,6 @@
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
             // 
-            // FormVoucherIN
-            // 
-            this.FormVoucherIN.Name = "FormVoucherIN";
-            this.FormVoucherIN.Size = new System.Drawing.Size(102, 20);
-            this.FormVoucherIN.Text = "Phiếu nhập kho";
-            this.FormVoucherIN.Click += new System.EventHandler(this.FormVoucherIN_Click_1);
-            // 
-            // FormVoucherOUT
-            // 
-            this.FormVoucherOUT.Name = "FormVoucherOUT";
-            this.FormVoucherOUT.Size = new System.Drawing.Size(97, 20);
-            this.FormVoucherOUT.Text = "Phiếu xuất kho";
-            this.FormVoucherOUT.Click += new System.EventHandler(this.FormVoucherOUT_Click);
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,6 +156,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Màn hình chính";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

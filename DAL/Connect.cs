@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class Connect
     {
         private string connString = @"Data Source=tim\SQLEXPRESS;Initial Catalog=cuaHangMayTinh3;Integrated Security=True;TrustServerCertificate=True";
-        
+
         private void BindParameters(SqlCommand cmd, string query, object[] parameters)
         {
             if (parameters == null)

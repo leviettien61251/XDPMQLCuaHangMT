@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DAL;
+using DTO;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
-using DTO;
 namespace BUS
 {
     public class BUS_Employee
@@ -21,6 +16,14 @@ namespace BUS
         public DataTable GetEmployeeById(int employeeId)
         {
             return dalEmployee.GetEmployeeById(employeeId);
+        }
+        public object GetEmployeeNameById(int employeeId)
+        {
+            return dalEmployee.GetEmployeeNameById(employeeId);
+        }
+        public DataTable SearchEmployees(string keyword)
+        {
+            return dalEmployee.SearchEmployees(keyword);
         }
         public bool InsertEmployee(Employee employee)
         {

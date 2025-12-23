@@ -1,13 +1,6 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace XDPMQLCuaHangMT
@@ -31,7 +24,7 @@ namespace XDPMQLCuaHangMT
             string password = textBoxTestPass.Text;
             int roleId = int.Parse(textBoxRole.Text);
             int employeeId = int.Parse(textBoxEmployee.Text);
-            
+
 
             PasswordHash hash = new PasswordHash(password);
             password = hash.Hash();
