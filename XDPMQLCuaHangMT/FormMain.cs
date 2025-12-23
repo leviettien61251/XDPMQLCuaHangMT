@@ -1,13 +1,7 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace XDPMQLCuaHangMT
 {
@@ -74,7 +68,7 @@ namespace XDPMQLCuaHangMT
             F_VoucherOUT.WindowState = FormWindowState.Maximized;
             F_VoucherOUT.Show();
             F_VoucherOUT.BringToFront();
-            
+
         }
 
         private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -82,17 +76,16 @@ namespace XDPMQLCuaHangMT
             Form form = new Form();
             switch (e.ClickedItem.Name)
             {
-
                 case "FormAccount":
-                    FormAccount F_Account = new FormAccount();
+                    AccountForm F_Account = new AccountForm(employeeId);
                     form = F_Account;
                     break;
                 case "FormEmployee":
-                    FormEmployee F_Employee = new FormEmployee();
+                    EmployeeForm F_Employee = new EmployeeForm(employeeId);
                     form = F_Employee;
                     break;
                 case "FormSupplier":
-                    FormSupplier F_Supplier = new FormSupplier();
+                    SupplierForm F_Supplier = new SupplierForm();
                     form = F_Supplier;
                     break;
                 case "FormStock":

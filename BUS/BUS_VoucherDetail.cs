@@ -1,7 +1,7 @@
+using DAL;
 using DTO;
 using System;
 using System.Data;
-using DAL;
 
 namespace BUS
 {

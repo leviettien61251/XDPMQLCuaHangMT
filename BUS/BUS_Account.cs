@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-using DAL;
+﻿using DAL;
 using DTO;
+using System;
+using System.Data;
 namespace BUS
 {
     public class BUS_Account
@@ -29,8 +24,6 @@ namespace BUS
                 return new DataTable(); // invalid password
 
             return dt; // authenticated
-
-
         }
 
         public bool InsertAccount(Account account)
@@ -46,11 +39,18 @@ namespace BUS
         {
             return dalRole.GetAllRole();
         }
-
         public DataTable GetAllEmployees()
         {
             return dalEmployee.GetAllEmployeess();
         }
-
+        public bool UpdateAccount(Account account)
+        {
+            int rowAffected = dalAccount.UpdateAccount(account.username, account.password, account.roleId, account.employeeId);
+            return rowAffected > 0;
+        }
+        public DataTable SearchingAccounts(string username)
+        {
+            return dalAccount.SearchingAccounts(username);
+        }
     }
 }

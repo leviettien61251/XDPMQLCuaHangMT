@@ -1,15 +1,8 @@
 ﻿using BUS;
 using DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace XDPMQLCuaHangMT
 {
@@ -27,8 +20,6 @@ namespace XDPMQLCuaHangMT
 
         private void FormAccount_Load(object sender, EventArgs e)
         {
-            
-            
             LoadData();
             LoadComboboxRoles();
         }
@@ -84,7 +75,7 @@ namespace XDPMQLCuaHangMT
                 MessageBox.Show("Tên đăng nhập không hợp lệ. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
+
 
             PasswordHash hash = new PasswordHash(password);
             password = hash.Hash();

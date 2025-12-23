@@ -1,6 +1,4 @@
 ﻿// ProductForm.cs
-using System;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace XDPMQLCuaHangMT
@@ -12,10 +10,10 @@ namespace XDPMQLCuaHangMT
             InitializeComponent();
 
             // Gán placeholder an toàn cho txtSearch nếu control hỗ trợ
-            var prop = this.txtSearch?.GetType().GetProperty("PlaceholderText");
+            var prop = this.txtSearchSupplier?.GetType().GetProperty("PlaceholderText");
             if (prop != null)
             {
-                prop.SetValue(this.txtSearch, "Tìm kiếm theo tên sản phẩm hoặc nhà cung cấp");
+                prop.SetValue(this.txtSearchSupplier, "Tìm kiếm theo tên sản phẩm hoặc nhà cung cấp");
             }
 
             // Gắn event handlers tại đây nếu cần

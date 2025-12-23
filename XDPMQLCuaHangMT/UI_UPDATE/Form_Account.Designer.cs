@@ -21,7 +21,6 @@ namespace XDPMQLCuaHangMT
         private Label lblChucVu;
         internal ComboBox cboChucVu;
         private Label lblNhanVien;
-        internal ComboBox cboNhanVien;
         internal TextBox textBoxEmployee;
         private FlowLayoutPanel inputActionPanel;
         internal Button btnThem;
@@ -30,37 +29,15 @@ namespace XDPMQLCuaHangMT
 
         private Panel pnlBangTaiKhoan;
         private Label lblBangTaiKhoan;
-        internal DataGridView dgvTaiKhoan;
         private Panel pnlTimKiemTK;
         internal TextBox txtTimKiemTK;
         internal Button btnTimKiemTK;
 
         private Panel pnlBangNhanVien;
         private Label lblBangNhanVien;
-        internal DataGridView dgvNhanVien;
         private Panel pnlTimKiemNV;
         internal TextBox txtTimKiemNV;
         internal Button btnTimKiemNV;
-
-        // DataGridView columns (accounts)
-        private DataGridViewTextBoxColumn colAccountId;
-        private DataGridViewTextBoxColumn colAccountEmployeeId;
-        private DataGridViewTextBoxColumn colUsername;
-        private DataGridViewTextBoxColumn colPasswordHash;
-        private DataGridViewTextBoxColumn colRoleId;
-        private DataGridViewTextBoxColumn colAccountIsActive;
-        private DataGridViewTextBoxColumn colCreatedAt;
-
-        // DataGridView columns (employees)
-        private DataGridViewTextBoxColumn colEmpId;
-        private DataGridViewTextBoxColumn colFirstName;
-        private DataGridViewTextBoxColumn colLastName;
-        private DataGridViewTextBoxColumn colImageURL;
-        private DataGridViewTextBoxColumn colPhone;
-        private DataGridViewTextBoxColumn colEmail;
-        private DataGridViewTextBoxColumn colEmpIsActive;
-        private DataGridViewTextBoxColumn colDeletedAt;
-        private DataGridViewTextBoxColumn colDeletedBy;
 
         protected override void Dispose(bool disposing)
         {
@@ -85,36 +62,20 @@ namespace XDPMQLCuaHangMT
             this.lblChucVu = new System.Windows.Forms.Label();
             this.cboChucVu = new System.Windows.Forms.ComboBox();
             this.lblNhanVien = new System.Windows.Forms.Label();
-            this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.inputActionPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.txtNhanVien = new System.Windows.Forms.TextBox();
             this.rightStack = new System.Windows.Forms.TableLayoutPanel();
             this.pnlBangTaiKhoan = new System.Windows.Forms.Panel();
-            this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
-            this.colAccountId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAccountEmployeeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUsername = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPasswordHash = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRoleId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAccountIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvAccount = new System.Windows.Forms.DataGridView();
             this.accountSearchLayout = new System.Windows.Forms.TableLayoutPanel();
             this.txtTimKiemTK = new System.Windows.Forms.TextBox();
             this.btnTimKiemTK = new System.Windows.Forms.Button();
             this.lblBangTaiKhoan = new System.Windows.Forms.Label();
             this.pnlBangNhanVien = new System.Windows.Forms.Panel();
-            this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.colEmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colImageURL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmpIsActive = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeletedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeletedBy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvEmployees = new System.Windows.Forms.DataGridView();
             this.empSearchLayout = new System.Windows.Forms.TableLayoutPanel();
             this.txtTimKiemNV = new System.Windows.Forms.TextBox();
             this.btnTimKiemNV = new System.Windows.Forms.Button();
@@ -122,16 +83,17 @@ namespace XDPMQLCuaHangMT
             this.textBoxEmployee = new System.Windows.Forms.TextBox();
             this.pnlTimKiemTK = new System.Windows.Forms.Panel();
             this.pnlTimKiemNV = new System.Windows.Forms.Panel();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.mainLayout.SuspendLayout();
             this.pnlInput.SuspendLayout();
             this.inputLayout.SuspendLayout();
             this.inputActionPanel.SuspendLayout();
             this.rightStack.SuspendLayout();
             this.pnlBangTaiKhoan.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).BeginInit();
             this.accountSearchLayout.SuspendLayout();
             this.pnlBangNhanVien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
             this.empSearchLayout.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,7 +110,7 @@ namespace XDPMQLCuaHangMT
             this.mainLayout.Name = "mainLayout";
             this.mainLayout.RowCount = 1;
             this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.mainLayout.Size = new System.Drawing.Size(1503, 637);
+            this.mainLayout.Size = new System.Drawing.Size(1503, 641);
             this.mainLayout.TabIndex = 0;
             // 
             // pnlInput
@@ -159,7 +121,7 @@ namespace XDPMQLCuaHangMT
             this.pnlInput.Location = new System.Drawing.Point(3, 3);
             this.pnlInput.Name = "pnlInput";
             this.pnlInput.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlInput.Size = new System.Drawing.Size(374, 631);
+            this.pnlInput.Size = new System.Drawing.Size(374, 635);
             this.pnlInput.TabIndex = 0;
             // 
             // inputLayout
@@ -175,8 +137,8 @@ namespace XDPMQLCuaHangMT
             this.inputLayout.Controls.Add(this.lblChucVu, 0, 4);
             this.inputLayout.Controls.Add(this.cboChucVu, 0, 5);
             this.inputLayout.Controls.Add(this.lblNhanVien, 0, 6);
-            this.inputLayout.Controls.Add(this.cboNhanVien, 0, 7);
             this.inputLayout.Controls.Add(this.inputActionPanel, 0, 8);
+            this.inputLayout.Controls.Add(this.txtNhanVien, 0, 7);
             this.inputLayout.Dock = System.Windows.Forms.DockStyle.Top;
             this.inputLayout.Location = new System.Drawing.Point(12, 12);
             this.inputLayout.Name = "inputLayout";
@@ -213,7 +175,7 @@ namespace XDPMQLCuaHangMT
             this.txtTenDangNhap.ForeColor = System.Drawing.Color.Black;
             this.txtTenDangNhap.Location = new System.Drawing.Point(3, 31);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(344, 26);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(344, 20);
             this.txtTenDangNhap.TabIndex = 1;
             // 
             // lblMatKhau
@@ -236,7 +198,7 @@ namespace XDPMQLCuaHangMT
             this.txtMatKhau.ForeColor = System.Drawing.Color.Black;
             this.txtMatKhau.Location = new System.Drawing.Point(3, 93);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(344, 26);
+            this.txtMatKhau.Size = new System.Drawing.Size(344, 20);
             this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
@@ -260,8 +222,9 @@ namespace XDPMQLCuaHangMT
             this.cboChucVu.ForeColor = System.Drawing.Color.Black;
             this.cboChucVu.Location = new System.Drawing.Point(3, 155);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(344, 28);
+            this.cboChucVu.Size = new System.Drawing.Size(344, 21);
             this.cboChucVu.TabIndex = 5;
+            this.cboChucVu.SelectedIndexChanged += new System.EventHandler(this.comboBoxRole_SelectedIndexChanged);
             // 
             // lblNhanVien
             // 
@@ -275,23 +238,13 @@ namespace XDPMQLCuaHangMT
             this.lblNhanVien.Text = "Nhân viên:";
             this.lblNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cboNhanVien
-            // 
-            this.cboNhanVien.BackColor = System.Drawing.Color.White;
-            this.cboNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboNhanVien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboNhanVien.ForeColor = System.Drawing.Color.Black;
-            this.cboNhanVien.Location = new System.Drawing.Point(3, 217);
-            this.cboNhanVien.Name = "cboNhanVien";
-            this.cboNhanVien.Size = new System.Drawing.Size(344, 28);
-            this.cboNhanVien.TabIndex = 7;
-            // 
             // inputActionPanel
             // 
             this.inputActionPanel.AutoSize = true;
             this.inputActionPanel.Controls.Add(this.btnThem);
             this.inputActionPanel.Controls.Add(this.btnSua);
             this.inputActionPanel.Controls.Add(this.btnXoa);
+            this.inputActionPanel.Controls.Add(this.buttonClear);
             this.inputActionPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.inputActionPanel.Location = new System.Drawing.Point(3, 251);
             this.inputActionPanel.Name = "inputActionPanel";
@@ -309,6 +262,7 @@ namespace XDPMQLCuaHangMT
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // btnSua
             // 
@@ -321,6 +275,7 @@ namespace XDPMQLCuaHangMT
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -333,6 +288,14 @@ namespace XDPMQLCuaHangMT
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            // 
+            // txtNhanVien
+            // 
+            this.txtNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNhanVien.Location = new System.Drawing.Point(3, 217);
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Size = new System.Drawing.Size(344, 20);
+            this.txtNhanVien.TabIndex = 9;
             // 
             // rightStack
             // 
@@ -347,95 +310,34 @@ namespace XDPMQLCuaHangMT
             this.rightStack.RowCount = 2;
             this.rightStack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.rightStack.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.rightStack.Size = new System.Drawing.Size(1117, 631);
+            this.rightStack.Size = new System.Drawing.Size(1117, 635);
             this.rightStack.TabIndex = 1;
             // 
             // pnlBangTaiKhoan
             // 
             this.pnlBangTaiKhoan.BackColor = System.Drawing.Color.White;
-            this.pnlBangTaiKhoan.Controls.Add(this.dgvTaiKhoan);
+            this.pnlBangTaiKhoan.Controls.Add(this.dgvAccount);
             this.pnlBangTaiKhoan.Controls.Add(this.accountSearchLayout);
             this.pnlBangTaiKhoan.Controls.Add(this.lblBangTaiKhoan);
             this.pnlBangTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBangTaiKhoan.Location = new System.Drawing.Point(3, 3);
             this.pnlBangTaiKhoan.Name = "pnlBangTaiKhoan";
             this.pnlBangTaiKhoan.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlBangTaiKhoan.Size = new System.Drawing.Size(1111, 309);
+            this.pnlBangTaiKhoan.Size = new System.Drawing.Size(1111, 311);
             this.pnlBangTaiKhoan.TabIndex = 0;
             // 
-            // dgvTaiKhoan
+            // dgvAccount
             // 
-            this.dgvTaiKhoan.AllowUserToAddRows = false;
-            this.dgvTaiKhoan.AllowUserToDeleteRows = false;
-            this.dgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTaiKhoan.BackgroundColor = System.Drawing.Color.White;
-            this.dgvTaiKhoan.ColumnHeadersHeight = 34;
-            this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colAccountId,
-            this.colAccountEmployeeId,
-            this.colUsername,
-            this.colPasswordHash,
-            this.colRoleId,
-            this.colAccountIsActive,
-            this.colCreatedAt});
-            this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTaiKhoan.GridColor = System.Drawing.Color.LightGray;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(12, 140);
-            this.dgvTaiKhoan.Name = "dgvTaiKhoan";
-            this.dgvTaiKhoan.ReadOnly = true;
-            this.dgvTaiKhoan.RowHeadersWidth = 62;
-            this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1087, 157);
-            this.dgvTaiKhoan.TabIndex = 0;
-            // 
-            // colAccountId
-            // 
-            this.colAccountId.HeaderText = "Account ID";
-            this.colAccountId.MinimumWidth = 8;
-            this.colAccountId.Name = "colAccountId";
-            this.colAccountId.ReadOnly = true;
-            // 
-            // colAccountEmployeeId
-            // 
-            this.colAccountEmployeeId.HeaderText = "Employee ID";
-            this.colAccountEmployeeId.MinimumWidth = 8;
-            this.colAccountEmployeeId.Name = "colAccountEmployeeId";
-            this.colAccountEmployeeId.ReadOnly = true;
-            // 
-            // colUsername
-            // 
-            this.colUsername.HeaderText = "Username";
-            this.colUsername.MinimumWidth = 8;
-            this.colUsername.Name = "colUsername";
-            this.colUsername.ReadOnly = true;
-            // 
-            // colPasswordHash
-            // 
-            this.colPasswordHash.HeaderText = "Password Hash";
-            this.colPasswordHash.MinimumWidth = 8;
-            this.colPasswordHash.Name = "colPasswordHash";
-            this.colPasswordHash.ReadOnly = true;
-            // 
-            // colRoleId
-            // 
-            this.colRoleId.HeaderText = "RoleId";
-            this.colRoleId.MinimumWidth = 8;
-            this.colRoleId.Name = "colRoleId";
-            this.colRoleId.ReadOnly = true;
-            // 
-            // colAccountIsActive
-            // 
-            this.colAccountIsActive.HeaderText = "Is Active";
-            this.colAccountIsActive.MinimumWidth = 8;
-            this.colAccountIsActive.Name = "colAccountIsActive";
-            this.colAccountIsActive.ReadOnly = true;
-            // 
-            // colCreatedAt
-            // 
-            this.colCreatedAt.HeaderText = "Created At";
-            this.colCreatedAt.MinimumWidth = 8;
-            this.colCreatedAt.Name = "colCreatedAt";
-            this.colCreatedAt.ReadOnly = true;
+            this.dgvAccount.AllowUserToAddRows = false;
+            this.dgvAccount.AllowUserToDeleteRows = false;
+            this.dgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAccount.Location = new System.Drawing.Point(12, 80);
+            this.dgvAccount.Name = "dgvAccount";
+            this.dgvAccount.ReadOnly = true;
+            this.dgvAccount.Size = new System.Drawing.Size(1087, 219);
+            this.dgvAccount.TabIndex = 3;
+            this.dgvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccount_CellClick);
             // 
             // accountSearchLayout
             // 
@@ -450,7 +352,7 @@ namespace XDPMQLCuaHangMT
             this.accountSearchLayout.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.accountSearchLayout.RowCount = 1;
             this.accountSearchLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.accountSearchLayout.Size = new System.Drawing.Size(1087, 100);
+            this.accountSearchLayout.Size = new System.Drawing.Size(1087, 40);
             this.accountSearchLayout.TabIndex = 1;
             // 
             // txtTimKiemTK
@@ -460,9 +362,9 @@ namespace XDPMQLCuaHangMT
             this.txtTimKiemTK.Location = new System.Drawing.Point(6, 12);
             this.txtTimKiemTK.Margin = new System.Windows.Forms.Padding(6, 6, 80, 6);
             this.txtTimKiemTK.Name = "txtTimKiemTK";
-            this.txtTimKiemTK.Size = new System.Drawing.Size(914, 26);
+            this.txtTimKiemTK.Size = new System.Drawing.Size(914, 20);
             this.txtTimKiemTK.TabIndex = 0;
-            this.txtTimKiemTK.Text = "Tìm kiếm tài khoản...";
+            this.txtTimKiemTK.TextChanged += new System.EventHandler(this.txtTimKiemTK_TextChanged);
             // 
             // btnTimKiemTK
             // 
@@ -470,7 +372,7 @@ namespace XDPMQLCuaHangMT
             this.btnTimKiemTK.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTimKiemTK.Location = new System.Drawing.Point(1003, 9);
             this.btnTimKiemTK.Name = "btnTimKiemTK";
-            this.btnTimKiemTK.Size = new System.Drawing.Size(81, 82);
+            this.btnTimKiemTK.Size = new System.Drawing.Size(81, 22);
             this.btnTimKiemTK.TabIndex = 1;
             this.btnTimKiemTK.Text = "Tìm kiếm";
             // 
@@ -489,105 +391,28 @@ namespace XDPMQLCuaHangMT
             // pnlBangNhanVien
             // 
             this.pnlBangNhanVien.BackColor = System.Drawing.Color.White;
-            this.pnlBangNhanVien.Controls.Add(this.dgvNhanVien);
+            this.pnlBangNhanVien.Controls.Add(this.dgvEmployees);
             this.pnlBangNhanVien.Controls.Add(this.empSearchLayout);
             this.pnlBangNhanVien.Controls.Add(this.lblBangNhanVien);
             this.pnlBangNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBangNhanVien.Location = new System.Drawing.Point(3, 318);
+            this.pnlBangNhanVien.Location = new System.Drawing.Point(3, 320);
             this.pnlBangNhanVien.Name = "pnlBangNhanVien";
             this.pnlBangNhanVien.Padding = new System.Windows.Forms.Padding(12);
-            this.pnlBangNhanVien.Size = new System.Drawing.Size(1111, 310);
+            this.pnlBangNhanVien.Size = new System.Drawing.Size(1111, 312);
             this.pnlBangNhanVien.TabIndex = 1;
             // 
-            // dgvNhanVien
+            // dgvEmployees
             // 
-            this.dgvNhanVien.AllowUserToAddRows = false;
-            this.dgvNhanVien.AllowUserToDeleteRows = false;
-            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNhanVien.BackgroundColor = System.Drawing.Color.White;
-            this.dgvNhanVien.ColumnHeadersHeight = 34;
-            this.dgvNhanVien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colEmpId,
-            this.colFirstName,
-            this.colLastName,
-            this.colImageURL,
-            this.colPhone,
-            this.colEmail,
-            this.colEmpIsActive,
-            this.colDeletedAt,
-            this.colDeletedBy});
-            this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNhanVien.GridColor = System.Drawing.Color.LightGray;
-            this.dgvNhanVien.Location = new System.Drawing.Point(12, 140);
-            this.dgvNhanVien.Name = "dgvNhanVien";
-            this.dgvNhanVien.ReadOnly = true;
-            this.dgvNhanVien.RowHeadersWidth = 62;
-            this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(1087, 158);
-            this.dgvNhanVien.TabIndex = 0;
-            // 
-            // colEmpId
-            // 
-            this.colEmpId.HeaderText = "Employee ID";
-            this.colEmpId.MinimumWidth = 8;
-            this.colEmpId.Name = "colEmpId";
-            this.colEmpId.ReadOnly = true;
-            // 
-            // colFirstName
-            // 
-            this.colFirstName.HeaderText = "First Name";
-            this.colFirstName.MinimumWidth = 8;
-            this.colFirstName.Name = "colFirstName";
-            this.colFirstName.ReadOnly = true;
-            // 
-            // colLastName
-            // 
-            this.colLastName.HeaderText = "Last Name";
-            this.colLastName.MinimumWidth = 8;
-            this.colLastName.Name = "colLastName";
-            this.colLastName.ReadOnly = true;
-            // 
-            // colImageURL
-            // 
-            this.colImageURL.HeaderText = "Image URL";
-            this.colImageURL.MinimumWidth = 8;
-            this.colImageURL.Name = "colImageURL";
-            this.colImageURL.ReadOnly = true;
-            // 
-            // colPhone
-            // 
-            this.colPhone.HeaderText = "Phone";
-            this.colPhone.MinimumWidth = 8;
-            this.colPhone.Name = "colPhone";
-            this.colPhone.ReadOnly = true;
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.MinimumWidth = 8;
-            this.colEmail.Name = "colEmail";
-            this.colEmail.ReadOnly = true;
-            // 
-            // colEmpIsActive
-            // 
-            this.colEmpIsActive.HeaderText = "IsActive";
-            this.colEmpIsActive.MinimumWidth = 8;
-            this.colEmpIsActive.Name = "colEmpIsActive";
-            this.colEmpIsActive.ReadOnly = true;
-            // 
-            // colDeletedAt
-            // 
-            this.colDeletedAt.HeaderText = "DeletedAt";
-            this.colDeletedAt.MinimumWidth = 8;
-            this.colDeletedAt.Name = "colDeletedAt";
-            this.colDeletedAt.ReadOnly = true;
-            // 
-            // colDeletedBy
-            // 
-            this.colDeletedBy.HeaderText = "DeletedBy";
-            this.colDeletedBy.MinimumWidth = 8;
-            this.colDeletedBy.Name = "colDeletedBy";
-            this.colDeletedBy.ReadOnly = true;
+            this.dgvEmployees.AllowUserToAddRows = false;
+            this.dgvEmployees.AllowUserToDeleteRows = false;
+            this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvEmployees.Location = new System.Drawing.Point(12, 79);
+            this.dgvEmployees.Name = "dgvEmployees";
+            this.dgvEmployees.ReadOnly = true;
+            this.dgvEmployees.Size = new System.Drawing.Size(1087, 221);
+            this.dgvEmployees.TabIndex = 3;
+            this.dgvEmployees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_CellClick);
             // 
             // empSearchLayout
             // 
@@ -602,7 +427,7 @@ namespace XDPMQLCuaHangMT
             this.empSearchLayout.Padding = new System.Windows.Forms.Padding(0, 6, 0, 6);
             this.empSearchLayout.RowCount = 1;
             this.empSearchLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.empSearchLayout.Size = new System.Drawing.Size(1087, 100);
+            this.empSearchLayout.Size = new System.Drawing.Size(1087, 39);
             this.empSearchLayout.TabIndex = 1;
             // 
             // txtTimKiemNV
@@ -611,9 +436,9 @@ namespace XDPMQLCuaHangMT
             this.txtTimKiemNV.ForeColor = System.Drawing.Color.Gray;
             this.txtTimKiemNV.Location = new System.Drawing.Point(3, 9);
             this.txtTimKiemNV.Name = "txtTimKiemNV";
-            this.txtTimKiemNV.Size = new System.Drawing.Size(994, 26);
+            this.txtTimKiemNV.Size = new System.Drawing.Size(994, 20);
             this.txtTimKiemNV.TabIndex = 0;
-            this.txtTimKiemNV.Text = "Tìm kiếm nhân viên...";
+            this.txtTimKiemNV.TextChanged += new System.EventHandler(this.txtTimKiemNV_TextChanged);
             // 
             // btnTimKiemNV
             // 
@@ -621,7 +446,7 @@ namespace XDPMQLCuaHangMT
             this.btnTimKiemNV.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnTimKiemNV.Location = new System.Drawing.Point(1003, 9);
             this.btnTimKiemNV.Name = "btnTimKiemNV";
-            this.btnTimKiemNV.Size = new System.Drawing.Size(81, 82);
+            this.btnTimKiemNV.Size = new System.Drawing.Size(81, 21);
             this.btnTimKiemNV.TabIndex = 1;
             this.btnTimKiemNV.Text = "Tìm kiếm";
             // 
@@ -645,7 +470,7 @@ namespace XDPMQLCuaHangMT
             this.textBoxEmployee.ForeColor = System.Drawing.Color.Black;
             this.textBoxEmployee.Location = new System.Drawing.Point(0, 0);
             this.textBoxEmployee.Name = "textBoxEmployee";
-            this.textBoxEmployee.Size = new System.Drawing.Size(100, 26);
+            this.textBoxEmployee.Size = new System.Drawing.Size(100, 20);
             this.textBoxEmployee.TabIndex = 0;
             this.textBoxEmployee.Visible = false;
             // 
@@ -669,14 +494,25 @@ namespace XDPMQLCuaHangMT
             this.pnlTimKiemNV.Size = new System.Drawing.Size(200, 40);
             this.pnlTimKiemNV.TabIndex = 0;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(246, 3);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(71, 29);
+            this.buttonClear.TabIndex = 3;
+            this.buttonClear.Text = "Làm mới";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // AccountForm
             // 
-            this.ClientSize = new System.Drawing.Size(1503, 637);
+            this.ClientSize = new System.Drawing.Size(1503, 641);
             this.Controls.Add(this.mainLayout);
             this.MinimumSize = new System.Drawing.Size(1100, 680);
             this.Name = "AccountForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý Tài Khoản";
+            this.Load += new System.EventHandler(this.AccountForm_Load);
             this.mainLayout.ResumeLayout(false);
             this.pnlInput.ResumeLayout(false);
             this.pnlInput.PerformLayout();
@@ -686,11 +522,11 @@ namespace XDPMQLCuaHangMT
             this.inputActionPanel.PerformLayout();
             this.rightStack.ResumeLayout(false);
             this.pnlBangTaiKhoan.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccount)).EndInit();
             this.accountSearchLayout.ResumeLayout(false);
             this.accountSearchLayout.PerformLayout();
             this.pnlBangNhanVien.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
             this.empSearchLayout.ResumeLayout(false);
             this.empSearchLayout.PerformLayout();
             this.ResumeLayout(false);
@@ -703,5 +539,9 @@ namespace XDPMQLCuaHangMT
         private TableLayoutPanel rightStack;
         private TableLayoutPanel accountSearchLayout;
         private TableLayoutPanel empSearchLayout;
+        private DataGridView dgvAccount;
+        private DataGridView dgvEmployees;
+        private TextBox txtNhanVien;
+        private Button buttonClear;
     }
 }

@@ -1,5 +1,4 @@
-﻿using DTO;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace DAL
@@ -11,16 +10,26 @@ namespace DAL
         {
             try
             {
-                query = "SELECT * FROM Suppliers";
+                query = "SELECT SupplierId as 'Mã nhà cung cấp', Name as 'Tên nhà cung cấp', Contact as 'Liên hệ', Phone 'Số điện thoại', Email, Address as 'Địa chỉ' \r\n    FROM dbo.Suppliers ";
                 return Load(query);
             }
             catch (SqlException)
             {
                 throw;
             }
-
         }
-
+        public DataTable SearchSupplierByName(string keywords)
+        {
+            try
+            {
+                query = "EXEC usp_SearchSupplierByName @Searching";
+                return ExecuteQuery(query, new object[] { keywords });
+            }
+            catch (SqlException)
+            {
+                throw;
+            }
+        }
         public int InsertSupplier(string name, string contactName, string phone, string email, string address)
         {
             try
@@ -40,7 +49,7 @@ namespace DAL
             try
             {
                 query = "UPDATE dbo.Suppliers SET Name = @Name , Contact = @Contact , Phone = @Phone , Email = @Email , Address = @Address WHERE SupplierId = @SupplierId ";
-                return ExecuteNonQuery(query, new object[] { name, contactName, phone, email, address , id });
+                return ExecuteNonQuery(query, new object[] { name, contactName, phone, email, address, id });
             }
             catch (SqlException)
             {

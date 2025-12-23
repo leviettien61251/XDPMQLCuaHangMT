@@ -64,7 +64,6 @@
             this.tableLayoutPanel1.Controls.Add(this.textBoxName, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -72,47 +71,43 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1200, 298);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 194);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // textBoxAddress
             // 
             this.textBoxAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(257, 241);
-            this.textBoxAddress.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxAddress.Location = new System.Drawing.Point(172, 155);
             this.textBoxAddress.Name = "textBoxAddress";
-            this.textBoxAddress.Size = new System.Drawing.Size(939, 35);
+            this.textBoxAddress.Size = new System.Drawing.Size(625, 26);
             this.textBoxAddress.TabIndex = 9;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(257, 182);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxEmail.Location = new System.Drawing.Point(172, 117);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(939, 35);
+            this.textBoxEmail.Size = new System.Drawing.Size(625, 26);
             this.textBoxEmail.TabIndex = 8;
             // 
             // textBoxPhone
             // 
             this.textBoxPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(257, 123);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxPhone.Location = new System.Drawing.Point(172, 79);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(939, 35);
+            this.textBoxPhone.Size = new System.Drawing.Size(625, 26);
             this.textBoxPhone.TabIndex = 7;
             // 
             // textBoxContact
             // 
             this.textBoxContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxContact.Location = new System.Drawing.Point(257, 64);
-            this.textBoxContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxContact.Location = new System.Drawing.Point(172, 41);
             this.textBoxContact.Name = "textBoxContact";
-            this.textBoxContact.Size = new System.Drawing.Size(939, 35);
+            this.textBoxContact.Size = new System.Drawing.Size(625, 26);
             this.textBoxContact.TabIndex = 6;
             // 
             // label1
@@ -120,10 +115,9 @@
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 0);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(245, 59);
+            this.label1.Size = new System.Drawing.Size(163, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "Name:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,10 +127,9 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 236);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(3, 152);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(245, 62);
+            this.label5.Size = new System.Drawing.Size(163, 42);
             this.label5.TabIndex = 4;
             this.label5.Text = "Address:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -146,10 +139,9 @@
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 177);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(3, 114);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(245, 59);
+            this.label4.Size = new System.Drawing.Size(163, 38);
             this.label4.TabIndex = 3;
             this.label4.Text = "Email:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -159,10 +151,9 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 118);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(3, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(245, 59);
+            this.label3.Size = new System.Drawing.Size(163, 38);
             this.label3.TabIndex = 2;
             this.label3.Text = "Phone:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -172,10 +163,9 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(3, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(245, 59);
+            this.label2.Size = new System.Drawing.Size(163, 38);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contact:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -184,31 +174,28 @@
             // 
             this.textBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.Location = new System.Drawing.Point(257, 5);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBoxName.Location = new System.Drawing.Point(172, 3);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(939, 35);
+            this.textBoxName.Size = new System.Drawing.Size(625, 26);
             this.textBoxName.TabIndex = 5;
             // 
             // dgv_Supplier
             // 
             this.dgv_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Supplier.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_Supplier.Location = new System.Drawing.Point(0, 378);
-            this.dgv_Supplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_Supplier.Location = new System.Drawing.Point(0, 246);
             this.dgv_Supplier.Name = "dgv_Supplier";
             this.dgv_Supplier.RowHeadersWidth = 62;
-            this.dgv_Supplier.Size = new System.Drawing.Size(1200, 314);
+            this.dgv_Supplier.Size = new System.Drawing.Size(800, 204);
             this.dgv_Supplier.TabIndex = 1;
             this.dgv_Supplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Supplier_CellClick);
             // 
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(258, 308);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAdd.Location = new System.Drawing.Point(172, 200);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(303, 62);
+            this.btnAdd.Size = new System.Drawing.Size(202, 40);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -217,10 +204,9 @@
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(567, 308);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUpdate.Location = new System.Drawing.Point(378, 200);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(303, 62);
+            this.btnUpdate.Size = new System.Drawing.Size(202, 40);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -229,10 +215,9 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(879, 308);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDelete.Location = new System.Drawing.Point(586, 200);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(303, 62);
+            this.btnDelete.Size = new System.Drawing.Size(202, 40);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -240,15 +225,14 @@
             // 
             // FormSupplier
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgv_Supplier);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormSupplier";
             this.Text = "FormSupplier";
             this.Load += new System.EventHandler(this.FormSupplier_Load);
