@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using XDPMQLCuaHangMT.UI_UPDATE;
 namespace XDPMQLCuaHangMT
 {
     public partial class FormMain : Form
@@ -68,7 +69,6 @@ namespace XDPMQLCuaHangMT
             F_VoucherOUT.WindowState = FormWindowState.Maximized;
             F_VoucherOUT.Show();
             F_VoucherOUT.BringToFront();
-
         }
 
         private void ManagementToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -89,7 +89,7 @@ namespace XDPMQLCuaHangMT
                     form = F_Supplier;
                     break;
                 case "FormStock":
-                    FormStock F_Stock = new FormStock(employeeId);
+                    Form_Stock F_Stock = new Form_Stock(employeeId);
                     form = F_Stock;
                     break;
                 default:

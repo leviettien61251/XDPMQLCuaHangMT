@@ -31,16 +31,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
         private Panel pnlSearch;
         internal TextBox txtSearch;
         internal Button btnSearch;
-        internal DataGridView dgvVouchers;
         private Label lblTableTitle;
-
-        private DataGridViewTextBoxColumn colVoucherId;
-        private DataGridViewTextBoxColumn colType;
-        private DataGridViewTextBoxColumn colDate;
-        private DataGridViewTextBoxColumn colEmployee;
-        private DataGridViewTextBoxColumn colNote;
-        private DataGridViewTextBoxColumn colTotalItems;
-        private DataGridViewTextBoxColumn colCreatedAt;
 
         protected override void Dispose(bool disposing)
         {
@@ -52,7 +43,6 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlInput = new System.Windows.Forms.Panel();
             this.lblType = new System.Windows.Forms.Label();
             this.cboType = new System.Windows.Forms.ComboBox();
@@ -71,22 +61,19 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnViewDetail = new System.Windows.Forms.Button();
             this.pnlTable = new System.Windows.Forms.Panel();
             this.lblTableTitle = new System.Windows.Forms.Label();
-            this.dgvVouchers = new System.Windows.Forms.DataGridView();
-            this.colVoucherId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEmployee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNote = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotalItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.pnlInput.SuspendLayout();
             this.actionPanel.SuspendLayout();
             this.pnlTable.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVouchers)).BeginInit();
             this.pnlSearch.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlInput
@@ -106,7 +93,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.pnlInput.Controls.Add(this.txtNote);
             this.pnlInput.Controls.Add(this.actionPanel);
             this.pnlInput.Location = new System.Drawing.Point(8, 8);
-            this.pnlInput.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlInput.Margin = new System.Windows.Forms.Padding(2);
             this.pnlInput.Name = "pnlInput";
             this.pnlInput.Size = new System.Drawing.Size(253, 426);
             this.pnlInput.TabIndex = 0;
@@ -130,7 +117,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.ForeColor = System.Drawing.Color.Black;
             this.cboType.Location = new System.Drawing.Point(11, 27);
-            this.cboType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboType.Margin = new System.Windows.Forms.Padding(2);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(231, 21);
             this.cboType.TabIndex = 1;
@@ -152,7 +139,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpDate.Location = new System.Drawing.Point(11, 73);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(231, 20);
             this.dtpDate.TabIndex = 3;
@@ -176,7 +163,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.txtVoucherId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVoucherId.ForeColor = System.Drawing.Color.Black;
             this.txtVoucherId.Location = new System.Drawing.Point(11, 120);
-            this.txtVoucherId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVoucherId.Margin = new System.Windows.Forms.Padding(2);
             this.txtVoucherId.Name = "txtVoucherId";
             this.txtVoucherId.Size = new System.Drawing.Size(230, 20);
             this.txtVoucherId.TabIndex = 5;
@@ -200,7 +187,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.cboEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboEmployee.ForeColor = System.Drawing.Color.Black;
             this.cboEmployee.Location = new System.Drawing.Point(11, 167);
-            this.cboEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.cboEmployee.Name = "cboEmployee";
             this.cboEmployee.Size = new System.Drawing.Size(231, 21);
             this.cboEmployee.TabIndex = 7;
@@ -224,7 +211,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.txtNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNote.ForeColor = System.Drawing.Color.Black;
             this.txtNote.Location = new System.Drawing.Point(11, 213);
-            this.txtNote.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNote.Margin = new System.Windows.Forms.Padding(2);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(230, 107);
@@ -237,7 +224,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.actionPanel.Controls.Add(this.btnDelete);
             this.actionPanel.Controls.Add(this.btnViewDetail);
             this.actionPanel.Location = new System.Drawing.Point(11, 333);
-            this.actionPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.actionPanel.Margin = new System.Windows.Forms.Padding(2);
             this.actionPanel.Name = "actionPanel";
             this.actionPanel.Size = new System.Drawing.Size(229, 61);
             this.actionPanel.TabIndex = 10;
@@ -249,7 +236,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnAdd.ForeColor = System.Drawing.Color.Black;
             this.btnAdd.Location = new System.Drawing.Point(2, 2);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 22);
             this.btnAdd.TabIndex = 0;
@@ -263,7 +250,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
             this.btnEdit.Location = new System.Drawing.Point(56, 2);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(50, 22);
             this.btnEdit.TabIndex = 1;
@@ -277,7 +264,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnDelete.ForeColor = System.Drawing.Color.Black;
             this.btnDelete.Location = new System.Drawing.Point(110, 2);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(50, 22);
             this.btnDelete.TabIndex = 2;
@@ -291,7 +278,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnViewDetail.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnViewDetail.ForeColor = System.Drawing.Color.Black;
             this.btnViewDetail.Location = new System.Drawing.Point(2, 28);
-            this.btnViewDetail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewDetail.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewDetail.Name = "btnViewDetail";
             this.btnViewDetail.Size = new System.Drawing.Size(81, 22);
             this.btnViewDetail.TabIndex = 3;
@@ -304,11 +291,9 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlTable.BackColor = System.Drawing.Color.White;
-            this.pnlTable.Controls.Add(this.lblTableTitle);
-            this.pnlTable.Controls.Add(this.dgvVouchers);
-            this.pnlTable.Controls.Add(this.pnlSearch);
+            this.pnlTable.Controls.Add(this.tableLayoutPanel1);
             this.pnlTable.Location = new System.Drawing.Point(272, 8);
-            this.pnlTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTable.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTable.Name = "pnlTable";
             this.pnlTable.Size = new System.Drawing.Size(789, 426);
             this.pnlTable.TabIndex = 1;
@@ -317,7 +302,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             // 
             this.lblTableTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.lblTableTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTableTitle.Location = new System.Drawing.Point(0, 37);
+            this.lblTableTitle.Location = new System.Drawing.Point(2, 0);
             this.lblTableTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTableTitle.Name = "lblTableTitle";
             this.lblTableTitle.Size = new System.Drawing.Size(261, 19);
@@ -325,104 +310,17 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.lblTableTitle.Text = "Bảng Phiếu nhập/xuất";
             this.lblTableTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dgvVouchers
-            // 
-            this.dgvVouchers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvVouchers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVouchers.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVouchers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvVouchers.ColumnHeadersHeight = 34;
-            this.dgvVouchers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colVoucherId,
-            this.colType,
-            this.colDate,
-            this.colEmployee,
-            this.colNote,
-            this.colTotalItems,
-            this.colCreatedAt});
-            this.dgvVouchers.GridColor = System.Drawing.Color.LightGray;
-            this.dgvVouchers.Location = new System.Drawing.Point(7, 58);
-            this.dgvVouchers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgvVouchers.Name = "dgvVouchers";
-            this.dgvVouchers.ReadOnly = true;
-            this.dgvVouchers.RowHeadersWidth = 62;
-            this.dgvVouchers.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgvVouchers.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
-            this.dgvVouchers.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.dgvVouchers.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvVouchers.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVouchers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVouchers.Size = new System.Drawing.Size(775, 359);
-            this.dgvVouchers.TabIndex = 1;
-            // 
-            // colVoucherId
-            // 
-            this.colVoucherId.DataPropertyName = "VoucherId";
-            this.colVoucherId.HeaderText = "ID Phiếu";
-            this.colVoucherId.Name = "colVoucherId";
-            this.colVoucherId.ReadOnly = true;
-            // 
-            // colType
-            // 
-            this.colType.DataPropertyName = "Type";
-            this.colType.HeaderText = "Loại";
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "Date";
-            this.colDate.HeaderText = "Ngày";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            // 
-            // colEmployee
-            // 
-            this.colEmployee.DataPropertyName = "Employee";
-            this.colEmployee.HeaderText = "Nhân viên";
-            this.colEmployee.Name = "colEmployee";
-            this.colEmployee.ReadOnly = true;
-            // 
-            // colNote
-            // 
-            this.colNote.DataPropertyName = "Note";
-            this.colNote.HeaderText = "Ghi chú";
-            this.colNote.Name = "colNote";
-            this.colNote.ReadOnly = true;
-            // 
-            // colTotalItems
-            // 
-            this.colTotalItems.DataPropertyName = "TotalItems";
-            this.colTotalItems.HeaderText = "Tổng SL";
-            this.colTotalItems.Name = "colTotalItems";
-            this.colTotalItems.ReadOnly = true;
-            // 
-            // colCreatedAt
-            // 
-            this.colCreatedAt.DataPropertyName = "CreatedAt";
-            this.colCreatedAt.HeaderText = "Ngày tạo";
-            this.colCreatedAt.Name = "colCreatedAt";
-            this.colCreatedAt.ReadOnly = true;
-            // 
             // pnlSearch
             // 
-            this.pnlSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlSearch.BackColor = System.Drawing.Color.White;
+            this.tableLayoutPanel1.SetColumnSpan(this.pnlSearch, 2);
             this.pnlSearch.Controls.Add(this.txtSearch);
             this.pnlSearch.Controls.Add(this.btnSearch);
-            this.pnlSearch.Location = new System.Drawing.Point(7, 7);
-            this.pnlSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSearch.Location = new System.Drawing.Point(2, 2);
+            this.pnlSearch.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSearch.Name = "pnlSearch";
-            this.pnlSearch.Size = new System.Drawing.Size(775, 24);
+            this.pnlSearch.Size = new System.Drawing.Size(785, 26);
             this.pnlSearch.TabIndex = 3;
             // 
             // txtSearch
@@ -431,10 +329,10 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.txtSearch.BackColor = System.Drawing.Color.White;
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.Gray;
-            this.txtSearch.Location = new System.Drawing.Point(4, 4);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSearch.Location = new System.Drawing.Point(4, 5);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(722, 20);
+            this.txtSearch.Size = new System.Drawing.Size(718, 20);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.Text = "Tìm kiếm phiếu...";
             // 
@@ -444,13 +342,59 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnSearch.BackColor = System.Drawing.Color.White;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnSearch.ForeColor = System.Drawing.Color.Black;
-            this.btnSearch.Location = new System.Drawing.Point(729, 3);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Location = new System.Drawing.Point(726, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(43, 18);
+            this.btnSearch.Size = new System.Drawing.Size(56, 18);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlSearch, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(789, 426);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel1.SetColumnSpan(this.tableLayoutPanel2, 2);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.lblTableTitle, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 33);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(783, 390);
+            this.tableLayoutPanel2.TabIndex = 4;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel2.SetColumnSpan(this.dataGridView1, 2);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(777, 354);
+            this.dataGridView1.TabIndex = 1;
             // 
             // Form_Stock
             // 
@@ -461,23 +405,30 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.Controls.Add(this.pnlInput);
             this.Controls.Add(this.pnlTable);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(512, 333);
             this.Name = "Form_Stock";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form Phiếu nhập/xuất";
+            this.Load += new System.EventHandler(this.Form_Stock_Load);
             this.pnlInput.ResumeLayout(false);
             this.pnlInput.PerformLayout();
             this.actionPanel.ResumeLayout(false);
             this.actionPanel.PerformLayout();
             this.pnlTable.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVouchers)).EndInit();
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private DataGridView dataGridView1;
     }
 }
