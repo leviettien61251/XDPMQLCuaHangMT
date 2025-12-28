@@ -61,22 +61,23 @@ namespace XDPMQLCuaHangMT
             object id = busStockVoucher.InsertStockVoucherSolid(stockVoucher);
             int voucherId_ = (int)id;
 
-            foreach (VoucherDetail item in list)
+            try
             {
-                i++;
-                string type_ = voucherType__;
-                int performedBy = this.employeeId__;
-                string productName = "asd";
 
-                if (busVoucherDetail.InsertVoucherDetailSolid(item, productName, type_, voucherId_))
+                foreach (VoucherDetail item in list)
                 {
-                    //MessageBox.Show("Thêm thành công");
-                }
-                else
-                {
-                    //MessageBox.Show("Thêm không thành công");
+                    i++;
+                    string type_ = voucherType__;
+                    int performedBy = this.employeeId__;
+                    string productName = "asd";
+                    busVoucherDetail.InsertVoucherDetailSolid(item, productName, type_, voucherId_);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             if (i == n)
             {
                 MessageBox.Show("Xuất phiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

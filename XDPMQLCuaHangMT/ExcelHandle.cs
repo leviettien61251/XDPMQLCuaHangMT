@@ -62,7 +62,7 @@ namespace XDPMQLCuaHangMT
                                 }
                                 ws.Columns().AdjustToContents();
                                 wb.SaveAs(sfd.FileName);
-                                MessageBox.Show("Xuất phiếu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                //MessageBox.Show("Xuất phiếu thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         catch (Exception ex)

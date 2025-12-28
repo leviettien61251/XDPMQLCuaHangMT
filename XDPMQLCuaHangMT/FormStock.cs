@@ -29,21 +29,21 @@ namespace XDPMQLCuaHangMT
             //formStockDetail.ShowDialog();
             //formStockDetail.WindowState = FormWindowState.Maximized;
             //formStockDetail.BringToFront();
-            if (voucherType__ != "IN")
-            {
+            //if (voucherType__ != "IN")
+            //{
 
-                FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__);
-                formVoucherOUT.ShowDialog();
-                formVoucherOUT.WindowState = FormWindowState.Maximized;
-                formVoucherOUT.BringToFront();
-            }
-            else
-            {
-                FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, voucherId, voucherType__);
-                formVoucherIN.ShowDialog();
-                formVoucherIN.WindowState = FormWindowState.Maximized;
-                formVoucherIN.BringToFront();
-            }
+            //    FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, voucherId, voucherType__);
+            //    formVoucherOUT.ShowDialog();
+            //    formVoucherOUT.WindowState = FormWindowState.Maximized;
+            //    formVoucherOUT.BringToFront();
+            //}
+            //else
+            //{
+            //    FormVoucherDetail formVoucherIN = new FormVoucherDetail(employeeId, voucherId, voucherType__);
+            //    formVoucherIN.ShowDialog();
+            //    formVoucherIN.WindowState = FormWindowState.Maximized;
+            //    formVoucherIN.BringToFront();
+            //}
         }
 
         private void FormStock_Load(object sender, EventArgs e)
@@ -105,21 +105,21 @@ namespace XDPMQLCuaHangMT
             //    Load_Data();
             //    voucherId = dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value != null ?
             //                Int32.Parse(dgvStock.Rows[dgvStock.Rows.Count - 1].Cells["VoucherId"].Value.ToString()) : 0;
-            if (voucherType__ != "IN")
-            {
+            //if (voucherType__ != "IN")
+            //{
 
-                FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, dtoStockVoucher.note);
-                formVoucherOUT.ShowDialog();
-                formVoucherOUT.WindowState = FormWindowState.Maximized;
-                formVoucherOUT.BringToFront();
-            }
-            else
-            {
-                FormVoucherIN formVoucherIN = new FormVoucherIN(employeeId, dtoStockVoucher.note);
-                formVoucherIN.ShowDialog();
-                formVoucherIN.WindowState = FormWindowState.Maximized;
-                formVoucherIN.BringToFront();
-            }
+            //    FormVoucherOUT formVoucherOUT = new FormVoucherOUT(employeeId, dtoStockVoucher.note);
+            //    formVoucherOUT.ShowDialog();
+            //    formVoucherOUT.WindowState = FormWindowState.Maximized;
+            //    formVoucherOUT.BringToFront();
+            //}
+            //else
+            //{
+            //    FormVoucherDetail formVoucherIN = new FormVoucherDetail(employeeId, dtoStockVoucher.note);
+            //    formVoucherIN.ShowDialog();
+            //    formVoucherIN.WindowState = FormWindowState.Maximized;
+            //    formVoucherIN.BringToFront();
+            //}
 
         }
 
