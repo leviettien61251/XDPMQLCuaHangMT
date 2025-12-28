@@ -53,7 +53,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.1129F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.8871F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 578);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 589);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(978, 70);
+            this.label1.Size = new System.Drawing.Size(978, 71);
             this.label1.TabIndex = 0;
             this.label1.Text = "Phiếu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -76,16 +76,16 @@
             this.dgvExport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.dgvExport, 2);
             this.dgvExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvExport.Location = new System.Drawing.Point(3, 73);
+            this.dgvExport.Location = new System.Drawing.Point(3, 74);
             this.dgvExport.Name = "dgvExport";
             this.dgvExport.ReadOnly = true;
-            this.dgvExport.Size = new System.Drawing.Size(978, 420);
+            this.dgvExport.Size = new System.Drawing.Size(978, 430);
             this.dgvExport.TabIndex = 1;
             // 
             // buttonExport
             // 
             this.buttonExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExport.Location = new System.Drawing.Point(3, 499);
+            this.buttonExport.Location = new System.Drawing.Point(3, 510);
             this.buttonExport.Name = "buttonExport";
             this.buttonExport.Size = new System.Drawing.Size(486, 56);
             this.buttonExport.TabIndex = 2;
@@ -96,7 +96,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(495, 499);
+            this.buttonCancel.Location = new System.Drawing.Point(495, 510);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(483, 56);
             this.buttonCancel.TabIndex = 3;
@@ -108,7 +108,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 578);
+            this.ClientSize = new System.Drawing.Size(984, 589);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FormFinalStock";
             this.Text = "FormFinalStock";

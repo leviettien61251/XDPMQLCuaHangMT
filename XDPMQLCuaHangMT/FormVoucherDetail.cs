@@ -7,45 +7,57 @@ using System.Windows.Forms;
 
 namespace XDPMQLCuaHangMT
 {
-    public partial class FormVoucherIN : Form
+    public partial class FormVoucherDetail : Form
     {
         protected int employeeId__, stockVoucherId__, productId__, productStockQty__;
-        protected string productName__, voucherType__ = "IN", note__;
+        protected string productName__, voucherType__, note__;
         VoucherDetail voucherDetail;
         BUS_Product busProduct = new BUS_Product();
         BUS_VoucherDetail busVoucherDetail = new BUS_VoucherDetail();
         List<VoucherDetail> productList = new List<VoucherDetail>();
-        public FormVoucherIN()
+        public FormVoucherDetail()
         {
             InitializeComponent();
         }
-        public FormVoucherIN(int employeeId, int stockVoucherId)
+        public FormVoucherDetail(int employeeId, string type, string note)
+        {
+            InitializeComponent();
+            this.employeeId__ = employeeId;
+            isInOut(type);
+            this.note__ = note;
+        }
+        public FormVoucherDetail(int employeeId, int stockVoucherId, string note, string type)
         {
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = "IN";
-        }
-        public FormVoucherIN(int employeeId, string note)
-        {
-            InitializeComponent();
-            this.employeeId__ = employeeId;
-            this.voucherType__ = "IN";
+            isInOut(type);
             this.note__ = note;
         }
-        public FormVoucherIN(int employeeId, int stockVoucherId, string note)
+        private void isInOut(string type)
         {
-            InitializeComponent();
-            this.employeeId__ = employeeId;
-            this.stockVoucherId__ = stockVoucherId;
-            this.voucherType__ = "IN";
-            this.note__ = note;
+            if (type.Equals("IN"))
+            {
+                this.voucherType__ = "IN";
+                this.Text = "Phiếu nhập";
+                labelVoucherId.Text = "Mã phiếu nhập: ";
+            }
+            else
+            {
+                this.voucherType__ = "OUT";
+                this.Text = "Phiếu xuất";
+                labelVoucherId.Text = "Mã phiếu xuất: ";
+            }
         }
         private void FormVoucherIN_Load(object sender, EventArgs e)
         {
             textBoxVoucherId.Text = stockVoucherId__.ToString();
             Load_Data();
-            textBoxCreatedDate.Text = DateTime.Now.ToString("yyyy/mm/dd HH:mm:ss");
+        }
+        private void Clear_InputFields()
+        {
+            textBoxQuantity.Clear();
+            productList.Clear();
         }
         private void Load_Data()
         {
@@ -73,17 +85,6 @@ namespace XDPMQLCuaHangMT
             FormFinalStock formFinalStock = new FormFinalStock(productList, employeeId__, voucherType__, note__);
             formFinalStock.ShowDialog();
         }
-
-        private void buttonSearchVoucherIN_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxSearchVoucherIN_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
             string searchText = textBoxSearchProduct.Text;
@@ -95,7 +96,6 @@ namespace XDPMQLCuaHangMT
             string searchText = textBoxSearchProduct.Text;
             dgvProduct.DataSource = busProduct.FindProducts(searchText);
         }
-
         private void buttonAddProductToDetail_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxQuantity.Text))
@@ -105,6 +105,20 @@ namespace XDPMQLCuaHangMT
             }
 
             int quantity__ = Convert.ToInt32(textBoxQuantity.Text);
+
+            if (this.voucherType__.Equals("OUT") && quantity__ <= 0)
+            {
+                MessageBox.Show("Số lượng sản phẩm phải lớn hơn 0!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (this.voucherType__.Equals("OUT"))
+            {
+                if (quantity__ > productStockQty__)
+                {
+                    MessageBox.Show("Số lượng tồn kho không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
 
             voucherDetail = new VoucherDetail();
             voucherDetail.productId = productId__;

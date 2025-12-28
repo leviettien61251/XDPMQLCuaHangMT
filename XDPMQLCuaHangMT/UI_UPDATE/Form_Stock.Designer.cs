@@ -60,20 +60,20 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnViewDetail = new System.Windows.Forms.Button();
             this.pnlTable = new System.Windows.Forms.Panel();
-            this.lblTableTitle = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblTableTitle = new System.Windows.Forms.Label();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.pnlInput.SuspendLayout();
             this.actionPanel.SuspendLayout();
             this.pnlTable.SuspendLayout();
-            this.pnlSearch.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pnlSearch.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlInput
@@ -116,11 +116,15 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.cboType.BackColor = System.Drawing.Color.White;
             this.cboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboType.ForeColor = System.Drawing.Color.Black;
+            this.cboType.Items.AddRange(new object[] {
+            "IN",
+            "OUT"});
             this.cboType.Location = new System.Drawing.Point(11, 27);
             this.cboType.Margin = new System.Windows.Forms.Padding(2);
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(231, 21);
             this.cboType.TabIndex = 1;
+            this.cboType.Click += new System.EventHandler(this.comboBoxStockType_SelectedIndexChanged);
             // 
             // lblDate
             // 
@@ -129,7 +133,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.lblDate.Location = new System.Drawing.Point(11, 53);
             this.lblDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(107, 16);
+            this.lblDate.Size = new System.Drawing.Size(128, 18);
             this.lblDate.TabIndex = 2;
             this.lblDate.Text = "Ngày Thực Hiện:";
             // 
@@ -242,6 +246,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // btnEdit
             // 
@@ -256,6 +261,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // btnDelete
             // 
@@ -270,6 +276,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // btnViewDetail
             // 
@@ -284,6 +291,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnViewDetail.TabIndex = 3;
             this.btnViewDetail.Text = "Xem Chi Tiết";
             this.btnViewDetail.UseVisualStyleBackColor = false;
+            this.btnViewDetail.Click += new System.EventHandler(this.buttonStockDetial_Click);
             // 
             // pnlTable
             // 
@@ -298,17 +306,21 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.pnlTable.Size = new System.Drawing.Size(789, 426);
             this.pnlTable.TabIndex = 1;
             // 
-            // lblTableTitle
+            // tableLayoutPanel1
             // 
-            this.lblTableTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.lblTableTitle.ForeColor = System.Drawing.Color.Black;
-            this.lblTableTitle.Location = new System.Drawing.Point(2, 0);
-            this.lblTableTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTableTitle.Name = "lblTableTitle";
-            this.lblTableTitle.Size = new System.Drawing.Size(261, 19);
-            this.lblTableTitle.TabIndex = 0;
-            this.lblTableTitle.Text = "Bảng Phiếu nhập/xuất";
-            this.lblTableTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pnlSearch, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(789, 426);
+            this.tableLayoutPanel1.TabIndex = 0;
             // 
             // pnlSearch
             // 
@@ -350,22 +362,6 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.btnSearch.Text = "Tìm kiếm";
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pnlSearch, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(789, 426);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -373,7 +369,7 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.lblTableTitle, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dgvStock, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 33);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -383,18 +379,31 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.tableLayoutPanel2.Size = new System.Drawing.Size(783, 390);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
-            // dataGridView1
+            // lblTableTitle
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel2.SetColumnSpan(this.dataGridView1, 2);
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 33);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(777, 354);
-            this.dataGridView1.TabIndex = 1;
+            this.lblTableTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblTableTitle.ForeColor = System.Drawing.Color.Black;
+            this.lblTableTitle.Location = new System.Drawing.Point(2, 0);
+            this.lblTableTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTableTitle.Name = "lblTableTitle";
+            this.lblTableTitle.Size = new System.Drawing.Size(261, 19);
+            this.lblTableTitle.TabIndex = 0;
+            this.lblTableTitle.Text = "Bảng Phiếu nhập/xuất";
+            this.lblTableTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.AllowUserToDeleteRows = false;
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel2.SetColumnSpan(this.dgvStock, 2);
+            this.dgvStock.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStock.Location = new System.Drawing.Point(3, 33);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
+            this.dgvStock.Size = new System.Drawing.Size(777, 354);
+            this.dgvStock.TabIndex = 1;
+            this.dgvStock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStock_CellClick);
             // 
             // Form_Stock
             // 
@@ -416,11 +425,11 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
             this.actionPanel.ResumeLayout(false);
             this.actionPanel.PerformLayout();
             this.pnlTable.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -429,6 +438,6 @@ namespace XDPMQLCuaHangMT.UI_UPDATE
 
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvStock;
     }
 }

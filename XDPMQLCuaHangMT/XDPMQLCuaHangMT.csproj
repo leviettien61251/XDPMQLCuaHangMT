@@ -139,11 +139,11 @@
     <Compile Include="FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormVoucherIN.cs">
+    <Compile Include="FormVoucherDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVoucherIN.Designer.cs">
-      <DependentUpon>FormVoucherIN.cs</DependentUpon>
+    <Compile Include="FormVoucherDetail.Designer.cs">
+      <DependentUpon>FormVoucherDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVoucherOUT.cs">
       <SubType>Form</SubType>
@@ -228,8 +228,8 @@
     <EmbeddedResource Include="FormTest.resx">
       <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVoucherIN.resx">
-      <DependentUpon>FormVoucherIN.cs</DependentUpon>
+    <EmbeddedResource Include="FormVoucherDetail.resx">
+      <DependentUpon>FormVoucherDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVoucherOUT.resx">
       <DependentUpon>FormVoucherOUT.cs</DependentUpon>
