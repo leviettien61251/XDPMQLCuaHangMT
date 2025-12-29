@@ -40,6 +40,9 @@
             this.labelRoleId = new System.Windows.Forms.Label();
             this.labelEmployeeId = new System.Windows.Forms.Label();
             this.labelCreateAt = new System.Windows.Forms.Label();
+            this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormThongKeSP = new System.Windows.Forms.ToolStripMenuItem();
+            this.FormThongKePhieu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +52,8 @@
             this.FormTest,
             this.FormManagement,
             this.FormVoucherIN,
-            this.FormVoucherOUT});
+            this.FormVoucherOUT,
+            this.thốngKêToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
@@ -142,6 +146,30 @@
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
             // 
+            // thốngKêToolStripMenuItem
+            // 
+            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormThongKeSP,
+            this.FormThongKePhieu});
+            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            this.thốngKêToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
+            // 
+            // FormThongKeSP
+            // 
+            this.FormThongKeSP.Name = "FormThongKeSP";
+            this.FormThongKeSP.Size = new System.Drawing.Size(214, 22);
+            this.FormThongKeSP.Text = "Thống kê sản phẩm";
+            this.FormThongKeSP.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
+            // 
+            // FormThongKePhieu
+            // 
+            this.FormThongKePhieu.Name = "FormThongKePhieu";
+            this.FormThongKePhieu.Size = new System.Drawing.Size(214, 22);
+            this.FormThongKePhieu.Text = "Thống kê phiếu nhập/xuất";
+            this.FormThongKePhieu.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +207,9 @@
         private System.Windows.Forms.ToolStripMenuItem FormStock;
         private System.Windows.Forms.ToolStripMenuItem FormVoucherIN;
         private System.Windows.Forms.ToolStripMenuItem FormVoucherOUT;
+        private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FormThongKeSP;
+        private System.Windows.Forms.ToolStripMenuItem FormThongKePhieu;
     }
 }
 

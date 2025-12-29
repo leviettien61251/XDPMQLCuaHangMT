@@ -85,10 +85,12 @@
     <Compile Include="BUS_Role.cs" />
     <Compile Include="BUS_StockVoucher.cs" />
     <Compile Include="BUS_Supplier.cs" />
+    <Compile Include="BUS_ThongKePhieu.cs" />
     <Compile Include="BUS_VoucherDetail.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="PasswordHash.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BUS_ThongKeSanPham.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
