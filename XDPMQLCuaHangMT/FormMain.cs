@@ -3,6 +3,7 @@ using DTO;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using XDPMQLCuaHangMT.ThongKe;
 using XDPMQLCuaHangMT.UI_UPDATE;
 namespace XDPMQLCuaHangMT
 {
@@ -79,6 +80,28 @@ namespace XDPMQLCuaHangMT
                     break;
                 case "FormStock":
                     Form_Stock F_Stock = new Form_Stock(employeeId);
+                    form = F_Stock;
+                    break;
+                default:
+                    break;
+            }
+            form.MdiParent = this;
+            form.WindowState = FormWindowState.Maximized;
+            form.Show();
+            form.BringToFront();
+        }
+
+        private void ThongKeClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            Form form = new Form();
+            switch (e.ClickedItem.Name)
+            {
+                case "FormThongKeSP":
+                    FormThongKeSP F_Supplier = new FormThongKeSP();
+                    form = F_Supplier;
+                    break;
+                case "FormThongKePhieu":
+                    FormThongKePhieu F_Stock = new FormThongKePhieu();
                     form = F_Stock;
                     break;
                 default:

@@ -87,6 +87,8 @@
     <Compile Include="DAL_Role.cs" />
     <Compile Include="DAL_StockVoucher.cs" />
     <Compile Include="DAL_Supplier.cs" />
+    <Compile Include="DAL_ThongKePhieu.cs" />
+    <Compile Include="DAL_ThongKeSanPham.cs" />
     <Compile Include="DAL_VoucherDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
