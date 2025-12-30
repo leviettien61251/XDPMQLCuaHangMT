@@ -30,41 +30,43 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBoxSearchVoucherIN = new System.Windows.Forms.TextBox();
-            this.buttonSearchVoucherIN = new System.Windows.Forms.Button();
             this.dgvDetailProduct = new System.Windows.Forms.DataGridView();
-            this.labelCreatedDate = new System.Windows.Forms.Label();
-            this.textBoxVoucherId = new System.Windows.Forms.TextBox();
-            this.labelVoucherId = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonSearchVoucherIN = new System.Windows.Forms.Button();
+            this.textBoxSearchVoucherIN = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.buttonSearchProduct = new System.Windows.Forms.Button();
-            this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonAddProductToDetail = new System.Windows.Forms.Button();
-            this.buttonConfirm = new System.Windows.Forms.Button();
-            this.buttonRemoveProductFromDetail = new System.Windows.Forms.Button();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxQuantity = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.buttonAddProductToDetail = new System.Windows.Forms.Button();
+            this.buttonConfirm = new System.Windows.Forms.Button();
+            this.buttonRemoveProductFromDetail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpCreatedDate = new System.Windows.Forms.DateTimePicker();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.labelVoucherId = new System.Windows.Forms.Label();
+            this.textBoxVoucherId = new System.Windows.Forms.TextBox();
+            this.labelCreatedDate = new System.Windows.Forms.Label();
+            this.labelUnitPrice = new System.Windows.Forms.Label();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailProduct)).BeginInit();
+            this.panel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
+            this.panel2.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -101,27 +103,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(946, 596);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // textBoxSearchVoucherIN
-            // 
-            this.textBoxSearchVoucherIN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSearchVoucherIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchVoucherIN.Location = new System.Drawing.Point(3, 4);
-            this.textBoxSearchVoucherIN.Name = "textBoxSearchVoucherIN";
-            this.textBoxSearchVoucherIN.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBoxSearchVoucherIN.Size = new System.Drawing.Size(801, 24);
-            this.textBoxSearchVoucherIN.TabIndex = 0;
-            this.textBoxSearchVoucherIN.WordWrap = false;
-            // 
-            // buttonSearchVoucherIN
-            // 
-            this.buttonSearchVoucherIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchVoucherIN.Location = new System.Drawing.Point(810, 3);
-            this.buttonSearchVoucherIN.Name = "buttonSearchVoucherIN";
-            this.buttonSearchVoucherIN.Size = new System.Drawing.Size(124, 28);
-            this.buttonSearchVoucherIN.TabIndex = 1;
-            this.buttonSearchVoucherIN.Text = "Tìm kiếm";
-            this.buttonSearchVoucherIN.UseVisualStyleBackColor = true;
-            // 
             // dgvDetailProduct
             // 
             this.dgvDetailProduct.AllowUserToAddRows = false;
@@ -136,34 +117,37 @@
             this.dgvDetailProduct.Size = new System.Drawing.Size(940, 550);
             this.dgvDetailProduct.TabIndex = 2;
             // 
-            // labelCreatedDate
+            // panel4
             // 
-            this.labelCreatedDate.AutoSize = true;
-            this.labelCreatedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCreatedDate.Location = new System.Drawing.Point(6, 30);
-            this.labelCreatedDate.Name = "labelCreatedDate";
-            this.labelCreatedDate.Size = new System.Drawing.Size(125, 18);
-            this.labelCreatedDate.TabIndex = 2;
-            this.labelCreatedDate.Text = "Ngày tạo phiếu:";
+            this.tableLayoutPanel2.SetColumnSpan(this.panel4, 2);
+            this.panel4.Controls.Add(this.buttonSearchVoucherIN);
+            this.panel4.Controls.Add(this.textBoxSearchVoucherIN);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(940, 34);
+            this.panel4.TabIndex = 3;
             // 
-            // textBoxVoucherId
+            // buttonSearchVoucherIN
             // 
-            this.textBoxVoucherId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxVoucherId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxVoucherId.Location = new System.Drawing.Point(135, 3);
-            this.textBoxVoucherId.Name = "textBoxVoucherId";
-            this.textBoxVoucherId.Size = new System.Drawing.Size(164, 24);
-            this.textBoxVoucherId.TabIndex = 1;
+            this.buttonSearchVoucherIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearchVoucherIN.Location = new System.Drawing.Point(810, 3);
+            this.buttonSearchVoucherIN.Name = "buttonSearchVoucherIN";
+            this.buttonSearchVoucherIN.Size = new System.Drawing.Size(124, 28);
+            this.buttonSearchVoucherIN.TabIndex = 1;
+            this.buttonSearchVoucherIN.Text = "Tìm kiếm";
+            this.buttonSearchVoucherIN.UseVisualStyleBackColor = true;
             // 
-            // labelVoucherId
+            // textBoxSearchVoucherIN
             // 
-            this.labelVoucherId.AutoSize = true;
-            this.labelVoucherId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVoucherId.Location = new System.Drawing.Point(6, 6);
-            this.labelVoucherId.Name = "labelVoucherId";
-            this.labelVoucherId.Size = new System.Drawing.Size(112, 16);
-            this.labelVoucherId.TabIndex = 0;
-            this.labelVoucherId.Text = "Mã phiếu nhập:";
+            this.textBoxSearchVoucherIN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSearchVoucherIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchVoucherIN.Location = new System.Drawing.Point(3, 4);
+            this.textBoxSearchVoucherIN.Name = "textBoxSearchVoucherIN";
+            this.textBoxSearchVoucherIN.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxSearchVoucherIN.Size = new System.Drawing.Size(801, 24);
+            this.textBoxSearchVoucherIN.TabIndex = 0;
+            this.textBoxSearchVoucherIN.WordWrap = false;
             // 
             // tableLayoutPanel3
             // 
@@ -197,6 +181,32 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(940, 467);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
+            // dgvProduct
+            // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel5.SetColumnSpan(this.dgvProduct, 2);
+            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProduct.Location = new System.Drawing.Point(3, 43);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
+            this.dgvProduct.RowHeadersWidth = 62;
+            this.dgvProduct.Size = new System.Drawing.Size(934, 421);
+            this.dgvProduct.TabIndex = 2;
+            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
+            // 
+            // panel2
+            // 
+            this.tableLayoutPanel5.SetColumnSpan(this.panel2, 2);
+            this.panel2.Controls.Add(this.textBoxSearchProduct);
+            this.panel2.Controls.Add(this.buttonSearchProduct);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(934, 34);
+            this.panel2.TabIndex = 3;
+            // 
             // textBoxSearchProduct
             // 
             this.textBoxSearchProduct.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -218,21 +228,6 @@
             this.buttonSearchProduct.UseVisualStyleBackColor = true;
             this.buttonSearchProduct.Click += new System.EventHandler(this.buttonSearchProduct_Click);
             // 
-            // dgvProduct
-            // 
-            this.dgvProduct.AllowUserToAddRows = false;
-            this.dgvProduct.AllowUserToDeleteRows = false;
-            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel5.SetColumnSpan(this.dgvProduct, 2);
-            this.dgvProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProduct.Location = new System.Drawing.Point(3, 43);
-            this.dgvProduct.Name = "dgvProduct";
-            this.dgvProduct.ReadOnly = true;
-            this.dgvProduct.RowHeadersWidth = 62;
-            this.dgvProduct.Size = new System.Drawing.Size(934, 421);
-            this.dgvProduct.TabIndex = 2;
-            this.dgvProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduct_CellClick);
-            // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
@@ -249,6 +244,50 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(940, 47);
             this.tableLayoutPanel6.TabIndex = 1;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.textBoxQuantity);
+            this.flowLayoutPanel2.Controls.Add(this.labelUnitPrice);
+            this.flowLayoutPanel2.Controls.Add(this.txtUnitPrice);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.tableLayoutPanel6.SetRowSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(447, 41);
+            this.flowLayoutPanel2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Số lượng:";
+            // 
+            // textBoxQuantity
+            // 
+            this.textBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxQuantity.Location = new System.Drawing.Point(84, 3);
+            this.textBoxQuantity.Name = "textBoxQuantity";
+            this.textBoxQuantity.Size = new System.Drawing.Size(136, 22);
+            this.textBoxQuantity.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.buttonAddProductToDetail);
+            this.panel3.Controls.Add(this.buttonConfirm);
+            this.panel3.Controls.Add(this.buttonRemoveProductFromDetail);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(456, 3);
+            this.panel3.Name = "panel3";
+            this.tableLayoutPanel6.SetRowSpan(this.panel3, 2);
+            this.panel3.Size = new System.Drawing.Size(481, 41);
+            this.panel3.TabIndex = 4;
             // 
             // buttonAddProductToDetail
             // 
@@ -286,36 +325,6 @@
             this.buttonRemoveProductFromDetail.UseVisualStyleBackColor = true;
             this.buttonRemoveProductFromDetail.Click += new System.EventHandler(this.buttonRemoveProductFromDetail_Click);
             // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.label1);
-            this.flowLayoutPanel2.Controls.Add(this.textBoxQuantity);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.tableLayoutPanel6.SetRowSpan(this.flowLayoutPanel2, 2);
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(447, 41);
-            this.flowLayoutPanel2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Số lượng:";
-            // 
-            // textBoxQuantity
-            // 
-            this.textBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuantity.Location = new System.Drawing.Point(81, 3);
-            this.textBoxQuantity.Name = "textBoxQuantity";
-            this.textBoxQuantity.Size = new System.Drawing.Size(354, 22);
-            this.textBoxQuantity.TabIndex = 1;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtpCreatedDate);
@@ -337,65 +346,79 @@
             this.dtpCreatedDate.Size = new System.Drawing.Size(164, 20);
             this.dtpCreatedDate.TabIndex = 3;
             // 
-            // panel2
+            // labelVoucherId
             // 
-            this.tableLayoutPanel5.SetColumnSpan(this.panel2, 2);
-            this.panel2.Controls.Add(this.textBoxSearchProduct);
-            this.panel2.Controls.Add(this.buttonSearchProduct);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(934, 34);
-            this.panel2.TabIndex = 3;
+            this.labelVoucherId.AutoSize = true;
+            this.labelVoucherId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVoucherId.Location = new System.Drawing.Point(6, 6);
+            this.labelVoucherId.Name = "labelVoucherId";
+            this.labelVoucherId.Size = new System.Drawing.Size(116, 16);
+            this.labelVoucherId.TabIndex = 0;
+            this.labelVoucherId.Text = "Mã phiếu nhập:";
             // 
-            // panel3
+            // textBoxVoucherId
             // 
-            this.panel3.Controls.Add(this.buttonAddProductToDetail);
-            this.panel3.Controls.Add(this.buttonConfirm);
-            this.panel3.Controls.Add(this.buttonRemoveProductFromDetail);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(456, 3);
-            this.panel3.Name = "panel3";
-            this.tableLayoutPanel6.SetRowSpan(this.panel3, 2);
-            this.panel3.Size = new System.Drawing.Size(481, 41);
-            this.panel3.TabIndex = 4;
+            this.textBoxVoucherId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxVoucherId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxVoucherId.Location = new System.Drawing.Point(135, 3);
+            this.textBoxVoucherId.Name = "textBoxVoucherId";
+            this.textBoxVoucherId.Size = new System.Drawing.Size(164, 24);
+            this.textBoxVoucherId.TabIndex = 1;
             // 
-            // panel4
+            // labelCreatedDate
             // 
-            this.tableLayoutPanel2.SetColumnSpan(this.panel4, 2);
-            this.panel4.Controls.Add(this.buttonSearchVoucherIN);
-            this.panel4.Controls.Add(this.textBoxSearchVoucherIN);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(940, 34);
-            this.panel4.TabIndex = 3;
+            this.labelCreatedDate.AutoSize = true;
+            this.labelCreatedDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreatedDate.Location = new System.Drawing.Point(6, 30);
+            this.labelCreatedDate.Name = "labelCreatedDate";
+            this.labelCreatedDate.Size = new System.Drawing.Size(125, 18);
+            this.labelCreatedDate.TabIndex = 2;
+            this.labelCreatedDate.Text = "Ngày tạo phiếu:";
             // 
-            // FormVoucherIN
+            // labelUnitPrice
+            // 
+            this.labelUnitPrice.AutoSize = true;
+            this.labelUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUnitPrice.Location = new System.Drawing.Point(226, 0);
+            this.labelUnitPrice.Name = "labelUnitPrice";
+            this.labelUnitPrice.Size = new System.Drawing.Size(67, 16);
+            this.labelUnitPrice.TabIndex = 2;
+            this.labelUnitPrice.Text = "Giá tiền:";
+            // 
+            // txtUnitPrice
+            // 
+            this.txtUnitPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUnitPrice.Location = new System.Drawing.Point(299, 3);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(136, 22);
+            this.txtUnitPrice.TabIndex = 3;
+            // 
+            // FormVoucherDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 602);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FormVoucherIN";
+            this.Name = "FormVoucherDetail";
             this.Text = "Phiếu nhập kho";
             this.Load += new System.EventHandler(this.FormVoucherIN_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetailProduct)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,5 +450,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label labelUnitPrice;
+        private System.Windows.Forms.TextBox txtUnitPrice;
     }
 }

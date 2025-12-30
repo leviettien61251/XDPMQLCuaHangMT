@@ -63,7 +63,7 @@ namespace BUS
         {
             try
             {
-                int rowAffected = dalVoucherDetail.InsertVoucherDetailSolid(voucherId, type, voucherDetail.productId, productName, voucherDetail.quantity);
+                int rowAffected = dalVoucherDetail.InsertVoucherDetailSolid(voucherId, type, voucherDetail.productId, productName, voucherDetail.quantity, voucherDetail.unitPrice);
                 return rowAffected > 0;
             }
             catch (Exception)

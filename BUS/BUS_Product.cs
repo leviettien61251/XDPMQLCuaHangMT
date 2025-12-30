@@ -29,5 +29,16 @@ namespace BUS
                 throw;
             }
         }
+        public DataTable GetProductById(int id)
+        {
+            try
+            {
+                return dalProduct.GetProductById(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

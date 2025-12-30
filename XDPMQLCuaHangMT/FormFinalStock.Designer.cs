@@ -30,9 +30,9 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvExport = new System.Windows.Forms.DataGridView();
             this.buttonExport = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.dgvExport = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExport)).BeginInit();
             this.SuspendLayout();
@@ -69,19 +69,6 @@
             this.label1.Text = "Phiếu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dgvExport
-            // 
-            this.dgvExport.AllowUserToAddRows = false;
-            this.dgvExport.AllowUserToDeleteRows = false;
-            this.dgvExport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.dgvExport, 2);
-            this.dgvExport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvExport.Location = new System.Drawing.Point(3, 74);
-            this.dgvExport.Name = "dgvExport";
-            this.dgvExport.ReadOnly = true;
-            this.dgvExport.Size = new System.Drawing.Size(978, 430);
-            this.dgvExport.TabIndex = 1;
-            // 
             // buttonExport
             // 
             this.buttonExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -104,6 +91,19 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
+            // dgvExport
+            // 
+            this.dgvExport.AllowUserToAddRows = false;
+            this.dgvExport.AllowUserToDeleteRows = false;
+            this.dgvExport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel1.SetColumnSpan(this.dgvExport, 2);
+            this.dgvExport.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvExport.Location = new System.Drawing.Point(3, 74);
+            this.dgvExport.Name = "dgvExport";
+            this.dgvExport.ReadOnly = true;
+            this.dgvExport.Size = new System.Drawing.Size(978, 430);
+            this.dgvExport.TabIndex = 1;
+            // 
             // FormFinalStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,8 +124,8 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvExport;
         private System.Windows.Forms.Button buttonExport;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.DataGridView dgvExport;
     }
 }
