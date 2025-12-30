@@ -10,6 +10,7 @@ namespace XDPMQLCuaHangMT
     public partial class FormVoucherDetail : Form
     {
         protected int employeeId__, stockVoucherId__, productId__, productStockQty__;
+        protected decimal costPrice__;
         protected string productName__, voucherType__, note__;
         VoucherDetail voucherDetail;
         BUS_Product busProduct = new BUS_Product();
@@ -71,6 +72,7 @@ namespace XDPMQLCuaHangMT
             dgvDetailProduct.Columns["voucherId"].HeaderText = "Mã phiếu nhập";
             dgvDetailProduct.Columns["productId"].HeaderText = "Mã sản phẩm";
             dgvDetailProduct.Columns["quantity"].HeaderText = "Số lượng";
+            dgvDetailProduct.Columns["unitPrice"].HeaderText = "Đơn giá";
 
         }
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,6 +80,9 @@ namespace XDPMQLCuaHangMT
             productId__ = Convert.ToInt32(dgvProduct.CurrentRow.Cells["Mã sản phẩm"].Value);
             productName__ = dgvProduct.CurrentRow.Cells["Tên sản phẩm"].Value.ToString();
             productStockQty__ = Convert.ToInt32(dgvProduct.CurrentRow.Cells["Tồn kho"].Value);
+            txtUnitPrice.Text = dgvProduct.CurrentRow.Cells["Giá nhập"].Value.ToString();
+
+
         }
 
         private void buttonConfirm_Click(object sender, EventArgs e)
@@ -120,10 +125,23 @@ namespace XDPMQLCuaHangMT
                 }
             }
 
+            if (string.IsNullOrEmpty(txtUnitPrice.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đơn giá sản phẩm!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             voucherDetail = new VoucherDetail();
             voucherDetail.productId = productId__;
             voucherDetail.voucherId = stockVoucherId__;
             voucherDetail.quantity = quantity__;
+
+            if (this.voucherType__.Equals("IN"))
+            {
+                costPrice__ = Convert.ToDecimal(txtUnitPrice.Text);//cost price
+                voucherDetail.unitPrice = costPrice__;
+            }
+
             MessageBox.Show("Xác nhận chọn sản phẩm: " + productName__, "Thông báo", MessageBoxButtons.OKCancel);
             productList.Add(voucherDetail);
             Load_ProductsToDetail();

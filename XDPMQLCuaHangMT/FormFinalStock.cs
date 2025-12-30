@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
+using XDPMQLCuaHangMT.ThongKe;
 namespace XDPMQLCuaHangMT
 {
     public partial class FormFinalStock : Form
@@ -13,6 +14,7 @@ namespace XDPMQLCuaHangMT
         protected string voucherType__, note__;
         BUS_StockVoucher busStockVoucher = new BUS_StockVoucher();
         BUS_VoucherDetail busVoucherDetail = new BUS_VoucherDetail();
+
         private ExcelHandle excelHandle = new ExcelHandle();
         StockVoucher stockVoucher;
         public FormFinalStock()
@@ -31,6 +33,7 @@ namespace XDPMQLCuaHangMT
         private void FormFinalStock_Load(object sender, EventArgs e)
         {
             Load_Data();
+            //this.reportViewer1.RefreshReport();
         }
 
         public void Load_Data()
@@ -41,6 +44,7 @@ namespace XDPMQLCuaHangMT
             dgvExport.Columns["voucherId"].HeaderText = "Mã phiếu nhập";
             dgvExport.Columns["productId"].HeaderText = "Mã sản phẩm";
             dgvExport.Columns["quantity"].HeaderText = "Số lượng";
+            dgvExport.Columns["unitPrice"].HeaderText = "Đơn giá";
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -70,6 +74,7 @@ namespace XDPMQLCuaHangMT
                     string type_ = voucherType__;
                     int performedBy = this.employeeId__;
                     string productName = "asd";
+
                     busVoucherDetail.InsertVoucherDetailSolid(item, productName, type_, voucherId_);
                 }
             }
@@ -78,10 +83,18 @@ namespace XDPMQLCuaHangMT
                 MessageBox.Show(ex.Message);
             }
 
+            if (voucherType__.Equals("IN"))
+            {
+
+                FormRpPhieuNhapKho rp = new FormRpPhieuNhapKho(voucherId_);
+                rp.Show();
+
+            }
+
             if (i == n)
             {
                 MessageBox.Show("Xuất phiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                //this.Close();
             }
             else
             {
