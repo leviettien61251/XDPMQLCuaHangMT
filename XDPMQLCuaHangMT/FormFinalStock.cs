@@ -88,7 +88,14 @@ namespace XDPMQLCuaHangMT
 
                 FormRpPhieuNhapKho rp = new FormRpPhieuNhapKho(voucherId_);
                 rp.Show();
+                rp.MaximumSize = this.MaximumSize;
 
+            }
+            else
+            {
+                FormRpPhieuXuatKho rp = new FormRpPhieuXuatKho(voucherId_);
+                rp.Show();
+                rp.MaximumSize = this.MaximumSize;
             }
 
             if (i == n)
