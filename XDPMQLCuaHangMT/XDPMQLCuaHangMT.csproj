@@ -161,6 +161,7 @@
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -254,6 +255,41 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="ThongKe\CrystalReportPhieuNhapKho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPhieuNhapKho.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThongKe\CrystalReportPhieuXuatKho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportPhieuXuatKho.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ThongKe\CrystalReportTongHopTonKho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportTongHopTonKho.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\FormCrpPhieuNhapKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\FormCrpPhieuNhapKho.Designer.cs">
+      <DependentUpon>FormCrpPhieuNhapKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\FormCrpPhieuXuatKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\FormCrpPhieuXuatKho.Designer.cs">
+      <DependentUpon>FormCrpPhieuXuatKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThongKe\FormCrpTongHopTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThongKe\FormCrpTongHopTonKho.Designer.cs">
+      <DependentUpon>FormCrpTongHopTonKho.cs</DependentUpon>
+    </Compile>
     <Compile Include="ThongKe\FormRpPhieuNhapKho.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +404,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ThongKe\CrystalReportPhieuNhapKho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPhieuNhapKho.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\CrystalReportPhieuXuatKho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportPhieuXuatKho.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\CrystalReportTongHopTonKho.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportTongHopTonKho.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\FormCrpPhieuNhapKho.resx">
+      <DependentUpon>FormCrpPhieuNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\FormCrpPhieuXuatKho.resx">
+      <DependentUpon>FormCrpPhieuXuatKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ThongKe\FormCrpTongHopTonKho.resx">
+      <DependentUpon>FormCrpTongHopTonKho.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\FormRpPhieuNhapKho.resx">
       <DependentUpon>FormRpPhieuNhapKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -466,6 +523,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
