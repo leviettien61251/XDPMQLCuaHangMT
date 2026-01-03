@@ -85,15 +85,14 @@ namespace XDPMQLCuaHangMT
 
             if (voucherType__.Equals("IN"))
             {
-
-                FormRpPhieuNhapKho rp = new FormRpPhieuNhapKho(voucherId_);
+                FormCrpPhieuNhapKho rp = new FormCrpPhieuNhapKho(voucherId_);
                 rp.Show();
                 rp.MaximumSize = this.MaximumSize;
 
             }
             else
             {
-                FormRpPhieuXuatKho rp = new FormRpPhieuXuatKho(voucherId_);
+                FormCrpPhieuXuatKho rp = new FormCrpPhieuXuatKho(voucherId_);
                 rp.Show();
                 rp.MaximumSize = this.MaximumSize;
             }
