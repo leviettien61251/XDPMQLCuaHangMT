@@ -1,4 +1,5 @@
 ﻿using DAL;
+using System;
 using System.Data;
 namespace BUS
 {
@@ -14,6 +15,9 @@ namespace BUS
         {
             return dalThongKeSanPham.ThongKeSanPhamSapHetHang(order);
         }
-
+        public DataTable ThongKeSanPhamTonKhoTheoKy(string begin, string end)
+        {
+            return dalThongKeSanPham.ThongKeTonKhoTheoKy(begin, end);
+        }
     }
 }

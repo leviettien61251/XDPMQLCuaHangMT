@@ -267,10 +267,11 @@
       <DependentUpon>CrystalReportPhieuXuatKho.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ThongKe\CrystalReportTongHopTonKho.cs">
+    <Compile Include="ThongKe\CrystalReportTongHopKho.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportTongHopTonKho.rpt</DependentUpon>
+      <DependentUpon>CrystalReportTongHopKho.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ThongKe\FormCrpPhieuNhapKho.cs">
       <SubType>Form</SubType>
@@ -412,9 +413,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportPhieuXuatKho.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\CrystalReportTongHopTonKho.rpt">
+    <EmbeddedResource Include="ThongKe\CrystalReportTongHopKho.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportTongHopTonKho.cs</LastGenOutput>
+      <LastGenOutput>CrystalReportTongHopKho.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\FormCrpPhieuNhapKho.resx">
       <DependentUpon>FormCrpPhieuNhapKho.cs</DependentUpon>
