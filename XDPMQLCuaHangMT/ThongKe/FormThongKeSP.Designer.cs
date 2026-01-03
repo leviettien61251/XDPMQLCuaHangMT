@@ -39,6 +39,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,7 +111,8 @@
             this.cboThongKe.FormattingEnabled = true;
             this.cboThongKe.Items.AddRange(new object[] {
             "Danh sách tồn kho",
-            "Danh sách sản phẩm sắp hết"});
+            "Danh sách sản phẩm sắp hết",
+            "Tổng hợp tồn kho"});
             this.cboThongKe.Location = new System.Drawing.Point(14, 46);
             this.cboThongKe.Name = "cboThongKe";
             this.cboThongKe.Size = new System.Drawing.Size(214, 21);
@@ -128,6 +131,8 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -138,9 +143,10 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(93, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
             this.dateTimePicker1.TabIndex = 1;
             // 
             // label2
@@ -165,6 +171,23 @@
             this.tableLayoutPanel1.SetRowSpan(this.dgvDanhSach, 2);
             this.dgvDanhSach.Size = new System.Drawing.Size(1498, 404);
             this.dgvDanhSach.TabIndex = 2;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(270, 6);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(117, 20);
+            this.dateTimePicker2.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(226, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "đến";
             // 
             // FormThongKeSP
             // 
@@ -198,5 +221,7 @@
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cboTop;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label4;
     }
 }

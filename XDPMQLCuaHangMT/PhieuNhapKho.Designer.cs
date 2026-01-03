@@ -7483,6 +7483,10 @@ namespace XDPMQLCuaHangMT {
             
             private global::System.Data.DataColumn columnTotal_OUT;
             
+            private global::System.Data.DataColumn columnTotalM_IN;
+            
+            private global::System.Data.DataColumn columnTotalM_OUT;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public usp_ThongKeSanPhamTonKhoTheoKyDataTable() {
@@ -7558,6 +7562,22 @@ namespace XDPMQLCuaHangMT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalM_INColumn {
+                get {
+                    return this.columnTotalM_IN;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalM_OUTColumn {
+                get {
+                    return this.columnTotalM_OUT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -7593,14 +7613,16 @@ namespace XDPMQLCuaHangMT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public usp_ThongKeSanPhamTonKhoTheoKyRow Addusp_ThongKeSanPhamTonKhoTheoKyRow(string Tên_sản_phẩm, short Tồn_kho, int Total_IN, int Total_OUT) {
+            public usp_ThongKeSanPhamTonKhoTheoKyRow Addusp_ThongKeSanPhamTonKhoTheoKyRow(string Tên_sản_phẩm, short Tồn_kho, int Total_IN, int Total_OUT, int TotalM_IN, int TotalM_OUT) {
                 usp_ThongKeSanPhamTonKhoTheoKyRow rowusp_ThongKeSanPhamTonKhoTheoKyRow = ((usp_ThongKeSanPhamTonKhoTheoKyRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Tên_sản_phẩm,
                         Tồn_kho,
                         Total_IN,
-                        Total_OUT};
+                        Total_OUT,
+                        TotalM_IN,
+                        TotalM_OUT};
                 rowusp_ThongKeSanPhamTonKhoTheoKyRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowusp_ThongKeSanPhamTonKhoTheoKyRow);
                 return rowusp_ThongKeSanPhamTonKhoTheoKyRow;
@@ -7635,6 +7657,8 @@ namespace XDPMQLCuaHangMT {
                 this.columnTồn_kho = base.Columns["Tồn kho"];
                 this.columnTotal_IN = base.Columns["Total IN"];
                 this.columnTotal_OUT = base.Columns["Total OUT"];
+                this.columnTotalM_IN = base.Columns["TotalM IN"];
+                this.columnTotalM_OUT = base.Columns["TotalM OUT"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7650,6 +7674,10 @@ namespace XDPMQLCuaHangMT {
                 base.Columns.Add(this.columnTotal_IN);
                 this.columnTotal_OUT = new global::System.Data.DataColumn("Total OUT", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotal_OUT);
+                this.columnTotalM_IN = new global::System.Data.DataColumn("TotalM IN", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalM_IN);
+                this.columnTotalM_OUT = new global::System.Data.DataColumn("TotalM OUT", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalM_OUT);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMã_sản_phẩm}, true));
                 this.columnMã_sản_phẩm.AutoIncrement = true;
@@ -7661,6 +7689,8 @@ namespace XDPMQLCuaHangMT {
                 this.columnTồn_kho.AllowDBNull = false;
                 this.columnTotal_IN.ReadOnly = true;
                 this.columnTotal_OUT.ReadOnly = true;
+                this.columnTotalM_IN.ReadOnly = true;
+                this.columnTotalM_OUT.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10242,6 +10272,40 @@ namespace XDPMQLCuaHangMT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalM_IN {
+                get {
+                    try {
+                        return ((int)(this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_INColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalM IN\' in table \'usp_ThongKeSanPhamTonKhoTheoKy\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_INColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalM_OUT {
+                get {
+                    try {
+                        return ((int)(this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_OUTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalM OUT\' in table \'usp_ThongKeSanPhamTonKhoTheoKy\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_OUTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTotal_INNull() {
                 return this.IsNull(this.tableusp_ThongKeSanPhamTonKhoTheoKy.Total_INColumn);
             }
@@ -10262,6 +10326,30 @@ namespace XDPMQLCuaHangMT {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTotal_OUTNull() {
                 this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.Total_OUTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalM_INNull() {
+                return this.IsNull(this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_INColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalM_INNull() {
+                this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_INColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalM_OUTNull() {
+                return this.IsNull(this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_OUTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalM_OUTNull() {
+                this[this.tableusp_ThongKeSanPhamTonKhoTheoKy.TotalM_OUTColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -16771,6 +16859,8 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             tableMapping.ColumnMappings.Add("Tồn kho", "Tồn kho");
             tableMapping.ColumnMappings.Add("Total IN", "Total IN");
             tableMapping.ColumnMappings.Add("Total OUT", "Total OUT");
+            tableMapping.ColumnMappings.Add("TotalM IN", "TotalM IN");
+            tableMapping.ColumnMappings.Add("TotalM OUT", "TotalM OUT");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

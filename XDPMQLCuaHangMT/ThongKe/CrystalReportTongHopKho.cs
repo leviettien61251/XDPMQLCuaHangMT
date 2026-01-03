@@ -16,14 +16,14 @@ namespace XDPMQLCuaHangMT.ThongKe {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CrystalReportTongHopTonKho : ReportClass {
+    public class CrystalReportTongHopKho : ReportClass {
         
-        public CrystalReportTongHopTonKho() {
+        public CrystalReportTongHopKho() {
         }
         
         public override string ResourceName {
             get {
-                return "CrystalReportTongHopTonKho.rpt";
+                return "CrystalReportTongHopKho.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace XDPMQLCuaHangMT.ThongKe {
         
         public override string FullResourceName {
             get {
-                return "XDPMQLCuaHangMT.ThongKe.CrystalReportTongHopTonKho.rpt";
+                return "XDPMQLCuaHangMT.ThongKe.CrystalReportTongHopKho.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace XDPMQLCuaHangMT.ThongKe {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCrystalReportTongHopTonKho : Component, ICachedReport {
+    public class CachedCrystalReportTongHopKho : Component, ICachedReport {
         
-        public CachedCrystalReportTongHopTonKho() {
+        public CachedCrystalReportTongHopKho() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace XDPMQLCuaHangMT.ThongKe {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CrystalReportTongHopTonKho rpt = new CrystalReportTongHopTonKho();
+            CrystalReportTongHopKho rpt = new CrystalReportTongHopKho();
             rpt.Site = this.Site;
             return rpt;
         }

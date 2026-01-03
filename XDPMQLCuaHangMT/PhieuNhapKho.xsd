@@ -859,7 +859,7 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="usp_ThongKeSanPhamTonKhoTheoKyTableAdapter" GeneratorDataComponentClassName="usp_ThongKeSanPhamTonKhoTheoKyTableAdapter" Name="usp_ThongKeSanPhamTonKhoTheoKy" UserDataComponentName="usp_ThongKeSanPhamTonKhoTheoKyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="cuaHangMayTinh3ConnectionString (Settings)" DbObjectName="cuaHangMayTinh3.dbo.usp_ThongKeSanPhamTonKhoTheoKy" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="cuaHangMayTinh3ConnectionString (Settings)" DbObjectName="cuaHangMayTinh3.dbo.usp_ThongKeSanPhamTonKhoTheoKy" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.usp_ThongKeSanPhamTonKhoTheoKy</CommandText>
@@ -878,6 +878,8 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
               <Mapping SourceColumn="Tồn kho" DataSetColumn="Tồn kho" />
               <Mapping SourceColumn="Total IN" DataSetColumn="Total IN" />
               <Mapping SourceColumn="Total OUT" DataSetColumn="Total OUT" />
+              <Mapping SourceColumn="TotalM IN" DataSetColumn="TotalM IN" />
+              <Mapping SourceColumn="TotalM OUT" DataSetColumn="TotalM OUT" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -952,67 +954,67 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
   <xs:element name="PhieuNhapKho" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="PhieuNhapKho" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PhieuNhapKho">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Accounts" msprop:Generator_RowClassName="AccountsRow" msprop:Generator_RowEvHandlerName="AccountsRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountsRowDeleted" msprop:Generator_RowDeletingName="AccountsRowDeleting" msprop:Generator_RowEvArgName="AccountsRowChangeEvent" msprop:Generator_TablePropName="Accounts" msprop:Generator_RowChangedName="AccountsRowChanged" msprop:Generator_UserTableName="Accounts" msprop:Generator_RowChangingName="AccountsRowChanging" msprop:Generator_TableClassName="AccountsDataTable" msprop:Generator_TableVarName="tableAccounts">
+        <xs:element name="Accounts" msprop:Generator_RowEvHandlerName="AccountsRowChangeEventHandler" msprop:Generator_RowDeletedName="AccountsRowDeleted" msprop:Generator_RowDeletingName="AccountsRowDeleting" msprop:Generator_RowEvArgName="AccountsRowChangeEvent" msprop:Generator_TablePropName="Accounts" msprop:Generator_RowChangedName="AccountsRowChanged" msprop:Generator_UserTableName="Accounts" msprop:Generator_RowChangingName="AccountsRowChanging" msprop:Generator_RowClassName="AccountsRow" msprop:Generator_TableClassName="AccountsDataTable" msprop:Generator_TableVarName="tableAccounts">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="AccountId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="AccountId" msprop:Generator_ColumnPropNameInTable="AccountIdColumn" msprop:Generator_ColumnPropNameInRow="AccountId" msprop:Generator_ColumnVarNameInTable="columnAccountId" type="xs:short" />
-              <xs:element name="EmployeeId" msprop:Generator_UserColumnName="EmployeeId" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" type="xs:short" />
-              <xs:element name="Username" msprop:Generator_UserColumnName="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_ColumnVarNameInTable="columnUsername">
+              <xs:element name="AccountId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="AccountIdColumn" msprop:Generator_ColumnPropNameInRow="AccountId" msprop:Generator_UserColumnName="AccountId" msprop:Generator_ColumnVarNameInTable="columnAccountId" type="xs:short" />
+              <xs:element name="EmployeeId" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_UserColumnName="EmployeeId" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" type="xs:short" />
+              <xs:element name="Username" msprop:Generator_ColumnPropNameInTable="UsernameColumn" msprop:Generator_ColumnPropNameInRow="Username" msprop:Generator_UserColumnName="Username" msprop:Generator_ColumnVarNameInTable="columnUsername">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PasswordHash" msprop:Generator_UserColumnName="PasswordHash" msprop:Generator_ColumnPropNameInTable="PasswordHashColumn" msprop:Generator_ColumnPropNameInRow="PasswordHash" msprop:Generator_ColumnVarNameInTable="columnPasswordHash">
+              <xs:element name="PasswordHash" msprop:Generator_ColumnPropNameInTable="PasswordHashColumn" msprop:Generator_ColumnPropNameInRow="PasswordHash" msprop:Generator_UserColumnName="PasswordHash" msprop:Generator_ColumnVarNameInTable="columnPasswordHash">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RoleId" msprop:Generator_UserColumnName="RoleId" msprop:Generator_ColumnPropNameInTable="RoleIdColumn" msprop:Generator_ColumnPropNameInRow="RoleId" msprop:Generator_ColumnVarNameInTable="columnRoleId" type="xs:short" />
-              <xs:element name="IsActive" msprop:Generator_UserColumnName="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" type="xs:boolean" />
-              <xs:element name="CreatedAt" msprop:Generator_UserColumnName="CreatedAt" msprop:Generator_ColumnPropNameInTable="CreatedAtColumn" msprop:Generator_ColumnPropNameInRow="CreatedAt" msprop:Generator_ColumnVarNameInTable="columnCreatedAt" type="xs:dateTime" />
+              <xs:element name="RoleId" msprop:Generator_ColumnPropNameInTable="RoleIdColumn" msprop:Generator_ColumnPropNameInRow="RoleId" msprop:Generator_UserColumnName="RoleId" msprop:Generator_ColumnVarNameInTable="columnRoleId" type="xs:short" />
+              <xs:element name="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_UserColumnName="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" type="xs:boolean" />
+              <xs:element name="CreatedAt" msprop:Generator_ColumnPropNameInTable="CreatedAtColumn" msprop:Generator_ColumnPropNameInRow="CreatedAt" msprop:Generator_UserColumnName="CreatedAt" msprop:Generator_ColumnVarNameInTable="columnCreatedAt" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Employees" msprop:Generator_RowClassName="EmployeesRow" msprop:Generator_RowEvHandlerName="EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeesRowDeleted" msprop:Generator_RowDeletingName="EmployeesRowDeleting" msprop:Generator_RowEvArgName="EmployeesRowChangeEvent" msprop:Generator_TablePropName="Employees" msprop:Generator_RowChangedName="EmployeesRowChanged" msprop:Generator_UserTableName="Employees" msprop:Generator_RowChangingName="EmployeesRowChanging" msprop:Generator_TableClassName="EmployeesDataTable" msprop:Generator_TableVarName="tableEmployees">
+        <xs:element name="Employees" msprop:Generator_RowEvHandlerName="EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeesRowDeleted" msprop:Generator_RowDeletingName="EmployeesRowDeleting" msprop:Generator_RowEvArgName="EmployeesRowChangeEvent" msprop:Generator_TablePropName="Employees" msprop:Generator_RowChangedName="EmployeesRowChanged" msprop:Generator_UserTableName="Employees" msprop:Generator_RowChangingName="EmployeesRowChanging" msprop:Generator_RowClassName="EmployeesRow" msprop:Generator_TableClassName="EmployeesDataTable" msprop:Generator_TableVarName="tableEmployees">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="EmployeeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="EmployeeId" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" type="xs:short" />
-              <xs:element name="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName">
+              <xs:element name="EmployeeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_UserColumnName="EmployeeId" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" type="xs:short" />
+              <xs:element name="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_UserColumnName="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ImageURL" msprop:Generator_UserColumnName="ImageURL" msprop:Generator_ColumnPropNameInTable="ImageURLColumn" msprop:Generator_ColumnPropNameInRow="ImageURL" msprop:Generator_ColumnVarNameInTable="columnImageURL" minOccurs="0">
+              <xs:element name="ImageURL" msprop:Generator_ColumnPropNameInTable="ImageURLColumn" msprop:Generator_ColumnPropNameInRow="ImageURL" msprop:Generator_UserColumnName="ImageURL" msprop:Generator_ColumnVarNameInTable="columnImageURL" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" minOccurs="0">
+              <xs:element name="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="IsActive" msprop:Generator_UserColumnName="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" type="xs:boolean" />
-              <xs:element name="DeletedAt" msprop:Generator_UserColumnName="DeletedAt" msprop:Generator_ColumnPropNameInTable="DeletedAtColumn" msprop:Generator_ColumnPropNameInRow="DeletedAt" msprop:Generator_ColumnVarNameInTable="columnDeletedAt" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="DeletedBy" msprop:Generator_UserColumnName="DeletedBy" msprop:Generator_ColumnPropNameInTable="DeletedByColumn" msprop:Generator_ColumnPropNameInRow="DeletedBy" msprop:Generator_ColumnVarNameInTable="columnDeletedBy" type="xs:short" minOccurs="0" />
-              <xs:element name="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" minOccurs="0">
+              <xs:element name="IsActive" msprop:Generator_ColumnPropNameInTable="IsActiveColumn" msprop:Generator_ColumnPropNameInRow="IsActive" msprop:Generator_UserColumnName="IsActive" msprop:Generator_ColumnVarNameInTable="columnIsActive" type="xs:boolean" />
+              <xs:element name="DeletedAt" msprop:Generator_ColumnPropNameInTable="DeletedAtColumn" msprop:Generator_ColumnPropNameInRow="DeletedAt" msprop:Generator_UserColumnName="DeletedAt" msprop:Generator_ColumnVarNameInTable="columnDeletedAt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DeletedBy" msprop:Generator_ColumnPropNameInTable="DeletedByColumn" msprop:Generator_ColumnPropNameInRow="DeletedBy" msprop:Generator_UserColumnName="DeletedBy" msprop:Generator_ColumnVarNameInTable="columnDeletedBy" type="xs:short" minOccurs="0" />
+              <xs:element name="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_UserColumnName="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -1022,37 +1024,37 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Products" msprop:Generator_RowClassName="ProductsRow" msprop:Generator_RowEvHandlerName="ProductsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductsRowDeleted" msprop:Generator_RowDeletingName="ProductsRowDeleting" msprop:Generator_RowEvArgName="ProductsRowChangeEvent" msprop:Generator_TablePropName="Products" msprop:Generator_RowChangedName="ProductsRowChanged" msprop:Generator_UserTableName="Products" msprop:Generator_RowChangingName="ProductsRowChanging" msprop:Generator_TableClassName="ProductsDataTable" msprop:Generator_TableVarName="tableProducts">
+        <xs:element name="Products" msprop:Generator_RowEvHandlerName="ProductsRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductsRowDeleted" msprop:Generator_RowDeletingName="ProductsRowDeleting" msprop:Generator_RowEvArgName="ProductsRowChangeEvent" msprop:Generator_TablePropName="Products" msprop:Generator_RowChangedName="ProductsRowChanged" msprop:Generator_UserTableName="Products" msprop:Generator_RowChangingName="ProductsRowChanging" msprop:Generator_RowClassName="ProductsRow" msprop:Generator_TableClassName="ProductsDataTable" msprop:Generator_TableVarName="tableProducts">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ProductId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" type="xs:short" />
-              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName">
+              <xs:element name="ProductId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_UserColumnName="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" type="xs:short" />
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SupplierId" msprop:Generator_UserColumnName="SupplierId" msprop:Generator_ColumnPropNameInTable="SupplierIdColumn" msprop:Generator_ColumnPropNameInRow="SupplierId" msprop:Generator_ColumnVarNameInTable="columnSupplierId" type="xs:short" minOccurs="0" />
-              <xs:element name="Unit" msprop:Generator_UserColumnName="Unit" msprop:Generator_ColumnPropNameInTable="UnitColumn" msprop:Generator_ColumnPropNameInRow="Unit" msprop:Generator_ColumnVarNameInTable="columnUnit" minOccurs="0">
+              <xs:element name="SupplierId" msprop:Generator_ColumnPropNameInTable="SupplierIdColumn" msprop:Generator_ColumnPropNameInRow="SupplierId" msprop:Generator_UserColumnName="SupplierId" msprop:Generator_ColumnVarNameInTable="columnSupplierId" type="xs:short" minOccurs="0" />
+              <xs:element name="Unit" msprop:Generator_ColumnPropNameInTable="UnitColumn" msprop:Generator_ColumnPropNameInRow="Unit" msprop:Generator_UserColumnName="Unit" msprop:Generator_ColumnVarNameInTable="columnUnit" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" type="xs:decimal" minOccurs="0" />
-              <xs:element name="CostPrice" msprop:Generator_UserColumnName="CostPrice" msprop:Generator_ColumnPropNameInTable="CostPriceColumn" msprop:Generator_ColumnPropNameInRow="CostPrice" msprop:Generator_ColumnVarNameInTable="columnCostPrice" type="xs:decimal" minOccurs="0" />
-              <xs:element name="StockQty" msprop:Generator_UserColumnName="StockQty" msprop:Generator_ColumnPropNameInTable="StockQtyColumn" msprop:Generator_ColumnPropNameInRow="StockQty" msprop:Generator_ColumnVarNameInTable="columnStockQty" type="xs:short" />
-              <xs:element name="MinThreshold" msprop:Generator_UserColumnName="MinThreshold" msprop:Generator_ColumnPropNameInTable="MinThresholdColumn" msprop:Generator_ColumnPropNameInRow="MinThreshold" msprop:Generator_ColumnVarNameInTable="columnMinThreshold" type="xs:short" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CostPrice" msprop:Generator_ColumnPropNameInTable="CostPriceColumn" msprop:Generator_ColumnPropNameInRow="CostPrice" msprop:Generator_UserColumnName="CostPrice" msprop:Generator_ColumnVarNameInTable="columnCostPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StockQty" msprop:Generator_ColumnPropNameInTable="StockQtyColumn" msprop:Generator_ColumnPropNameInRow="StockQty" msprop:Generator_UserColumnName="StockQty" msprop:Generator_ColumnVarNameInTable="columnStockQty" type="xs:short" />
+              <xs:element name="MinThreshold" msprop:Generator_ColumnPropNameInTable="MinThresholdColumn" msprop:Generator_ColumnPropNameInRow="MinThreshold" msprop:Generator_UserColumnName="MinThreshold" msprop:Generator_ColumnVarNameInTable="columnMinThreshold" type="xs:short" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Roles" msprop:Generator_RowClassName="RolesRow" msprop:Generator_RowEvHandlerName="RolesRowChangeEventHandler" msprop:Generator_RowDeletedName="RolesRowDeleted" msprop:Generator_RowDeletingName="RolesRowDeleting" msprop:Generator_RowEvArgName="RolesRowChangeEvent" msprop:Generator_TablePropName="Roles" msprop:Generator_RowChangedName="RolesRowChanged" msprop:Generator_UserTableName="Roles" msprop:Generator_RowChangingName="RolesRowChanging" msprop:Generator_TableClassName="RolesDataTable" msprop:Generator_TableVarName="tableRoles">
+        <xs:element name="Roles" msprop:Generator_RowEvHandlerName="RolesRowChangeEventHandler" msprop:Generator_RowDeletedName="RolesRowDeleted" msprop:Generator_RowDeletingName="RolesRowDeleting" msprop:Generator_RowEvArgName="RolesRowChangeEvent" msprop:Generator_TablePropName="Roles" msprop:Generator_RowChangedName="RolesRowChanged" msprop:Generator_UserTableName="Roles" msprop:Generator_RowChangingName="RolesRowChanging" msprop:Generator_RowClassName="RolesRow" msprop:Generator_TableClassName="RolesDataTable" msprop:Generator_TableVarName="tableRoles">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="RoleId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="RoleId" msprop:Generator_ColumnPropNameInTable="RoleIdColumn" msprop:Generator_ColumnPropNameInRow="RoleId" msprop:Generator_ColumnVarNameInTable="columnRoleId" type="xs:short" />
-              <xs:element name="RoleName" msprop:Generator_UserColumnName="RoleName" msprop:Generator_ColumnPropNameInTable="RoleNameColumn" msprop:Generator_ColumnPropNameInRow="RoleName" msprop:Generator_ColumnVarNameInTable="columnRoleName">
+              <xs:element name="RoleId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="RoleIdColumn" msprop:Generator_ColumnPropNameInRow="RoleId" msprop:Generator_UserColumnName="RoleId" msprop:Generator_ColumnVarNameInTable="columnRoleId" type="xs:short" />
+              <xs:element name="RoleName" msprop:Generator_ColumnPropNameInTable="RoleNameColumn" msprop:Generator_ColumnPropNameInRow="RoleName" msprop:Generator_UserColumnName="RoleName" msprop:Generator_ColumnVarNameInTable="columnRoleName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -1062,49 +1064,49 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockTransactions" msprop:Generator_RowClassName="StockTransactionsRow" msprop:Generator_RowEvHandlerName="StockTransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="StockTransactionsRowDeleted" msprop:Generator_RowDeletingName="StockTransactionsRowDeleting" msprop:Generator_RowEvArgName="StockTransactionsRowChangeEvent" msprop:Generator_TablePropName="StockTransactions" msprop:Generator_RowChangedName="StockTransactionsRowChanged" msprop:Generator_UserTableName="StockTransactions" msprop:Generator_RowChangingName="StockTransactionsRowChanging" msprop:Generator_TableClassName="StockTransactionsDataTable" msprop:Generator_TableVarName="tableStockTransactions">
+        <xs:element name="StockTransactions" msprop:Generator_RowEvHandlerName="StockTransactionsRowChangeEventHandler" msprop:Generator_RowDeletedName="StockTransactionsRowDeleted" msprop:Generator_RowDeletingName="StockTransactionsRowDeleting" msprop:Generator_RowEvArgName="StockTransactionsRowChangeEvent" msprop:Generator_TablePropName="StockTransactions" msprop:Generator_RowChangedName="StockTransactionsRowChanged" msprop:Generator_UserTableName="StockTransactions" msprop:Generator_RowChangingName="StockTransactionsRowChanging" msprop:Generator_RowClassName="StockTransactionsRow" msprop:Generator_TableClassName="StockTransactionsDataTable" msprop:Generator_TableVarName="tableStockTransactions">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="TxId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="TxId" msprop:Generator_ColumnPropNameInTable="TxIdColumn" msprop:Generator_ColumnPropNameInRow="TxId" msprop:Generator_ColumnVarNameInTable="columnTxId" type="xs:int" />
-              <xs:element name="VoucherId" msprop:Generator_UserColumnName="VoucherId" msprop:Generator_ColumnPropNameInTable="VoucherIdColumn" msprop:Generator_ColumnPropNameInRow="VoucherId" msprop:Generator_ColumnVarNameInTable="columnVoucherId" type="xs:short" minOccurs="0" />
-              <xs:element name="TxType" msprop:Generator_UserColumnName="TxType" msprop:Generator_ColumnPropNameInTable="TxTypeColumn" msprop:Generator_ColumnPropNameInRow="TxType" msprop:Generator_ColumnVarNameInTable="columnTxType">
+              <xs:element name="TxId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="TxIdColumn" msprop:Generator_ColumnPropNameInRow="TxId" msprop:Generator_UserColumnName="TxId" msprop:Generator_ColumnVarNameInTable="columnTxId" type="xs:int" />
+              <xs:element name="VoucherId" msprop:Generator_ColumnPropNameInTable="VoucherIdColumn" msprop:Generator_ColumnPropNameInRow="VoucherId" msprop:Generator_UserColumnName="VoucherId" msprop:Generator_ColumnVarNameInTable="columnVoucherId" type="xs:short" minOccurs="0" />
+              <xs:element name="TxType" msprop:Generator_ColumnPropNameInTable="TxTypeColumn" msprop:Generator_ColumnPropNameInRow="TxType" msprop:Generator_UserColumnName="TxType" msprop:Generator_ColumnVarNameInTable="columnTxType">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="3" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:short" />
-              <xs:element name="TxDate" msprop:Generator_UserColumnName="TxDate" msprop:Generator_ColumnPropNameInTable="TxDateColumn" msprop:Generator_ColumnPropNameInRow="TxDate" msprop:Generator_ColumnVarNameInTable="columnTxDate" type="xs:dateTime" />
-              <xs:element name="PerformedBy" msprop:Generator_UserColumnName="PerformedBy" msprop:Generator_ColumnPropNameInTable="PerformedByColumn" msprop:Generator_ColumnPropNameInRow="PerformedBy" msprop:Generator_ColumnVarNameInTable="columnPerformedBy" type="xs:short" minOccurs="0" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:short" />
+              <xs:element name="TxDate" msprop:Generator_ColumnPropNameInTable="TxDateColumn" msprop:Generator_ColumnPropNameInRow="TxDate" msprop:Generator_UserColumnName="TxDate" msprop:Generator_ColumnVarNameInTable="columnTxDate" type="xs:dateTime" />
+              <xs:element name="PerformedBy" msprop:Generator_ColumnPropNameInTable="PerformedByColumn" msprop:Generator_ColumnPropNameInRow="PerformedBy" msprop:Generator_UserColumnName="PerformedBy" msprop:Generator_ColumnVarNameInTable="columnPerformedBy" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockVoucherDetails" msprop:Generator_RowClassName="StockVoucherDetailsRow" msprop:Generator_RowEvHandlerName="StockVoucherDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="StockVoucherDetailsRowDeleted" msprop:Generator_RowDeletingName="StockVoucherDetailsRowDeleting" msprop:Generator_RowEvArgName="StockVoucherDetailsRowChangeEvent" msprop:Generator_TablePropName="StockVoucherDetails" msprop:Generator_RowChangedName="StockVoucherDetailsRowChanged" msprop:Generator_UserTableName="StockVoucherDetails" msprop:Generator_RowChangingName="StockVoucherDetailsRowChanging" msprop:Generator_TableClassName="StockVoucherDetailsDataTable" msprop:Generator_TableVarName="tableStockVoucherDetails">
+        <xs:element name="StockVoucherDetails" msprop:Generator_RowEvHandlerName="StockVoucherDetailsRowChangeEventHandler" msprop:Generator_RowDeletedName="StockVoucherDetailsRowDeleted" msprop:Generator_RowDeletingName="StockVoucherDetailsRowDeleting" msprop:Generator_RowEvArgName="StockVoucherDetailsRowChangeEvent" msprop:Generator_TablePropName="StockVoucherDetails" msprop:Generator_RowChangedName="StockVoucherDetailsRowChanged" msprop:Generator_UserTableName="StockVoucherDetails" msprop:Generator_RowChangingName="StockVoucherDetailsRowChanging" msprop:Generator_RowClassName="StockVoucherDetailsRow" msprop:Generator_TableClassName="StockVoucherDetailsDataTable" msprop:Generator_TableVarName="tableStockVoucherDetails">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DetailId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DetailId" msprop:Generator_ColumnPropNameInTable="DetailIdColumn" msprop:Generator_ColumnPropNameInRow="DetailId" msprop:Generator_ColumnVarNameInTable="columnDetailId" type="xs:short" />
-              <xs:element name="VoucherId" msprop:Generator_UserColumnName="VoucherId" msprop:Generator_ColumnPropNameInTable="VoucherIdColumn" msprop:Generator_ColumnPropNameInRow="VoucherId" msprop:Generator_ColumnVarNameInTable="columnVoucherId" type="xs:short" />
-              <xs:element name="ProductId" msprop:Generator_UserColumnName="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" type="xs:short" />
-              <xs:element name="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:short" />
-              <xs:element name="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DetailId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="DetailIdColumn" msprop:Generator_ColumnPropNameInRow="DetailId" msprop:Generator_UserColumnName="DetailId" msprop:Generator_ColumnVarNameInTable="columnDetailId" type="xs:short" />
+              <xs:element name="VoucherId" msprop:Generator_ColumnPropNameInTable="VoucherIdColumn" msprop:Generator_ColumnPropNameInRow="VoucherId" msprop:Generator_UserColumnName="VoucherId" msprop:Generator_ColumnVarNameInTable="columnVoucherId" type="xs:short" />
+              <xs:element name="ProductId" msprop:Generator_ColumnPropNameInTable="ProductIdColumn" msprop:Generator_ColumnPropNameInRow="ProductId" msprop:Generator_UserColumnName="ProductId" msprop:Generator_ColumnVarNameInTable="columnProductId" type="xs:short" />
+              <xs:element name="Quantity" msprop:Generator_ColumnPropNameInTable="QuantityColumn" msprop:Generator_ColumnPropNameInRow="Quantity" msprop:Generator_UserColumnName="Quantity" msprop:Generator_ColumnVarNameInTable="columnQuantity" type="xs:short" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_UserColumnName="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockVouchers" msprop:Generator_RowClassName="StockVouchersRow" msprop:Generator_RowEvHandlerName="StockVouchersRowChangeEventHandler" msprop:Generator_RowDeletedName="StockVouchersRowDeleted" msprop:Generator_RowDeletingName="StockVouchersRowDeleting" msprop:Generator_RowEvArgName="StockVouchersRowChangeEvent" msprop:Generator_TablePropName="StockVouchers" msprop:Generator_RowChangedName="StockVouchersRowChanged" msprop:Generator_UserTableName="StockVouchers" msprop:Generator_RowChangingName="StockVouchersRowChanging" msprop:Generator_TableClassName="StockVouchersDataTable" msprop:Generator_TableVarName="tableStockVouchers">
+        <xs:element name="StockVouchers" msprop:Generator_RowEvHandlerName="StockVouchersRowChangeEventHandler" msprop:Generator_RowDeletedName="StockVouchersRowDeleted" msprop:Generator_RowDeletingName="StockVouchersRowDeleting" msprop:Generator_RowEvArgName="StockVouchersRowChangeEvent" msprop:Generator_TablePropName="StockVouchers" msprop:Generator_RowChangedName="StockVouchersRowChanged" msprop:Generator_UserTableName="StockVouchers" msprop:Generator_RowChangingName="StockVouchersRowChanging" msprop:Generator_RowClassName="StockVouchersRow" msprop:Generator_TableClassName="StockVouchersDataTable" msprop:Generator_TableVarName="tableStockVouchers">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="VoucherId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="VoucherId" msprop:Generator_ColumnPropNameInTable="VoucherIdColumn" msprop:Generator_ColumnPropNameInRow="VoucherId" msprop:Generator_ColumnVarNameInTable="columnVoucherId" type="xs:short" />
-              <xs:element name="VoucherType" msprop:Generator_UserColumnName="VoucherType" msprop:Generator_ColumnPropNameInTable="VoucherTypeColumn" msprop:Generator_ColumnPropNameInRow="VoucherType" msprop:Generator_ColumnVarNameInTable="columnVoucherType">
+              <xs:element name="VoucherId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="VoucherIdColumn" msprop:Generator_ColumnPropNameInRow="VoucherId" msprop:Generator_UserColumnName="VoucherId" msprop:Generator_ColumnVarNameInTable="columnVoucherId" type="xs:short" />
+              <xs:element name="VoucherType" msprop:Generator_ColumnPropNameInTable="VoucherTypeColumn" msprop:Generator_ColumnPropNameInRow="VoucherType" msprop:Generator_UserColumnName="VoucherType" msprop:Generator_ColumnVarNameInTable="columnVoucherType">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="3" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="VoucherDate" msprop:Generator_UserColumnName="VoucherDate" msprop:Generator_ColumnPropNameInTable="VoucherDateColumn" msprop:Generator_ColumnPropNameInRow="VoucherDate" msprop:Generator_ColumnVarNameInTable="columnVoucherDate" type="xs:dateTime" />
-              <xs:element name="CreatedBy" msprop:Generator_UserColumnName="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" type="xs:short" minOccurs="0" />
-              <xs:element name="Note" msprop:Generator_UserColumnName="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_ColumnVarNameInTable="columnNote" minOccurs="0">
+              <xs:element name="VoucherDate" msprop:Generator_ColumnPropNameInTable="VoucherDateColumn" msprop:Generator_ColumnPropNameInRow="VoucherDate" msprop:Generator_UserColumnName="VoucherDate" msprop:Generator_ColumnVarNameInTable="columnVoucherDate" type="xs:dateTime" />
+              <xs:element name="CreatedBy" msprop:Generator_ColumnPropNameInTable="CreatedByColumn" msprop:Generator_ColumnPropNameInRow="CreatedBy" msprop:Generator_UserColumnName="CreatedBy" msprop:Generator_ColumnVarNameInTable="columnCreatedBy" type="xs:short" minOccurs="0" />
+              <xs:element name="Note" msprop:Generator_ColumnPropNameInTable="NoteColumn" msprop:Generator_ColumnPropNameInRow="Note" msprop:Generator_UserColumnName="Note" msprop:Generator_ColumnVarNameInTable="columnNote" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
@@ -1114,39 +1116,39 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Suppliers" msprop:Generator_RowClassName="SuppliersRow" msprop:Generator_RowEvHandlerName="SuppliersRowChangeEventHandler" msprop:Generator_RowDeletedName="SuppliersRowDeleted" msprop:Generator_RowDeletingName="SuppliersRowDeleting" msprop:Generator_RowEvArgName="SuppliersRowChangeEvent" msprop:Generator_TablePropName="Suppliers" msprop:Generator_RowChangedName="SuppliersRowChanged" msprop:Generator_UserTableName="Suppliers" msprop:Generator_RowChangingName="SuppliersRowChanging" msprop:Generator_TableClassName="SuppliersDataTable" msprop:Generator_TableVarName="tableSuppliers">
+        <xs:element name="Suppliers" msprop:Generator_RowEvHandlerName="SuppliersRowChangeEventHandler" msprop:Generator_RowDeletedName="SuppliersRowDeleted" msprop:Generator_RowDeletingName="SuppliersRowDeleting" msprop:Generator_RowEvArgName="SuppliersRowChangeEvent" msprop:Generator_TablePropName="Suppliers" msprop:Generator_RowChangedName="SuppliersRowChanged" msprop:Generator_UserTableName="Suppliers" msprop:Generator_RowChangingName="SuppliersRowChanging" msprop:Generator_RowClassName="SuppliersRow" msprop:Generator_TableClassName="SuppliersDataTable" msprop:Generator_TableVarName="tableSuppliers">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="SupplierId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="SupplierId" msprop:Generator_ColumnPropNameInTable="SupplierIdColumn" msprop:Generator_ColumnPropNameInRow="SupplierId" msprop:Generator_ColumnVarNameInTable="columnSupplierId" type="xs:short" />
-              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName">
+              <xs:element name="SupplierId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="SupplierIdColumn" msprop:Generator_ColumnPropNameInRow="SupplierId" msprop:Generator_UserColumnName="SupplierId" msprop:Generator_ColumnVarNameInTable="columnSupplierId" type="xs:short" />
+              <xs:element name="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnVarNameInTable="columnName">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Contact" msprop:Generator_UserColumnName="Contact" msprop:Generator_ColumnPropNameInTable="ContactColumn" msprop:Generator_ColumnPropNameInRow="Contact" msprop:Generator_ColumnVarNameInTable="columnContact" minOccurs="0">
+              <xs:element name="Contact" msprop:Generator_ColumnPropNameInTable="ContactColumn" msprop:Generator_ColumnPropNameInRow="Contact" msprop:Generator_UserColumnName="Contact" msprop:Generator_ColumnVarNameInTable="columnContact" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" minOccurs="0">
+              <xs:element name="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_UserColumnName="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" minOccurs="0">
+              <xs:element name="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_UserColumnName="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -1156,10 +1158,10 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_GetEmployeeNameById" msprop:Generator_RowClassName="usp_GetEmployeeNameByIdRow" msprop:Generator_RowEvHandlerName="usp_GetEmployeeNameByIdRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_GetEmployeeNameByIdRowDeleted" msprop:Generator_RowDeletingName="usp_GetEmployeeNameByIdRowDeleting" msprop:Generator_RowEvArgName="usp_GetEmployeeNameByIdRowChangeEvent" msprop:Generator_TablePropName="usp_GetEmployeeNameById" msprop:Generator_RowChangedName="usp_GetEmployeeNameByIdRowChanged" msprop:Generator_UserTableName="usp_GetEmployeeNameById" msprop:Generator_RowChangingName="usp_GetEmployeeNameByIdRowChanging" msprop:Generator_TableClassName="usp_GetEmployeeNameByIdDataTable" msprop:Generator_TableVarName="tableusp_GetEmployeeNameById">
+        <xs:element name="usp_GetEmployeeNameById" msprop:Generator_RowEvHandlerName="usp_GetEmployeeNameByIdRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_GetEmployeeNameByIdRowDeleted" msprop:Generator_RowDeletingName="usp_GetEmployeeNameByIdRowDeleting" msprop:Generator_RowEvArgName="usp_GetEmployeeNameByIdRowChangeEvent" msprop:Generator_TablePropName="usp_GetEmployeeNameById" msprop:Generator_RowChangedName="usp_GetEmployeeNameByIdRowChanged" msprop:Generator_UserTableName="usp_GetEmployeeNameById" msprop:Generator_RowChangingName="usp_GetEmployeeNameByIdRowChanging" msprop:Generator_RowClassName="usp_GetEmployeeNameByIdRow" msprop:Generator_TableClassName="usp_GetEmployeeNameByIdDataTable" msprop:Generator_TableVarName="tableusp_GetEmployeeNameById">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnVarNameInTable="columnColumn1" minOccurs="0">
+              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_UserColumnName="Column1" msprop:Generator_ColumnVarNameInTable="columnColumn1" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -1169,138 +1171,138 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_GetVoucherDetailsByVoucherId" msprop:Generator_RowClassName="usp_GetVoucherDetailsByVoucherIdRow" msprop:Generator_RowEvHandlerName="usp_GetVoucherDetailsByVoucherIdRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_GetVoucherDetailsByVoucherIdRowDeleted" msprop:Generator_RowDeletingName="usp_GetVoucherDetailsByVoucherIdRowDeleting" msprop:Generator_RowEvArgName="usp_GetVoucherDetailsByVoucherIdRowChangeEvent" msprop:Generator_TablePropName="usp_GetVoucherDetailsByVoucherId" msprop:Generator_RowChangedName="usp_GetVoucherDetailsByVoucherIdRowChanged" msprop:Generator_UserTableName="usp_GetVoucherDetailsByVoucherId" msprop:Generator_RowChangingName="usp_GetVoucherDetailsByVoucherIdRowChanging" msprop:Generator_TableClassName="usp_GetVoucherDetailsByVoucherIdDataTable" msprop:Generator_TableVarName="tableusp_GetVoucherDetailsByVoucherId">
+        <xs:element name="usp_GetVoucherDetailsByVoucherId" msprop:Generator_RowEvHandlerName="usp_GetVoucherDetailsByVoucherIdRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_GetVoucherDetailsByVoucherIdRowDeleted" msprop:Generator_RowDeletingName="usp_GetVoucherDetailsByVoucherIdRowDeleting" msprop:Generator_RowEvArgName="usp_GetVoucherDetailsByVoucherIdRowChangeEvent" msprop:Generator_TablePropName="usp_GetVoucherDetailsByVoucherId" msprop:Generator_RowChangedName="usp_GetVoucherDetailsByVoucherIdRowChanged" msprop:Generator_UserTableName="usp_GetVoucherDetailsByVoucherId" msprop:Generator_RowChangingName="usp_GetVoucherDetailsByVoucherIdRowChanging" msprop:Generator_RowClassName="usp_GetVoucherDetailsByVoucherIdRow" msprop:Generator_TableClassName="usp_GetVoucherDetailsByVoucherIdDataTable" msprop:Generator_TableVarName="tableusp_GetVoucherDetailsByVoucherId">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
+              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Mã_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Mã sản phẩm" msprop:Generator_ColumnPropNameInTable="Mã_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Mã_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnMã_sản_phẩm" type="xs:short" />
-              <xs:element name="Đơn_x0020_vị" msprop:Generator_UserColumnName="Đơn vị" msprop:Generator_ColumnPropNameInTable="Đơn_vịColumn" msprop:Generator_ColumnPropNameInRow="Đơn_vị" msprop:Generator_ColumnVarNameInTable="columnĐơn_vị" minOccurs="0">
+              <xs:element name="Mã_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Mã_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Mã_sản_phẩm" msprop:Generator_UserColumnName="Mã sản phẩm" msprop:Generator_ColumnVarNameInTable="columnMã_sản_phẩm" type="xs:short" />
+              <xs:element name="Đơn_x0020_vị" msprop:Generator_ColumnPropNameInTable="Đơn_vịColumn" msprop:Generator_ColumnPropNameInRow="Đơn_vị" msprop:Generator_UserColumnName="Đơn vị" msprop:Generator_ColumnVarNameInTable="columnĐơn_vị" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Số_x0020_lượng" msprop:Generator_UserColumnName="Số lượng" msprop:Generator_ColumnPropNameInTable="Số_lượngColumn" msprop:Generator_ColumnPropNameInRow="Số_lượng" msprop:Generator_ColumnVarNameInTable="columnSố_lượng" type="xs:short" />
-              <xs:element name="Đơn_x0020_giá" msprop:Generator_UserColumnName="Đơn giá" msprop:Generator_ColumnPropNameInTable="Đơn_giáColumn" msprop:Generator_ColumnPropNameInRow="Đơn_giá" msprop:Generator_ColumnVarNameInTable="columnĐơn_giá" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Thành_x0020_tiền" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Thành tiền" msprop:Generator_ColumnPropNameInTable="Thành_tiềnColumn" msprop:Generator_ColumnPropNameInRow="Thành_tiền" msprop:Generator_ColumnVarNameInTable="columnThành_tiền" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Số_x0020_lượng" msprop:Generator_ColumnPropNameInTable="Số_lượngColumn" msprop:Generator_ColumnPropNameInRow="Số_lượng" msprop:Generator_UserColumnName="Số lượng" msprop:Generator_ColumnVarNameInTable="columnSố_lượng" type="xs:short" />
+              <xs:element name="Đơn_x0020_giá" msprop:Generator_ColumnPropNameInTable="Đơn_giáColumn" msprop:Generator_ColumnPropNameInRow="Đơn_giá" msprop:Generator_UserColumnName="Đơn giá" msprop:Generator_ColumnVarNameInTable="columnĐơn_giá" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Thành_x0020_tiền" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Thành_tiềnColumn" msprop:Generator_ColumnPropNameInRow="Thành_tiền" msprop:Generator_UserColumnName="Thành tiền" msprop:Generator_ColumnVarNameInTable="columnThành_tiền" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_InsertStockVoucher_" msprop:Generator_RowClassName="usp_InsertStockVoucher_Row" msprop:Generator_RowEvHandlerName="usp_InsertStockVoucher_RowChangeEventHandler" msprop:Generator_RowDeletedName="usp_InsertStockVoucher_RowDeleted" msprop:Generator_RowDeletingName="usp_InsertStockVoucher_RowDeleting" msprop:Generator_RowEvArgName="usp_InsertStockVoucher_RowChangeEvent" msprop:Generator_TablePropName="usp_InsertStockVoucher_" msprop:Generator_RowChangedName="usp_InsertStockVoucher_RowChanged" msprop:Generator_UserTableName="usp_InsertStockVoucher_" msprop:Generator_RowChangingName="usp_InsertStockVoucher_RowChanging" msprop:Generator_TableClassName="usp_InsertStockVoucher_DataTable" msprop:Generator_TableVarName="tableusp_InsertStockVoucher_">
+        <xs:element name="usp_InsertStockVoucher_" msprop:Generator_RowEvHandlerName="usp_InsertStockVoucher_RowChangeEventHandler" msprop:Generator_RowDeletedName="usp_InsertStockVoucher_RowDeleted" msprop:Generator_RowDeletingName="usp_InsertStockVoucher_RowDeleting" msprop:Generator_RowEvArgName="usp_InsertStockVoucher_RowChangeEvent" msprop:Generator_TablePropName="usp_InsertStockVoucher_" msprop:Generator_RowChangedName="usp_InsertStockVoucher_RowChanged" msprop:Generator_UserTableName="usp_InsertStockVoucher_" msprop:Generator_RowChangingName="usp_InsertStockVoucher_RowChanging" msprop:Generator_RowClassName="usp_InsertStockVoucher_Row" msprop:Generator_TableClassName="usp_InsertStockVoucher_DataTable" msprop:Generator_TableVarName="tableusp_InsertStockVoucher_">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Column1" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_ColumnVarNameInTable="columnColumn1" type="xs:int" minOccurs="0" />
+              <xs:element name="Column1" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Column1Column" msprop:Generator_ColumnPropNameInRow="Column1" msprop:Generator_UserColumnName="Column1" msprop:Generator_ColumnVarNameInTable="columnColumn1" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_SearchAccountByUserName" msprop:Generator_RowClassName="usp_SearchAccountByUserNameRow" msprop:Generator_RowEvHandlerName="usp_SearchAccountByUserNameRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearchAccountByUserNameRowDeleted" msprop:Generator_RowDeletingName="usp_SearchAccountByUserNameRowDeleting" msprop:Generator_RowEvArgName="usp_SearchAccountByUserNameRowChangeEvent" msprop:Generator_TablePropName="usp_SearchAccountByUserName" msprop:Generator_RowChangedName="usp_SearchAccountByUserNameRowChanged" msprop:Generator_UserTableName="usp_SearchAccountByUserName" msprop:Generator_RowChangingName="usp_SearchAccountByUserNameRowChanging" msprop:Generator_TableClassName="usp_SearchAccountByUserNameDataTable" msprop:Generator_TableVarName="tableusp_SearchAccountByUserName">
+        <xs:element name="usp_SearchAccountByUserName" msprop:Generator_RowEvHandlerName="usp_SearchAccountByUserNameRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearchAccountByUserNameRowDeleted" msprop:Generator_RowDeletingName="usp_SearchAccountByUserNameRowDeleting" msprop:Generator_RowEvArgName="usp_SearchAccountByUserNameRowChangeEvent" msprop:Generator_TablePropName="usp_SearchAccountByUserName" msprop:Generator_RowChangedName="usp_SearchAccountByUserNameRowChanged" msprop:Generator_UserTableName="usp_SearchAccountByUserName" msprop:Generator_RowChangingName="usp_SearchAccountByUserNameRowChanging" msprop:Generator_RowClassName="usp_SearchAccountByUserNameRow" msprop:Generator_TableClassName="usp_SearchAccountByUserNameDataTable" msprop:Generator_TableVarName="tableusp_SearchAccountByUserName">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Mã_x0020_tài_x0020_khoản" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Mã tài khoản" msprop:Generator_ColumnPropNameInTable="Mã_tài_khoảnColumn" msprop:Generator_ColumnPropNameInRow="Mã_tài_khoản" msprop:Generator_ColumnVarNameInTable="columnMã_tài_khoản" type="xs:short" />
-              <xs:element name="Tên_x0020_đăng_x0020_nhập" msprop:Generator_UserColumnName="Tên đăng nhập" msprop:Generator_ColumnPropNameInTable="Tên_đăng_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tên_đăng_nhập" msprop:Generator_ColumnVarNameInTable="columnTên_đăng_nhập">
+              <xs:element name="Mã_x0020_tài_x0020_khoản" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Mã_tài_khoảnColumn" msprop:Generator_ColumnPropNameInRow="Mã_tài_khoản" msprop:Generator_UserColumnName="Mã tài khoản" msprop:Generator_ColumnVarNameInTable="columnMã_tài_khoản" type="xs:short" />
+              <xs:element name="Tên_x0020_đăng_x0020_nhập" msprop:Generator_ColumnPropNameInTable="Tên_đăng_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tên_đăng_nhập" msprop:Generator_UserColumnName="Tên đăng nhập" msprop:Generator_ColumnVarNameInTable="columnTên_đăng_nhập">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Chức_x0020_vụ" msprop:Generator_UserColumnName="Chức vụ" msprop:Generator_ColumnPropNameInTable="Chức_vụColumn" msprop:Generator_ColumnPropNameInRow="Chức_vụ" msprop:Generator_ColumnVarNameInTable="columnChức_vụ">
+              <xs:element name="Chức_x0020_vụ" msprop:Generator_ColumnPropNameInTable="Chức_vụColumn" msprop:Generator_ColumnPropNameInRow="Chức_vụ" msprop:Generator_UserColumnName="Chức vụ" msprop:Generator_ColumnVarNameInTable="columnChức_vụ">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Mã_x0020_nhân_x0020_viên" msprop:Generator_UserColumnName="Mã nhân viên" msprop:Generator_ColumnPropNameInTable="Mã_nhân_viênColumn" msprop:Generator_ColumnPropNameInRow="Mã_nhân_viên" msprop:Generator_ColumnVarNameInTable="columnMã_nhân_viên" type="xs:short" />
-              <xs:element name="Tạo_x0020_lúc" msprop:Generator_UserColumnName="Tạo lúc" msprop:Generator_ColumnPropNameInTable="Tạo_lúcColumn" msprop:Generator_ColumnPropNameInRow="Tạo_lúc" msprop:Generator_ColumnVarNameInTable="columnTạo_lúc" type="xs:dateTime" />
+              <xs:element name="Mã_x0020_nhân_x0020_viên" msprop:Generator_ColumnPropNameInTable="Mã_nhân_viênColumn" msprop:Generator_ColumnPropNameInRow="Mã_nhân_viên" msprop:Generator_UserColumnName="Mã nhân viên" msprop:Generator_ColumnVarNameInTable="columnMã_nhân_viên" type="xs:short" />
+              <xs:element name="Tạo_x0020_lúc" msprop:Generator_ColumnPropNameInTable="Tạo_lúcColumn" msprop:Generator_ColumnPropNameInRow="Tạo_lúc" msprop:Generator_UserColumnName="Tạo lúc" msprop:Generator_ColumnVarNameInTable="columnTạo_lúc" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_SearchEmployee" msprop:Generator_RowClassName="usp_SearchEmployeeRow" msprop:Generator_RowEvHandlerName="usp_SearchEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearchEmployeeRowDeleted" msprop:Generator_RowDeletingName="usp_SearchEmployeeRowDeleting" msprop:Generator_RowEvArgName="usp_SearchEmployeeRowChangeEvent" msprop:Generator_TablePropName="usp_SearchEmployee" msprop:Generator_RowChangedName="usp_SearchEmployeeRowChanged" msprop:Generator_UserTableName="usp_SearchEmployee" msprop:Generator_RowChangingName="usp_SearchEmployeeRowChanging" msprop:Generator_TableClassName="usp_SearchEmployeeDataTable" msprop:Generator_TableVarName="tableusp_SearchEmployee">
+        <xs:element name="usp_SearchEmployee" msprop:Generator_RowEvHandlerName="usp_SearchEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearchEmployeeRowDeleted" msprop:Generator_RowDeletingName="usp_SearchEmployeeRowDeleting" msprop:Generator_RowEvArgName="usp_SearchEmployeeRowChangeEvent" msprop:Generator_TablePropName="usp_SearchEmployee" msprop:Generator_RowChangedName="usp_SearchEmployeeRowChanged" msprop:Generator_UserTableName="usp_SearchEmployee" msprop:Generator_RowChangingName="usp_SearchEmployeeRowChanging" msprop:Generator_RowClassName="usp_SearchEmployeeRow" msprop:Generator_TableClassName="usp_SearchEmployeeDataTable" msprop:Generator_TableVarName="tableusp_SearchEmployee">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Trạng_x0020_thái" msprop:Generator_UserColumnName="Trạng thái" msprop:Generator_ColumnPropNameInTable="Trạng_tháiColumn" msprop:Generator_ColumnPropNameInRow="Trạng_thái" msprop:Generator_ColumnVarNameInTable="columnTrạng_thái" type="xs:boolean" />
-              <xs:element name="Mã_x0020_nhân_x0020_viên" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Mã nhân viên" msprop:Generator_ColumnPropNameInTable="Mã_nhân_viênColumn" msprop:Generator_ColumnPropNameInRow="Mã_nhân_viên" msprop:Generator_ColumnVarNameInTable="columnMã_nhân_viên" type="xs:short" />
-              <xs:element name="Hình_x0020_ảnh" msprop:Generator_UserColumnName="Hình ảnh" msprop:Generator_ColumnPropNameInTable="Hình_ảnhColumn" msprop:Generator_ColumnPropNameInRow="Hình_ảnh" msprop:Generator_ColumnVarNameInTable="columnHình_ảnh" minOccurs="0">
+              <xs:element name="Trạng_x0020_thái" msprop:Generator_ColumnPropNameInTable="Trạng_tháiColumn" msprop:Generator_ColumnPropNameInRow="Trạng_thái" msprop:Generator_UserColumnName="Trạng thái" msprop:Generator_ColumnVarNameInTable="columnTrạng_thái" type="xs:boolean" />
+              <xs:element name="Mã_x0020_nhân_x0020_viên" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Mã_nhân_viênColumn" msprop:Generator_ColumnPropNameInRow="Mã_nhân_viên" msprop:Generator_UserColumnName="Mã nhân viên" msprop:Generator_ColumnVarNameInTable="columnMã_nhân_viên" type="xs:short" />
+              <xs:element name="Hình_x0020_ảnh" msprop:Generator_ColumnPropNameInTable="Hình_ảnhColumn" msprop:Generator_ColumnPropNameInRow="Hình_ảnh" msprop:Generator_UserColumnName="Hình ảnh" msprop:Generator_ColumnVarNameInTable="columnHình_ảnh" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Tên" msprop:Generator_UserColumnName="Tên" msprop:Generator_ColumnPropNameInTable="TênColumn" msprop:Generator_ColumnPropNameInRow="Tên" msprop:Generator_ColumnVarNameInTable="columnTên">
+              <xs:element name="Tên" msprop:Generator_ColumnPropNameInTable="TênColumn" msprop:Generator_ColumnPropNameInRow="Tên" msprop:Generator_UserColumnName="Tên" msprop:Generator_ColumnVarNameInTable="columnTên">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Họ" msprop:Generator_UserColumnName="Họ" msprop:Generator_ColumnPropNameInTable="HọColumn" msprop:Generator_ColumnPropNameInRow="Họ" msprop:Generator_ColumnVarNameInTable="columnHọ" minOccurs="0">
+              <xs:element name="Họ" msprop:Generator_ColumnPropNameInTable="HọColumn" msprop:Generator_ColumnPropNameInRow="Họ" msprop:Generator_UserColumnName="Họ" msprop:Generator_ColumnVarNameInTable="columnHọ" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Số_x0020_điện_x0020_thoại" msprop:Generator_UserColumnName="Số điện thoại" msprop:Generator_ColumnPropNameInTable="Số_điện_thoạiColumn" msprop:Generator_ColumnPropNameInRow="Số_điện_thoại" msprop:Generator_ColumnVarNameInTable="columnSố_điện_thoại" minOccurs="0">
+              <xs:element name="Số_x0020_điện_x0020_thoại" msprop:Generator_ColumnPropNameInTable="Số_điện_thoạiColumn" msprop:Generator_ColumnPropNameInRow="Số_điện_thoại" msprop:Generator_UserColumnName="Số điện thoại" msprop:Generator_ColumnVarNameInTable="columnSố_điện_thoại" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DeletedAt" msprop:Generator_UserColumnName="DeletedAt" msprop:Generator_ColumnPropNameInTable="DeletedAtColumn" msprop:Generator_ColumnPropNameInRow="DeletedAt" msprop:Generator_ColumnVarNameInTable="columnDeletedAt" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Xóa_x0020_bởi" msprop:Generator_UserColumnName="Xóa bởi" msprop:Generator_ColumnPropNameInTable="Xóa_bởiColumn" msprop:Generator_ColumnPropNameInRow="Xóa_bởi" msprop:Generator_ColumnVarNameInTable="columnXóa_bởi" type="xs:short" minOccurs="0" />
+              <xs:element name="DeletedAt" msprop:Generator_ColumnPropNameInTable="DeletedAtColumn" msprop:Generator_ColumnPropNameInRow="DeletedAt" msprop:Generator_UserColumnName="DeletedAt" msprop:Generator_ColumnVarNameInTable="columnDeletedAt" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Xóa_x0020_bởi" msprop:Generator_ColumnPropNameInTable="Xóa_bởiColumn" msprop:Generator_ColumnPropNameInRow="Xóa_bởi" msprop:Generator_UserColumnName="Xóa bởi" msprop:Generator_ColumnVarNameInTable="columnXóa_bởi" type="xs:short" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_SearchSupplierByName" msprop:Generator_RowClassName="usp_SearchSupplierByNameRow" msprop:Generator_RowEvHandlerName="usp_SearchSupplierByNameRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearchSupplierByNameRowDeleted" msprop:Generator_RowDeletingName="usp_SearchSupplierByNameRowDeleting" msprop:Generator_RowEvArgName="usp_SearchSupplierByNameRowChangeEvent" msprop:Generator_TablePropName="usp_SearchSupplierByName" msprop:Generator_RowChangedName="usp_SearchSupplierByNameRowChanged" msprop:Generator_UserTableName="usp_SearchSupplierByName" msprop:Generator_RowChangingName="usp_SearchSupplierByNameRowChanging" msprop:Generator_TableClassName="usp_SearchSupplierByNameDataTable" msprop:Generator_TableVarName="tableusp_SearchSupplierByName">
+        <xs:element name="usp_SearchSupplierByName" msprop:Generator_RowEvHandlerName="usp_SearchSupplierByNameRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearchSupplierByNameRowDeleted" msprop:Generator_RowDeletingName="usp_SearchSupplierByNameRowDeleting" msprop:Generator_RowEvArgName="usp_SearchSupplierByNameRowChangeEvent" msprop:Generator_TablePropName="usp_SearchSupplierByName" msprop:Generator_RowChangedName="usp_SearchSupplierByNameRowChanged" msprop:Generator_UserTableName="usp_SearchSupplierByName" msprop:Generator_RowChangingName="usp_SearchSupplierByNameRowChanging" msprop:Generator_RowClassName="usp_SearchSupplierByNameRow" msprop:Generator_TableClassName="usp_SearchSupplierByNameDataTable" msprop:Generator_TableVarName="tableusp_SearchSupplierByName">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Mã_x0020_nhà_x0020_cung_x0020_cấp" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Mã nhà cung cấp" msprop:Generator_ColumnPropNameInTable="Mã_nhà_cung_cấpColumn" msprop:Generator_ColumnPropNameInRow="Mã_nhà_cung_cấp" msprop:Generator_ColumnVarNameInTable="columnMã_nhà_cung_cấp" type="xs:short" />
-              <xs:element name="Tên_x0020_nhà_x0020_cung_x0020_cấp" msprop:Generator_UserColumnName="Tên nhà cung cấp" msprop:Generator_ColumnPropNameInTable="Tên_nhà_cung_cấpColumn" msprop:Generator_ColumnPropNameInRow="Tên_nhà_cung_cấp" msprop:Generator_ColumnVarNameInTable="columnTên_nhà_cung_cấp">
+              <xs:element name="Mã_x0020_nhà_x0020_cung_x0020_cấp" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Mã_nhà_cung_cấpColumn" msprop:Generator_ColumnPropNameInRow="Mã_nhà_cung_cấp" msprop:Generator_UserColumnName="Mã nhà cung cấp" msprop:Generator_ColumnVarNameInTable="columnMã_nhà_cung_cấp" type="xs:short" />
+              <xs:element name="Tên_x0020_nhà_x0020_cung_x0020_cấp" msprop:Generator_ColumnPropNameInTable="Tên_nhà_cung_cấpColumn" msprop:Generator_ColumnPropNameInRow="Tên_nhà_cung_cấp" msprop:Generator_UserColumnName="Tên nhà cung cấp" msprop:Generator_ColumnVarNameInTable="columnTên_nhà_cung_cấp">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Liên_x0020_hệ" msprop:Generator_UserColumnName="Liên hệ" msprop:Generator_ColumnPropNameInTable="Liên_hệColumn" msprop:Generator_ColumnPropNameInRow="Liên_hệ" msprop:Generator_ColumnVarNameInTable="columnLiên_hệ" minOccurs="0">
+              <xs:element name="Liên_x0020_hệ" msprop:Generator_ColumnPropNameInTable="Liên_hệColumn" msprop:Generator_ColumnPropNameInRow="Liên_hệ" msprop:Generator_UserColumnName="Liên hệ" msprop:Generator_ColumnVarNameInTable="columnLiên_hệ" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Số_x0020_điện_x0020_thoại" msprop:Generator_UserColumnName="Số điện thoại" msprop:Generator_ColumnPropNameInTable="Số_điện_thoạiColumn" msprop:Generator_ColumnPropNameInRow="Số_điện_thoại" msprop:Generator_ColumnVarNameInTable="columnSố_điện_thoại" minOccurs="0">
+              <xs:element name="Số_x0020_điện_x0020_thoại" msprop:Generator_ColumnPropNameInTable="Số_điện_thoạiColumn" msprop:Generator_ColumnPropNameInRow="Số_điện_thoại" msprop:Generator_UserColumnName="Số điện thoại" msprop:Generator_ColumnVarNameInTable="columnSố_điện_thoại" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
+              <xs:element name="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_UserColumnName="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Địa_x0020_chỉ" msprop:Generator_UserColumnName="Địa chỉ" msprop:Generator_ColumnPropNameInTable="Địa_chỉColumn" msprop:Generator_ColumnPropNameInRow="Địa_chỉ" msprop:Generator_ColumnVarNameInTable="columnĐịa_chỉ" minOccurs="0">
+              <xs:element name="Địa_x0020_chỉ" msprop:Generator_ColumnPropNameInTable="Địa_chỉColumn" msprop:Generator_ColumnPropNameInRow="Địa_chỉ" msprop:Generator_UserColumnName="Địa chỉ" msprop:Generator_ColumnVarNameInTable="columnĐịa_chỉ" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="250" />
@@ -1310,7 +1312,111 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="usp_SearhProductByName" msprop:Generator_RowClassName="usp_SearhProductByNameRow" msprop:Generator_RowEvHandlerName="usp_SearhProductByNameRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearhProductByNameRowDeleted" msprop:Generator_RowDeletingName="usp_SearhProductByNameRowDeleting" msprop:Generator_RowEvArgName="usp_SearhProductByNameRowChangeEvent" msprop:Generator_TablePropName="usp_SearhProductByName" msprop:Generator_RowChangedName="usp_SearhProductByNameRowChanged" msprop:Generator_UserTableName="usp_SearhProductByName" msprop:Generator_RowChangingName="usp_SearhProductByNameRowChanging" msprop:Generator_TableClassName="usp_SearhProductByNameDataTable" msprop:Generator_TableVarName="tableusp_SearhProductByName">
+        <xs:element name="usp_SearhProductByName" msprop:Generator_RowEvHandlerName="usp_SearhProductByNameRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_SearhProductByNameRowDeleted" msprop:Generator_RowDeletingName="usp_SearhProductByNameRowDeleting" msprop:Generator_RowEvArgName="usp_SearhProductByNameRowChangeEvent" msprop:Generator_TablePropName="usp_SearhProductByName" msprop:Generator_RowChangedName="usp_SearhProductByNameRowChanged" msprop:Generator_UserTableName="usp_SearhProductByName" msprop:Generator_RowChangingName="usp_SearhProductByNameRowChanging" msprop:Generator_RowClassName="usp_SearhProductByNameRow" msprop:Generator_TableClassName="usp_SearhProductByNameDataTable" msprop:Generator_TableVarName="tableusp_SearhProductByName">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mã_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Mã_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Mã_sản_phẩm" msprop:Generator_UserColumnName="Mã sản phẩm" msprop:Generator_ColumnVarNameInTable="columnMã_sản_phẩm" type="xs:short" />
+              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nhà_x0020_cung_x0020_cấp" msprop:Generator_ColumnPropNameInTable="Nhà_cung_cấpColumn" msprop:Generator_ColumnPropNameInRow="Nhà_cung_cấp" msprop:Generator_UserColumnName="Nhà cung cấp" msprop:Generator_ColumnVarNameInTable="columnNhà_cung_cấp">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Đơn_x0020_vị" msprop:Generator_ColumnPropNameInTable="Đơn_vịColumn" msprop:Generator_ColumnPropNameInRow="Đơn_vị" msprop:Generator_UserColumnName="Đơn vị" msprop:Generator_ColumnVarNameInTable="columnĐơn_vị" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Giá" msprop:Generator_ColumnPropNameInTable="GiáColumn" msprop:Generator_ColumnPropNameInRow="Giá" msprop:Generator_UserColumnName="Giá" msprop:Generator_ColumnVarNameInTable="columnGiá" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tồn_x0020_kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usp_ThongKePhieu" msprop:Generator_RowEvHandlerName="usp_ThongKePhieuRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKePhieuRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKePhieuRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKePhieuRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKePhieu" msprop:Generator_RowChangedName="usp_ThongKePhieuRowChanged" msprop:Generator_UserTableName="usp_ThongKePhieu" msprop:Generator_RowChangingName="usp_ThongKePhieuRowChanging" msprop:Generator_RowClassName="usp_ThongKePhieuRow" msprop:Generator_TableClassName="usp_ThongKePhieuDataTable" msprop:Generator_TableVarName="tableusp_ThongKePhieu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mã_x0020_phiếu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Mã_phiếuColumn" msprop:Generator_ColumnPropNameInRow="Mã_phiếu" msprop:Generator_UserColumnName="Mã phiếu" msprop:Generator_ColumnVarNameInTable="columnMã_phiếu" type="xs:short" />
+              <xs:element name="Thể_x0020_loại" msprop:Generator_ColumnPropNameInTable="Thể_loạiColumn" msprop:Generator_ColumnPropNameInRow="Thể_loại" msprop:Generator_UserColumnName="Thể loại" msprop:Generator_ColumnVarNameInTable="columnThể_loại">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Số_x0020_lượng_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Số_lượng_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Số_lượng_sản_phẩm" msprop:Generator_UserColumnName="Số lượng sản phẩm" msprop:Generator_ColumnVarNameInTable="columnSố_lượng_sản_phẩm" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usp_ThongKePhieuTongSoPhieu" msprop:Generator_RowEvHandlerName="usp_ThongKePhieuTongSoPhieuRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKePhieuTongSoPhieuRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKePhieuTongSoPhieuRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKePhieuTongSoPhieuRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKePhieuTongSoPhieu" msprop:Generator_RowChangedName="usp_ThongKePhieuTongSoPhieuRowChanged" msprop:Generator_UserTableName="usp_ThongKePhieuTongSoPhieu" msprop:Generator_RowChangingName="usp_ThongKePhieuTongSoPhieuRowChanging" msprop:Generator_RowClassName="usp_ThongKePhieuTongSoPhieuRow" msprop:Generator_TableClassName="usp_ThongKePhieuTongSoPhieuDataTable" msprop:Generator_TableVarName="tableusp_ThongKePhieuTongSoPhieu">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Tổng_x0020_phiếu" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Tổng_phiếuColumn" msprop:Generator_ColumnPropNameInRow="Tổng_phiếu" msprop:Generator_UserColumnName="Tổng phiếu" msprop:Generator_ColumnVarNameInTable="columnTổng_phiếu" type="xs:int" minOccurs="0" />
+              <xs:element name="Số_x0020_lượng_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Số_lượng_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Số_lượng_sản_phẩm" msprop:Generator_UserColumnName="Số lượng sản phẩm" msprop:Generator_ColumnVarNameInTable="columnSố_lượng_sản_phẩm" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usp_ThongKeSanPham" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPham" msprop:Generator_RowChangedName="usp_ThongKeSanPhamRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPham" msprop:Generator_RowChangingName="usp_ThongKeSanPhamRowChanging" msprop:Generator_RowClassName="usp_ThongKeSanPhamRow" msprop:Generator_TableClassName="usp_ThongKeSanPhamDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPham">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Má_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Má_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Má_sản_phẩm" msprop:Generator_UserColumnName="Má sản phẩm" msprop:Generator_ColumnVarNameInTable="columnMá_sản_phẩm" type="xs:short" />
+              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tồn_x0020_kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
+              <xs:element name="Giá_x0020_nhập" msprop:Generator_ColumnPropNameInTable="Giá_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Giá_nhập" msprop:Generator_UserColumnName="Giá nhập" msprop:Generator_ColumnVarNameInTable="columnGiá_nhập" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tổng_x0020_tiền_x0020_nhập" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Tổng_tiền_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tổng_tiền_nhập" msprop:Generator_UserColumnName="Tổng tiền nhập" msprop:Generator_ColumnVarNameInTable="columnTổng_tiền_nhập" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usp_ThongKeSanPhamSapHetHang" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamSapHetHangRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamSapHetHangRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamSapHetHangRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamSapHetHangRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPhamSapHetHang" msprop:Generator_RowChangedName="usp_ThongKeSanPhamSapHetHangRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPhamSapHetHang" msprop:Generator_RowChangingName="usp_ThongKeSanPhamSapHetHangRowChanging" msprop:Generator_RowClassName="usp_ThongKeSanPhamSapHetHangRow" msprop:Generator_TableClassName="usp_ThongKeSanPhamSapHetHangDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPhamSapHetHang">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Má_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Má_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Má_sản_phẩm" msprop:Generator_UserColumnName="Má sản phẩm" msprop:Generator_ColumnVarNameInTable="columnMá_sản_phẩm" type="xs:short" />
+              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tồn_x0020_kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
+              <xs:element name="Giá_x0020_nhập" msprop:Generator_ColumnPropNameInTable="Giá_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Giá_nhập" msprop:Generator_UserColumnName="Giá nhập" msprop:Generator_ColumnVarNameInTable="columnGiá_nhập" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tổng_x0020_tiền_x0020_nhập" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Tổng_tiền_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tổng_tiền_nhập" msprop:Generator_UserColumnName="Tổng tiền nhập" msprop:Generator_ColumnVarNameInTable="columnTổng_tiền_nhập" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usp_ThongKeSanPhamTonKho" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamTonKhoRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamTonKhoRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamTonKhoRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamTonKhoRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPhamTonKho" msprop:Generator_RowChangedName="usp_ThongKeSanPhamTonKhoRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPhamTonKho" msprop:Generator_RowChangingName="usp_ThongKeSanPhamTonKhoRowChanging" msprop:Generator_RowClassName="usp_ThongKeSanPhamTonKhoRow" msprop:Generator_TableClassName="usp_ThongKeSanPhamTonKhoDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPhamTonKho">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Má_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInTable="Má_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Má_sản_phẩm" msprop:Generator_UserColumnName="Má sản phẩm" msprop:Generator_ColumnVarNameInTable="columnMá_sản_phẩm" type="xs:short" />
+              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tồn_x0020_kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
+              <xs:element name="Giá_x0020_nhập" msprop:Generator_ColumnPropNameInTable="Giá_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Giá_nhập" msprop:Generator_UserColumnName="Giá nhập" msprop:Generator_ColumnVarNameInTable="columnGiá_nhập" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Tổng_x0020_tiền_x0020_nhập" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="Tổng_tiền_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tổng_tiền_nhập" msprop:Generator_UserColumnName="Tổng tiền nhập" msprop:Generator_ColumnVarNameInTable="columnTổng_tiền_nhập" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usp_ThongKeSanPhamTonKhoTheoKy" msprop:Generator_RowClassName="usp_ThongKeSanPhamTonKhoTheoKyRow" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamTonKhoTheoKyRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamTonKhoTheoKyRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamTonKhoTheoKyRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamTonKhoTheoKyRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPhamTonKhoTheoKy" msprop:Generator_RowChangedName="usp_ThongKeSanPhamTonKhoTheoKyRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPhamTonKhoTheoKy" msprop:Generator_RowChangingName="usp_ThongKeSanPhamTonKhoTheoKyRowChanging" msprop:Generator_TableClassName="usp_ThongKeSanPhamTonKhoTheoKyDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPhamTonKhoTheoKy">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Mã_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Mã sản phẩm" msprop:Generator_ColumnPropNameInTable="Mã_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Mã_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnMã_sản_phẩm" type="xs:short" />
@@ -1321,113 +1427,11 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Nhà_x0020_cung_x0020_cấp" msprop:Generator_UserColumnName="Nhà cung cấp" msprop:Generator_ColumnPropNameInTable="Nhà_cung_cấpColumn" msprop:Generator_ColumnPropNameInRow="Nhà_cung_cấp" msprop:Generator_ColumnVarNameInTable="columnNhà_cung_cấp">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="150" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Đơn_x0020_vị" msprop:Generator_UserColumnName="Đơn vị" msprop:Generator_ColumnPropNameInTable="Đơn_vịColumn" msprop:Generator_ColumnPropNameInRow="Đơn_vị" msprop:Generator_ColumnVarNameInTable="columnĐơn_vị" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Giá" msprop:Generator_UserColumnName="Giá" msprop:Generator_ColumnPropNameInTable="GiáColumn" msprop:Generator_ColumnPropNameInRow="Giá" msprop:Generator_ColumnVarNameInTable="columnGiá" type="xs:decimal" minOccurs="0" />
               <xs:element name="Tồn_x0020_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="usp_ThongKePhieu" msprop:Generator_RowClassName="usp_ThongKePhieuRow" msprop:Generator_RowEvHandlerName="usp_ThongKePhieuRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKePhieuRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKePhieuRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKePhieuRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKePhieu" msprop:Generator_RowChangedName="usp_ThongKePhieuRowChanged" msprop:Generator_UserTableName="usp_ThongKePhieu" msprop:Generator_RowChangingName="usp_ThongKePhieuRowChanging" msprop:Generator_TableClassName="usp_ThongKePhieuDataTable" msprop:Generator_TableVarName="tableusp_ThongKePhieu">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Mã_x0020_phiếu" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Mã phiếu" msprop:Generator_ColumnPropNameInTable="Mã_phiếuColumn" msprop:Generator_ColumnPropNameInRow="Mã_phiếu" msprop:Generator_ColumnVarNameInTable="columnMã_phiếu" type="xs:short" />
-              <xs:element name="Thể_x0020_loại" msprop:Generator_UserColumnName="Thể loại" msprop:Generator_ColumnPropNameInTable="Thể_loạiColumn" msprop:Generator_ColumnPropNameInRow="Thể_loại" msprop:Generator_ColumnVarNameInTable="columnThể_loại">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Số_x0020_lượng_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Số lượng sản phẩm" msprop:Generator_ColumnPropNameInTable="Số_lượng_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Số_lượng_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnSố_lượng_sản_phẩm" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="usp_ThongKePhieuTongSoPhieu" msprop:Generator_RowClassName="usp_ThongKePhieuTongSoPhieuRow" msprop:Generator_RowEvHandlerName="usp_ThongKePhieuTongSoPhieuRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKePhieuTongSoPhieuRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKePhieuTongSoPhieuRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKePhieuTongSoPhieuRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKePhieuTongSoPhieu" msprop:Generator_RowChangedName="usp_ThongKePhieuTongSoPhieuRowChanged" msprop:Generator_UserTableName="usp_ThongKePhieuTongSoPhieu" msprop:Generator_RowChangingName="usp_ThongKePhieuTongSoPhieuRowChanging" msprop:Generator_TableClassName="usp_ThongKePhieuTongSoPhieuDataTable" msprop:Generator_TableVarName="tableusp_ThongKePhieuTongSoPhieu">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Tổng_x0020_phiếu" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Tổng phiếu" msprop:Generator_ColumnPropNameInTable="Tổng_phiếuColumn" msprop:Generator_ColumnPropNameInRow="Tổng_phiếu" msprop:Generator_ColumnVarNameInTable="columnTổng_phiếu" type="xs:int" minOccurs="0" />
-              <xs:element name="Số_x0020_lượng_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Số lượng sản phẩm" msprop:Generator_ColumnPropNameInTable="Số_lượng_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Số_lượng_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnSố_lượng_sản_phẩm" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="usp_ThongKeSanPham" msprop:Generator_RowClassName="usp_ThongKeSanPhamRow" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPham" msprop:Generator_RowChangedName="usp_ThongKeSanPhamRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPham" msprop:Generator_RowChangingName="usp_ThongKeSanPhamRowChanging" msprop:Generator_TableClassName="usp_ThongKeSanPhamDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPham">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Má_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Má sản phẩm" msprop:Generator_ColumnPropNameInTable="Má_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Má_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnMá_sản_phẩm" type="xs:short" />
-              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Tồn_x0020_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
-              <xs:element name="Giá_x0020_nhập" msprop:Generator_UserColumnName="Giá nhập" msprop:Generator_ColumnPropNameInTable="Giá_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Giá_nhập" msprop:Generator_ColumnVarNameInTable="columnGiá_nhập" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Tổng_x0020_tiền_x0020_nhập" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Tổng tiền nhập" msprop:Generator_ColumnPropNameInTable="Tổng_tiền_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tổng_tiền_nhập" msprop:Generator_ColumnVarNameInTable="columnTổng_tiền_nhập" type="xs:decimal" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="usp_ThongKeSanPhamSapHetHang" msprop:Generator_RowClassName="usp_ThongKeSanPhamSapHetHangRow" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamSapHetHangRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamSapHetHangRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamSapHetHangRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamSapHetHangRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPhamSapHetHang" msprop:Generator_RowChangedName="usp_ThongKeSanPhamSapHetHangRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPhamSapHetHang" msprop:Generator_RowChangingName="usp_ThongKeSanPhamSapHetHangRowChanging" msprop:Generator_TableClassName="usp_ThongKeSanPhamSapHetHangDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPhamSapHetHang">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Má_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Má sản phẩm" msprop:Generator_ColumnPropNameInTable="Má_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Má_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnMá_sản_phẩm" type="xs:short" />
-              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Tồn_x0020_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
-              <xs:element name="Giá_x0020_nhập" msprop:Generator_UserColumnName="Giá nhập" msprop:Generator_ColumnPropNameInTable="Giá_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Giá_nhập" msprop:Generator_ColumnVarNameInTable="columnGiá_nhập" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Tổng_x0020_tiền_x0020_nhập" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Tổng tiền nhập" msprop:Generator_ColumnPropNameInTable="Tổng_tiền_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tổng_tiền_nhập" msprop:Generator_ColumnVarNameInTable="columnTổng_tiền_nhập" type="xs:decimal" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="usp_ThongKeSanPhamTonKho" msprop:Generator_RowClassName="usp_ThongKeSanPhamTonKhoRow" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamTonKhoRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamTonKhoRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamTonKhoRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamTonKhoRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPhamTonKho" msprop:Generator_RowChangedName="usp_ThongKeSanPhamTonKhoRowChanged" msprop:Generator_UserTableName="usp_ThongKeSanPhamTonKho" msprop:Generator_RowChangingName="usp_ThongKeSanPhamTonKhoRowChanging" msprop:Generator_TableClassName="usp_ThongKeSanPhamTonKhoDataTable" msprop:Generator_TableVarName="tableusp_ThongKeSanPhamTonKho">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Má_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="Má sản phẩm" msprop:Generator_ColumnPropNameInTable="Má_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Má_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnMá_sản_phẩm" type="xs:short" />
-              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Tồn_x0020_kho" msprop:Generator_UserColumnName="Tồn kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" type="xs:short" />
-              <xs:element name="Giá_x0020_nhập" msprop:Generator_UserColumnName="Giá nhập" msprop:Generator_ColumnPropNameInTable="Giá_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Giá_nhập" msprop:Generator_ColumnVarNameInTable="columnGiá_nhập" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Tổng_x0020_tiền_x0020_nhập" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Tổng tiền nhập" msprop:Generator_ColumnPropNameInTable="Tổng_tiền_nhậpColumn" msprop:Generator_ColumnPropNameInRow="Tổng_tiền_nhập" msprop:Generator_ColumnVarNameInTable="columnTổng_tiền_nhập" type="xs:decimal" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="usp_ThongKeSanPhamTonKhoTheoKy" msprop:Generator_RowEvHandlerName="usp_ThongKeSanPhamTonKhoTheoKyRowChangeEventHandler" msprop:Generator_RowDeletedName="usp_ThongKeSanPhamTonKhoTheoKyRowDeleted" msprop:Generator_RowDeletingName="usp_ThongKeSanPhamTonKhoTheoKyRowDeleting" msprop:Generator_RowEvArgName="usp_ThongKeSanPhamTonKhoTheoKyRowChangeEvent" msprop:Generator_TablePropName="usp_ThongKeSanPhamTonKhoTheoKy" msprop:Generator_RowChangedName="usp_ThongKeSanPhamTonKhoTheoKyRowChanged" msprop:Generator_RowChangingName="usp_ThongKeSanPhamTonKhoTheoKyRowChanging" msprop:Generator_TableClassName="usp_ThongKeSanPhamTonKhoTheoKyDataTable" msprop:Generator_RowClassName="usp_ThongKeSanPhamTonKhoTheoKyRow" msprop:Generator_TableVarName="tableusp_ThongKeSanPhamTonKhoTheoKy" msprop:Generator_UserTableName="usp_ThongKeSanPhamTonKhoTheoKy">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Mã_x0020_sản_x0020_phẩm" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnPropNameInRow="Mã_sản_phẩm" msprop:Generator_ColumnPropNameInTable="Mã_sản_phẩmColumn" msprop:Generator_ColumnVarNameInTable="columnMã_sản_phẩm" msprop:Generator_UserColumnName="Mã sản phẩm" type="xs:short" />
-              <xs:element name="Tên_x0020_sản_x0020_phẩm" msprop:Generator_ColumnPropNameInRow="Tên_sản_phẩm" msprop:Generator_ColumnPropNameInTable="Tên_sản_phẩmColumn" msprop:Generator_ColumnVarNameInTable="columnTên_sản_phẩm" msprop:Generator_UserColumnName="Tên sản phẩm">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Tồn_x0020_kho" msprop:Generator_ColumnPropNameInRow="Tồn_kho" msprop:Generator_ColumnPropNameInTable="Tồn_khoColumn" msprop:Generator_ColumnVarNameInTable="columnTồn_kho" msprop:Generator_UserColumnName="Tồn kho" type="xs:short" />
-              <xs:element name="Total_x0020_IN" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Total_IN" msprop:Generator_ColumnPropNameInTable="Total_INColumn" msprop:Generator_ColumnVarNameInTable="columnTotal_IN" msprop:Generator_UserColumnName="Total IN" type="xs:int" minOccurs="0" />
-              <xs:element name="Total_x0020_OUT" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Total_OUT" msprop:Generator_ColumnPropNameInTable="Total_OUTColumn" msprop:Generator_ColumnVarNameInTable="columnTotal_OUT" msprop:Generator_UserColumnName="Total OUT" type="xs:int" minOccurs="0" />
+              <xs:element name="Total_x0020_IN" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Total IN" msprop:Generator_ColumnPropNameInTable="Total_INColumn" msprop:Generator_ColumnPropNameInRow="Total_IN" msprop:Generator_ColumnVarNameInTable="columnTotal_IN" type="xs:int" minOccurs="0" />
+              <xs:element name="Total_x0020_OUT" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Total OUT" msprop:Generator_ColumnPropNameInTable="Total_OUTColumn" msprop:Generator_ColumnPropNameInRow="Total_OUT" msprop:Generator_ColumnVarNameInTable="columnTotal_OUT" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalM_x0020_IN" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="TotalM_IN" msprop:Generator_ColumnPropNameInTable="TotalM_INColumn" msprop:Generator_ColumnVarNameInTable="columnTotalM_IN" msprop:Generator_UserColumnName="TotalM IN" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalM_x0020_OUT" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="TotalM_OUT" msprop:Generator_ColumnPropNameInTable="TotalM_OUTColumn" msprop:Generator_ColumnVarNameInTable="columnTotalM_OUT" msprop:Generator_UserColumnName="TotalM OUT" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1508,14 +1512,14 @@ SELECT SupplierId, Name, Contact, Phone, Email, Address FROM Suppliers WHERE (Su
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Accounts_Employee" msdata:parent="Employees" msdata:child="Accounts" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="Accounts" msprop:Generator_RelationVarName="relationFK_Accounts_Employee" msprop:Generator_ChildPropName="GetAccountsRows" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_UserRelationName="FK_Accounts_Employee" />
-      <msdata:Relationship name="FK_Accounts_Role" msdata:parent="Roles" msdata:child="Accounts" msdata:parentkey="RoleId" msdata:childkey="RoleId" msprop:Generator_UserParentTable="Roles" msprop:Generator_UserChildTable="Accounts" msprop:Generator_RelationVarName="relationFK_Accounts_Role" msprop:Generator_ChildPropName="GetAccountsRows" msprop:Generator_ParentPropName="RolesRow" msprop:Generator_UserRelationName="FK_Accounts_Role" />
-      <msdata:Relationship name="FK_Products_Supplier" msdata:parent="Suppliers" msdata:child="Products" msdata:parentkey="SupplierId" msdata:childkey="SupplierId" msprop:Generator_UserParentTable="Suppliers" msprop:Generator_UserChildTable="Products" msprop:Generator_RelationVarName="relationFK_Products_Supplier" msprop:Generator_ChildPropName="GetProductsRows" msprop:Generator_ParentPropName="SuppliersRow" msprop:Generator_UserRelationName="FK_Products_Supplier" />
-      <msdata:Relationship name="FK_StockTx_By" msdata:parent="Employees" msdata:child="StockTransactions" msdata:parentkey="EmployeeId" msdata:childkey="PerformedBy" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="StockTransactions" msprop:Generator_RelationVarName="relationFK_StockTx_By" msprop:Generator_ChildPropName="GetStockTransactionsRows" msprop:Generator_UserRelationName="FK_StockTx_By" msprop:Generator_ParentPropName="EmployeesRow" />
-      <msdata:Relationship name="FK_StockTx_Voucher" msdata:parent="StockVouchers" msdata:child="StockTransactions" msdata:parentkey="VoucherId" msdata:childkey="VoucherId" msprop:Generator_UserParentTable="StockVouchers" msprop:Generator_UserChildTable="StockTransactions" msprop:Generator_RelationVarName="relationFK_StockTx_Voucher" msprop:Generator_ChildPropName="GetStockTransactionsRows" msprop:Generator_ParentPropName="StockVouchersRow" msprop:Generator_UserRelationName="FK_StockTx_Voucher" />
-      <msdata:Relationship name="FK_SVD_Product" msdata:parent="Products" msdata:child="StockVoucherDetails" msdata:parentkey="ProductId" msdata:childkey="ProductId" msprop:Generator_UserParentTable="Products" msprop:Generator_UserChildTable="StockVoucherDetails" msprop:Generator_RelationVarName="relationFK_SVD_Product" msprop:Generator_ChildPropName="GetStockVoucherDetailsRows" msprop:Generator_UserRelationName="FK_SVD_Product" msprop:Generator_ParentPropName="ProductsRow" />
-      <msdata:Relationship name="FK_SVD_Voucher" msdata:parent="StockVouchers" msdata:child="StockVoucherDetails" msdata:parentkey="VoucherId" msdata:childkey="VoucherId" msprop:Generator_UserParentTable="StockVouchers" msprop:Generator_UserChildTable="StockVoucherDetails" msprop:Generator_RelationVarName="relationFK_SVD_Voucher" msprop:Generator_ChildPropName="GetStockVoucherDetailsRows" msprop:Generator_ParentPropName="StockVouchersRow" msprop:Generator_UserRelationName="FK_SVD_Voucher" />
-      <msdata:Relationship name="FK_StockVouchers_CreatedBy" msdata:parent="Employees" msdata:child="StockVouchers" msdata:parentkey="EmployeeId" msdata:childkey="CreatedBy" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="StockVouchers" msprop:Generator_RelationVarName="relationFK_StockVouchers_CreatedBy" msprop:Generator_ChildPropName="GetStockVouchersRows" msprop:Generator_UserRelationName="FK_StockVouchers_CreatedBy" msprop:Generator_ParentPropName="EmployeesRow" />
+      <msdata:Relationship name="FK_Accounts_Employee" msdata:parent="Employees" msdata:child="Accounts" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="Accounts" msprop:Generator_RelationVarName="relationFK_Accounts_Employee" msprop:Generator_ChildPropName="GetAccountsRows" msprop:Generator_UserRelationName="FK_Accounts_Employee" msprop:Generator_ParentPropName="EmployeesRow" />
+      <msdata:Relationship name="FK_Accounts_Role" msdata:parent="Roles" msdata:child="Accounts" msdata:parentkey="RoleId" msdata:childkey="RoleId" msprop:Generator_UserParentTable="Roles" msprop:Generator_UserChildTable="Accounts" msprop:Generator_RelationVarName="relationFK_Accounts_Role" msprop:Generator_ChildPropName="GetAccountsRows" msprop:Generator_UserRelationName="FK_Accounts_Role" msprop:Generator_ParentPropName="RolesRow" />
+      <msdata:Relationship name="FK_Products_Supplier" msdata:parent="Suppliers" msdata:child="Products" msdata:parentkey="SupplierId" msdata:childkey="SupplierId" msprop:Generator_UserParentTable="Suppliers" msprop:Generator_UserChildTable="Products" msprop:Generator_RelationVarName="relationFK_Products_Supplier" msprop:Generator_ChildPropName="GetProductsRows" msprop:Generator_UserRelationName="FK_Products_Supplier" msprop:Generator_ParentPropName="SuppliersRow" />
+      <msdata:Relationship name="FK_StockTx_By" msdata:parent="Employees" msdata:child="StockTransactions" msdata:parentkey="EmployeeId" msdata:childkey="PerformedBy" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="StockTransactions" msprop:Generator_RelationVarName="relationFK_StockTx_By" msprop:Generator_ChildPropName="GetStockTransactionsRows" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_UserRelationName="FK_StockTx_By" />
+      <msdata:Relationship name="FK_StockTx_Voucher" msdata:parent="StockVouchers" msdata:child="StockTransactions" msdata:parentkey="VoucherId" msdata:childkey="VoucherId" msprop:Generator_UserParentTable="StockVouchers" msprop:Generator_UserChildTable="StockTransactions" msprop:Generator_RelationVarName="relationFK_StockTx_Voucher" msprop:Generator_ChildPropName="GetStockTransactionsRows" msprop:Generator_UserRelationName="FK_StockTx_Voucher" msprop:Generator_ParentPropName="StockVouchersRow" />
+      <msdata:Relationship name="FK_SVD_Product" msdata:parent="Products" msdata:child="StockVoucherDetails" msdata:parentkey="ProductId" msdata:childkey="ProductId" msprop:Generator_UserParentTable="Products" msprop:Generator_UserChildTable="StockVoucherDetails" msprop:Generator_RelationVarName="relationFK_SVD_Product" msprop:Generator_ChildPropName="GetStockVoucherDetailsRows" msprop:Generator_ParentPropName="ProductsRow" msprop:Generator_UserRelationName="FK_SVD_Product" />
+      <msdata:Relationship name="FK_SVD_Voucher" msdata:parent="StockVouchers" msdata:child="StockVoucherDetails" msdata:parentkey="VoucherId" msdata:childkey="VoucherId" msprop:Generator_UserParentTable="StockVouchers" msprop:Generator_UserChildTable="StockVoucherDetails" msprop:Generator_RelationVarName="relationFK_SVD_Voucher" msprop:Generator_ChildPropName="GetStockVoucherDetailsRows" msprop:Generator_UserRelationName="FK_SVD_Voucher" msprop:Generator_ParentPropName="StockVouchersRow" />
+      <msdata:Relationship name="FK_StockVouchers_CreatedBy" msdata:parent="Employees" msdata:child="StockVouchers" msdata:parentkey="EmployeeId" msdata:childkey="CreatedBy" msprop:Generator_UserParentTable="Employees" msprop:Generator_UserChildTable="StockVouchers" msprop:Generator_RelationVarName="relationFK_StockVouchers_CreatedBy" msprop:Generator_ChildPropName="GetStockVouchersRows" msprop:Generator_ParentPropName="EmployeesRow" msprop:Generator_UserRelationName="FK_StockVouchers_CreatedBy" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
