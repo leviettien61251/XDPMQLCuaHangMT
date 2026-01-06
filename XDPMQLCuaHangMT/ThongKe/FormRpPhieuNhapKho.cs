@@ -34,7 +34,7 @@ namespace XDPMQLCuaHangMT.ThongKe
 
                 ReportDataSource reportDataSource = new ReportDataSource("GetPhieuNhapKho", phieuNhap);
                 this.reportViewer1.LocalReport.DataSources.Clear();
-                this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
+                //this.reportViewer1.LocalReport.DataSources.Add(reportDataSource);
                 this.reportViewer1.RefreshReport();
             }
             catch (Exception ex)

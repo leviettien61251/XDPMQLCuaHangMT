@@ -24,7 +24,7 @@ namespace XDPMQLCuaHangMT
         {
             InitializeComponent();
             this.employeeId__ = employeeId;
-            isInOut(type);
+            InOut(type);
             this.note__ = note;
         }
         public FormVoucherDetail(int employeeId, int stockVoucherId, string note, string type)
@@ -32,10 +32,10 @@ namespace XDPMQLCuaHangMT
             InitializeComponent();
             this.employeeId__ = employeeId;
             this.stockVoucherId__ = stockVoucherId;
-            isInOut(type);
+            InOut(type);
             this.note__ = note;
         }
-        private void isInOut(string type)
+        private void InOut(string type)
         {
             if (type.Equals("IN"))
             {
@@ -58,7 +58,7 @@ namespace XDPMQLCuaHangMT
         private void Clear_InputFields()
         {
             textBoxQuantity.Clear();
-            productList.Clear();
+            //productList.Clear();
         }
         private void Load_Data()
         {
@@ -73,7 +73,7 @@ namespace XDPMQLCuaHangMT
             dgvDetailProduct.Columns["productId"].HeaderText = "Mã sản phẩm";
             dgvDetailProduct.Columns["quantity"].HeaderText = "Số lượng";
             dgvDetailProduct.Columns["unitPrice"].HeaderText = "Đơn giá";
-
+            Clear_InputFields();
         }
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -81,21 +81,18 @@ namespace XDPMQLCuaHangMT
             productName__ = dgvProduct.CurrentRow.Cells["Tên sản phẩm"].Value.ToString();
             productStockQty__ = Convert.ToInt32(dgvProduct.CurrentRow.Cells["Tồn kho"].Value);
             txtUnitPrice.Text = dgvProduct.CurrentRow.Cells["Giá nhập"].Value.ToString();
-
-
         }
-
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             FormFinalStock formFinalStock = new FormFinalStock(productList, employeeId__, voucherType__, note__);
             formFinalStock.ShowDialog();
+            Clear_InputFields();
         }
         private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
         {
             string searchText = textBoxSearchProduct.Text;
             dgvProduct.DataSource = busProduct.FindProducts(searchText);
         }
-
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
             string searchText = textBoxSearchProduct.Text;
@@ -138,13 +135,14 @@ namespace XDPMQLCuaHangMT
 
             if (this.voucherType__.Equals("IN"))
             {
-                costPrice__ = Convert.ToDecimal(txtUnitPrice.Text);//cost price
+                costPrice__ = Convert.ToDecimal(txtUnitPrice.Text);
                 voucherDetail.unitPrice = costPrice__;
             }
 
             MessageBox.Show("Xác nhận chọn sản phẩm: " + productName__, "Thông báo", MessageBoxButtons.OKCancel);
             productList.Add(voucherDetail);
             Load_ProductsToDetail();
+            Clear_InputFields();
         }
         private void buttonRemoveProductFromDetail_Click(object sender, EventArgs e)
         {
