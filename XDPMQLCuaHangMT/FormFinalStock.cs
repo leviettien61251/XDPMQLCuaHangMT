@@ -54,10 +54,7 @@ namespace XDPMQLCuaHangMT
 
         private void buttonExport_Click(object sender, EventArgs e)
         {
-
-            excelHandle.SaveExcel(dgvExport, "Danh sách sản phẩm trong phiếu", "Phiếu xuất nhập kho");
             int i = 0;
-            int n = dgvExport.RowCount;
             stockVoucher = new StockVoucher();
             stockVoucher.voucherType = voucherType__;
             stockVoucher.createdBy = this.employeeId__;
@@ -96,17 +93,6 @@ namespace XDPMQLCuaHangMT
                 rp.Show();
                 rp.MaximumSize = this.MaximumSize;
             }
-
-            if (i == n)
-            {
-                MessageBox.Show("Xuất phiếu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Xuất phiếu thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            i = 0;
         }
     }
 }
