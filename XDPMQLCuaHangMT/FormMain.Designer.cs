@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.FormTest = new System.Windows.Forms.ToolStripMenuItem();
             this.FormManagement = new System.Windows.Forms.ToolStripMenuItem();
             this.FormAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.FormEmployee = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,19 +36,18 @@
             this.FormStock = new System.Windows.Forms.ToolStripMenuItem();
             this.FormVoucherIN = new System.Windows.Forms.ToolStripMenuItem();
             this.FormVoucherOUT = new System.Windows.Forms.ToolStripMenuItem();
-            this.labelRoleId = new System.Windows.Forms.Label();
-            this.labelEmployeeId = new System.Windows.Forms.Label();
-            this.labelCreateAt = new System.Windows.Forms.Label();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FormThongKeSP = new System.Windows.Forms.ToolStripMenuItem();
             this.FormThongKePhieu = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelRoleId = new System.Windows.Forms.Label();
+            this.labelEmployeeId = new System.Windows.Forms.Label();
+            this.labelCreateAt = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FormTest,
             this.FormManagement,
             this.FormVoucherIN,
             this.FormVoucherOUT,
@@ -59,12 +57,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // FormTest
-            // 
-            this.FormTest.Name = "FormTest";
-            this.FormTest.Size = new System.Drawing.Size(68, 20);
-            this.FormTest.Text = "FormTest";
             // 
             // FormManagement
             // 
@@ -81,28 +73,28 @@
             // FormAccount
             // 
             this.FormAccount.Name = "FormAccount";
-            this.FormAccount.Size = new System.Drawing.Size(161, 22);
+            this.FormAccount.Size = new System.Drawing.Size(180, 22);
             this.FormAccount.Text = "Tài Khoản";
             this.FormAccount.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
             // 
             // FormEmployee
             // 
             this.FormEmployee.Name = "FormEmployee";
-            this.FormEmployee.Size = new System.Drawing.Size(161, 22);
+            this.FormEmployee.Size = new System.Drawing.Size(180, 22);
             this.FormEmployee.Text = "Nhân viên";
             this.FormEmployee.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.formToolStripMenuItem_DropDownItemClicked);
             // 
             // FormSupplier
             // 
             this.FormSupplier.Name = "FormSupplier";
-            this.FormSupplier.Size = new System.Drawing.Size(161, 22);
+            this.FormSupplier.Size = new System.Drawing.Size(180, 22);
             this.FormSupplier.Text = "Nhà cung cấp";
             this.FormSupplier.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ManagementToolStripMenuItem_DropDownItemClicked);
             // 
             // FormStock
             // 
             this.FormStock.Name = "FormStock";
-            this.FormStock.Size = new System.Drawing.Size(161, 22);
+            this.FormStock.Size = new System.Drawing.Size(180, 22);
             this.FormStock.Text = "Phiếu nhập/xuất";
             // 
             // FormVoucherIN
@@ -118,6 +110,30 @@
             this.FormVoucherOUT.Size = new System.Drawing.Size(97, 20);
             this.FormVoucherOUT.Text = "Phiếu xuất kho";
             this.FormVoucherOUT.Click += new System.EventHandler(this.FormVoucherOUT_Click);
+            // 
+            // thốngKêToolStripMenuItem
+            // 
+            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FormThongKeSP,
+            this.FormThongKePhieu});
+            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.thốngKêToolStripMenuItem.Text = "Thống kê";
+            this.thốngKêToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
+            // 
+            // FormThongKeSP
+            // 
+            this.FormThongKeSP.Name = "FormThongKeSP";
+            this.FormThongKeSP.Size = new System.Drawing.Size(214, 22);
+            this.FormThongKeSP.Text = "Thống kê sản phẩm";
+            this.FormThongKeSP.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
+            // 
+            // FormThongKePhieu
+            // 
+            this.FormThongKePhieu.Name = "FormThongKePhieu";
+            this.FormThongKePhieu.Size = new System.Drawing.Size(214, 22);
+            this.FormThongKePhieu.Text = "Thống kê phiếu nhập/xuất";
+            this.FormThongKePhieu.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
             // 
             // labelRoleId
             // 
@@ -145,30 +161,6 @@
             this.labelCreateAt.Size = new System.Drawing.Size(60, 13);
             this.labelCreateAt.TabIndex = 3;
             this.labelCreateAt.Text = "Created At:";
-            // 
-            // thốngKêToolStripMenuItem
-            // 
-            this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.FormThongKeSP,
-            this.FormThongKePhieu});
-            this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.thốngKêToolStripMenuItem.Text = "Thống kê";
-            this.thốngKêToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
-            // 
-            // FormThongKeSP
-            // 
-            this.FormThongKeSP.Name = "FormThongKeSP";
-            this.FormThongKeSP.Size = new System.Drawing.Size(214, 22);
-            this.FormThongKeSP.Text = "Thống kê sản phẩm";
-            this.FormThongKeSP.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
-            // 
-            // FormThongKePhieu
-            // 
-            this.FormThongKePhieu.Name = "FormThongKePhieu";
-            this.FormThongKePhieu.Size = new System.Drawing.Size(214, 22);
-            this.FormThongKePhieu.Text = "Thống kê phiếu nhập/xuất";
-            this.FormThongKePhieu.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.ThongKeClicked);
             // 
             // FormMain
             // 
@@ -199,7 +191,6 @@
         private System.Windows.Forms.Label labelRoleId;
         private System.Windows.Forms.Label labelEmployeeId;
         private System.Windows.Forms.Label labelCreateAt;
-        private System.Windows.Forms.ToolStripMenuItem FormTest;
         private System.Windows.Forms.ToolStripMenuItem FormManagement;
         private System.Windows.Forms.ToolStripMenuItem FormAccount;
         private System.Windows.Forms.ToolStripMenuItem FormEmployee;
