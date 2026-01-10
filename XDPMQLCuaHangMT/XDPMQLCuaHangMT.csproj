@@ -181,18 +181,6 @@
       <DependentUpon>cuaHangMayTinh3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ExcelHandle.cs" />
-    <Compile Include="FormAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormAccount.Designer.cs">
-      <DependentUpon>FormAccount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormEmployee.Designer.cs">
-      <DependentUpon>FormEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormFinalStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,35 +193,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormStock.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormStock.Designer.cs">
-      <DependentUpon>FormStock.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormStockDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormStockDetail.Designer.cs">
       <DependentUpon>FormStockDetail.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSupplier.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSupplier.Designer.cs">
-      <DependentUpon>FormSupplier.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTest.Designer.cs">
-      <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVoucherDetail.cs">
       <SubType>Form</SubType>
@@ -290,18 +254,6 @@
     </Compile>
     <Compile Include="ThongKe\FormCrpTongHopTonKho.Designer.cs">
       <DependentUpon>FormCrpTongHopTonKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongKe\FormRpPhieuNhapKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe\FormRpPhieuNhapKho.Designer.cs">
-      <DependentUpon>FormRpPhieuNhapKho.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ThongKe\FormRpPhieuXuatKho.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ThongKe\FormRpPhieuXuatKho.Designer.cs">
-      <DependentUpon>FormRpPhieuXuatKho.cs</DependentUpon>
     </Compile>
     <Compile Include="ThongKe\FormThongKePhieu.cs">
       <SubType>Form</SubType>
@@ -363,32 +315,14 @@
     <Compile Include="UI_UPDATE\Form_Stock.Designer.cs">
       <DependentUpon>Form_Stock.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAccount.resx">
-      <DependentUpon>FormAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormEmployee.resx">
-      <DependentUpon>FormEmployee.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormFinalStock.resx">
       <DependentUpon>FormFinalStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormStock.resx">
-      <DependentUpon>FormStock.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormStockDetail.resx">
       <DependentUpon>FormStockDetail.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSupplier.resx">
-      <DependentUpon>FormSupplier.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTest.resx">
-      <DependentUpon>FormTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVoucherDetail.resx">
       <DependentUpon>FormVoucherDetail.cs</DependentUpon>
@@ -426,20 +360,12 @@
     <EmbeddedResource Include="ThongKe\FormCrpTongHopTonKho.resx">
       <DependentUpon>FormCrpTongHopTonKho.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\FormRpPhieuNhapKho.resx">
-      <DependentUpon>FormRpPhieuNhapKho.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\FormRpPhieuXuatKho.resx">
-      <DependentUpon>FormRpPhieuXuatKho.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\FormThongKePhieu.resx">
       <DependentUpon>FormThongKePhieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ThongKe\FormThongKeSP.resx">
       <DependentUpon>FormThongKeSP.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ThongKe\ReportPhieuNhapKho.rdlc" />
-    <EmbeddedResource Include="ThongKe\ReportPhieuXuatKho.rdlc" />
     <EmbeddedResource Include="UI_UPDATE\Form_Account.resx">
       <DependentUpon>Form_Account.cs</DependentUpon>
     </EmbeddedResource>
